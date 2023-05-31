@@ -89,7 +89,7 @@ namespace KursovaHotel2
         private void btnBack_Click(object sender, EventArgs e)
         {
             if (clientIndex > 0)
-            {               
+            {
                 clientIndex--;
                 SelectClient();
                 IsAllowedAddClient = false;
@@ -233,5 +233,8 @@ namespace KursovaHotel2
             tabControlMenu.Enabled = true;
             tabControlMenu.Visible = true;
         }
+
+       
     }
 }
+

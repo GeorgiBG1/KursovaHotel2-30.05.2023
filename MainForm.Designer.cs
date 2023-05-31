@@ -37,7 +37,7 @@
             // 
             // btnHideForm
             // 
-            this.btnHideForm.Location = new System.Drawing.Point(758, 140);
+            this.btnHideForm.Location = new System.Drawing.Point(790, 140);
             this.btnHideForm.Name = "btnHideForm";
             this.btnHideForm.Size = new System.Drawing.Size(262, 39);
             this.btnHideForm.TabIndex = 5;
@@ -47,9 +47,9 @@
             // panelRooms
             // 
             this.panelRooms.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelRooms.Location = new System.Drawing.Point(34, 198);
+            this.panelRooms.Location = new System.Drawing.Point(34, 223);
             this.panelRooms.Name = "panelRooms";
-            this.panelRooms.Size = new System.Drawing.Size(986, 336);
+            this.panelRooms.Size = new System.Drawing.Size(1018, 311);
             this.panelRooms.TabIndex = 4;
             // 
             // btnSelectRoom
@@ -63,17 +63,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(402, 140);
+            this.button1.Location = new System.Drawing.Point(415, 140);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(239, 39);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Погледни резторанта";
+            this.button1.Text = "Преглед на ресторанта";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(315, 33);
+            this.label1.Location = new System.Drawing.Point(310, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(429, 45);
             this.label1.TabIndex = 7;

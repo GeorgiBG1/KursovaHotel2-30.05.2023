@@ -128,6 +128,7 @@
             this.btnDelAll.TabIndex = 92;
             this.btnDelAll.Text = "Зачисти БД";
             this.btnDelAll.UseVisualStyleBackColor = true;
+            this.btnDelAll.Click += new System.EventHandler(this.btnDelAll_Click);
             // 
             // monthCalendar
             // 
@@ -136,6 +137,7 @@
             this.monthCalendar.Name = "monthCalendar";
             this.monthCalendar.TabIndex = 91;
             this.monthCalendar.Visible = false;
+            this.monthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateChanged);
             // 
             // btnSelectMenus
             // 
@@ -145,6 +147,7 @@
             this.btnSelectMenus.TabIndex = 90;
             this.btnSelectMenus.Text = "Избери гозбата на мама";
             this.btnSelectMenus.UseVisualStyleBackColor = true;
+            this.btnSelectMenus.Click += new System.EventHandler(this.btnSelectMenus_Click);
             // 
             // numUpDownAge
             // 
@@ -218,6 +221,7 @@
             this.radioBtnGroupRes.TabIndex = 83;
             this.radioBtnGroupRes.Text = "Групова регистрация";
             this.radioBtnGroupRes.UseVisualStyleBackColor = true;
+            this.radioBtnGroupRes.Click += new System.EventHandler(this.radioBtnGroupRes_CheckedChanged);
             // 
             // radioBtnOneRes
             // 
@@ -230,6 +234,7 @@
             this.radioBtnOneRes.TabStop = true;
             this.radioBtnOneRes.Text = "Единична регистрация";
             this.radioBtnOneRes.UseVisualStyleBackColor = true;
+            this.radioBtnOneRes.Click += new System.EventHandler(this.radioBtnOneRes_CheckedChanged_1);
             // 
             // btnNext
             // 
@@ -242,6 +247,7 @@
             this.btnNext.Text = "Следващ";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Visible = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnBack
             // 
@@ -254,6 +260,7 @@
             this.btnBack.Text = "Назад";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Visible = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnSaveRes
             // 
@@ -264,6 +271,7 @@
             this.btnSaveRes.TabIndex = 79;
             this.btnSaveRes.Text = "Завършване на регистрацията";
             this.btnSaveRes.UseVisualStyleBackColor = false;
+            this.btnSaveRes.Click += new System.EventHandler(this.btnSaveRes_Click);
             // 
             // lblTotalPrice
             // 
@@ -284,6 +292,7 @@
             this.btnExpiredOn.TabIndex = 77;
             this.btnExpiredOn.Text = "Дата на заминаване";
             this.btnExpiredOn.UseVisualStyleBackColor = true;
+            this.btnExpiredOn.Click += new System.EventHandler(this.btnExpiredOn_Click);
             // 
             // btnBookedOn
             // 
@@ -295,6 +304,7 @@
             this.btnBookedOn.TabIndex = 76;
             this.btnBookedOn.Text = "Дата на пристигане";
             this.btnBookedOn.UseVisualStyleBackColor = false;
+            this.btnBookedOn.Click += new System.EventHandler(this.btnBookedOn_Click);
             // 
             // lblAge
             // 

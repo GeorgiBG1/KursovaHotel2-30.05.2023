@@ -13,7 +13,7 @@ namespace KursovaHotel.Data
     {
         public HotelDbContext()
         {
-            this.Database.EnsureCreated();
+            //this.Database.EnsureCreated();
         }
 
         public DbSet<Room> Rooms { get; set; }
