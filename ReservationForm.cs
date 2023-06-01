@@ -223,18 +223,6 @@ namespace KursovaHotel2
         {
             HotelBusiness.DeleteAll();
         }
-
-        private void btnSelectRoom_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnSelectMenus_Click(object sender, EventArgs e)
-        {
-            tabControlMenu.Enabled = true;
-            tabControlMenu.Visible = true;
-        }
-
-       
     }
 }
 

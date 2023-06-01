@@ -28,19 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControlMenu = new System.Windows.Forms.TabControl();
-            this.tabPageWithMenus = new System.Windows.Forms.TabPage();
-            this.tabPageBuffet = new System.Windows.Forms.TabPage();
-            this.tabPageALLIn = new System.Windows.Forms.TabPage();
-            this.tabPageVipMenu = new System.Windows.Forms.TabPage();
             this.btnDelAll = new System.Windows.Forms.Button();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
-            this.btnSelectMenus = new System.Windows.Forms.Button();
             this.numUpDownAge = new System.Windows.Forms.NumericUpDown();
             this.txtBoxFirstName = new System.Windows.Forms.TextBox();
             this.lblDateEnd = new System.Windows.Forms.Label();
             this.lblDateStart = new System.Windows.Forms.Label();
-            this.btnSelectRoom = new System.Windows.Forms.Button();
             this.lblDuration = new System.Windows.Forms.Label();
             this.radioBtnGroupRes = new System.Windows.Forms.RadioButton();
             this.radioBtnOneRes = new System.Windows.Forms.RadioButton();
@@ -62,67 +55,12 @@
             this.lblLastName = new System.Windows.Forms.Label();
             this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
             this.lblMiddleName = new System.Windows.Forms.Label();
-            this.tabControlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownAge)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControlMenu
-            // 
-            this.tabControlMenu.Controls.Add(this.tabPageWithMenus);
-            this.tabControlMenu.Controls.Add(this.tabPageBuffet);
-            this.tabControlMenu.Controls.Add(this.tabPageALLIn);
-            this.tabControlMenu.Controls.Add(this.tabPageVipMenu);
-            this.tabControlMenu.Enabled = false;
-            this.tabControlMenu.Location = new System.Drawing.Point(434, 179);
-            this.tabControlMenu.Name = "tabControlMenu";
-            this.tabControlMenu.SelectedIndex = 0;
-            this.tabControlMenu.Size = new System.Drawing.Size(396, 258);
-            this.tabControlMenu.TabIndex = 93;
-            this.tabControlMenu.Visible = false;
-            // 
-            // tabPageWithMenus
-            // 
-            this.tabPageWithMenus.Location = new System.Drawing.Point(4, 24);
-            this.tabPageWithMenus.Name = "tabPageWithMenus";
-            this.tabPageWithMenus.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageWithMenus.Size = new System.Drawing.Size(388, 230);
-            this.tabPageWithMenus.TabIndex = 0;
-            this.tabPageWithMenus.Text = "Обикновено меню";
-            this.tabPageWithMenus.UseVisualStyleBackColor = true;
-            // 
-            // tabPageBuffet
-            // 
-            this.tabPageBuffet.Location = new System.Drawing.Point(4, 24);
-            this.tabPageBuffet.Name = "tabPageBuffet";
-            this.tabPageBuffet.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBuffet.Size = new System.Drawing.Size(388, 230);
-            this.tabPageBuffet.TabIndex = 1;
-            this.tabPageBuffet.Text = "Блок маса";
-            this.tabPageBuffet.UseVisualStyleBackColor = true;
-            // 
-            // tabPageALLIn
-            // 
-            this.tabPageALLIn.Location = new System.Drawing.Point(4, 24);
-            this.tabPageALLIn.Name = "tabPageALLIn";
-            this.tabPageALLIn.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageALLIn.Size = new System.Drawing.Size(388, 230);
-            this.tabPageALLIn.TabIndex = 2;
-            this.tabPageALLIn.Text = "All Inclusive";
-            this.tabPageALLIn.UseVisualStyleBackColor = true;
-            // 
-            // tabPageVipMenu
-            // 
-            this.tabPageVipMenu.Location = new System.Drawing.Point(4, 24);
-            this.tabPageVipMenu.Name = "tabPageVipMenu";
-            this.tabPageVipMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageVipMenu.Size = new System.Drawing.Size(388, 230);
-            this.tabPageVipMenu.TabIndex = 3;
-            this.tabPageVipMenu.Text = "VIP меню";
-            this.tabPageVipMenu.UseVisualStyleBackColor = true;
-            // 
             // btnDelAll
             // 
-            this.btnDelAll.Location = new System.Drawing.Point(710, 18);
+            this.btnDelAll.Location = new System.Drawing.Point(314, 585);
             this.btnDelAll.Name = "btnDelAll";
             this.btnDelAll.Size = new System.Drawing.Size(81, 23);
             this.btnDelAll.TabIndex = 92;
@@ -133,21 +71,11 @@
             // monthCalendar
             // 
             this.monthCalendar.Enabled = false;
-            this.monthCalendar.Location = new System.Drawing.Point(434, 449);
+            this.monthCalendar.Location = new System.Drawing.Point(196, 368);
             this.monthCalendar.Name = "monthCalendar";
             this.monthCalendar.TabIndex = 91;
             this.monthCalendar.Visible = false;
             this.monthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateChanged);
-            // 
-            // btnSelectMenus
-            // 
-            this.btnSelectMenus.Location = new System.Drawing.Point(220, 373);
-            this.btnSelectMenus.Name = "btnSelectMenus";
-            this.btnSelectMenus.Size = new System.Drawing.Size(155, 44);
-            this.btnSelectMenus.TabIndex = 90;
-            this.btnSelectMenus.Text = "Избери гозбата на мама";
-            this.btnSelectMenus.UseVisualStyleBackColor = true;
-            this.btnSelectMenus.Click += new System.EventHandler(this.btnSelectMenus_Click);
             // 
             // numUpDownAge
             // 
@@ -172,7 +100,7 @@
             // 
             this.lblDateEnd.Enabled = false;
             this.lblDateEnd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblDateEnd.Location = new System.Drawing.Point(220, 417);
+            this.lblDateEnd.Location = new System.Drawing.Point(34, 449);
             this.lblDateEnd.Name = "lblDateEnd";
             this.lblDateEnd.Size = new System.Drawing.Size(173, 26);
             this.lblDateEnd.TabIndex = 87;
@@ -185,7 +113,7 @@
             this.lblDateStart.BackColor = System.Drawing.SystemColors.Control;
             this.lblDateStart.Enabled = false;
             this.lblDateStart.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblDateStart.Location = new System.Drawing.Point(29, 420);
+            this.lblDateStart.Location = new System.Drawing.Point(34, 395);
             this.lblDateStart.Name = "lblDateStart";
             this.lblDateStart.Size = new System.Drawing.Size(173, 26);
             this.lblDateStart.TabIndex = 86;
@@ -193,19 +121,10 @@
             this.lblDateStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblDateStart.Visible = false;
             // 
-            // btnSelectRoom
-            // 
-            this.btnSelectRoom.Location = new System.Drawing.Point(28, 373);
-            this.btnSelectRoom.Name = "btnSelectRoom";
-            this.btnSelectRoom.Size = new System.Drawing.Size(155, 44);
-            this.btnSelectRoom.TabIndex = 85;
-            this.btnSelectRoom.Text = "Избери стая";
-            this.btnSelectRoom.UseVisualStyleBackColor = true;
-            // 
             // lblDuration
             // 
             this.lblDuration.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDuration.Location = new System.Drawing.Point(28, 472);
+            this.lblDuration.Location = new System.Drawing.Point(34, 539);
             this.lblDuration.Name = "lblDuration";
             this.lblDuration.Size = new System.Drawing.Size(365, 23);
             this.lblDuration.TabIndex = 84;
@@ -215,7 +134,7 @@
             // radioBtnGroupRes
             // 
             this.radioBtnGroupRes.AutoSize = true;
-            this.radioBtnGroupRes.Location = new System.Drawing.Point(28, 552);
+            this.radioBtnGroupRes.Location = new System.Drawing.Point(28, 589);
             this.radioBtnGroupRes.Name = "radioBtnGroupRes";
             this.radioBtnGroupRes.Size = new System.Drawing.Size(142, 19);
             this.radioBtnGroupRes.TabIndex = 83;
@@ -227,7 +146,7 @@
             // 
             this.radioBtnOneRes.AutoSize = true;
             this.radioBtnOneRes.Checked = true;
-            this.radioBtnOneRes.Location = new System.Drawing.Point(28, 527);
+            this.radioBtnOneRes.Location = new System.Drawing.Point(28, 564);
             this.radioBtnOneRes.Name = "radioBtnOneRes";
             this.radioBtnOneRes.Size = new System.Drawing.Size(150, 19);
             this.radioBtnOneRes.TabIndex = 82;
@@ -240,7 +159,7 @@
             // 
             this.btnNext.BackColor = System.Drawing.SystemColors.Control;
             this.btnNext.Enabled = false;
-            this.btnNext.Location = new System.Drawing.Point(152, 576);
+            this.btnNext.Location = new System.Drawing.Point(152, 614);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(138, 43);
             this.btnNext.TabIndex = 81;
@@ -253,7 +172,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.Control;
             this.btnBack.Enabled = false;
-            this.btnBack.Location = new System.Drawing.Point(19, 577);
+            this.btnBack.Location = new System.Drawing.Point(19, 614);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(127, 42);
             this.btnBack.TabIndex = 80;
@@ -265,7 +184,7 @@
             // btnSaveRes
             // 
             this.btnSaveRes.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSaveRes.Location = new System.Drawing.Point(296, 576);
+            this.btnSaveRes.Location = new System.Drawing.Point(296, 614);
             this.btnSaveRes.Name = "btnSaveRes";
             this.btnSaveRes.Size = new System.Drawing.Size(127, 43);
             this.btnSaveRes.TabIndex = 79;
@@ -276,7 +195,7 @@
             // lblTotalPrice
             // 
             this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTotalPrice.Location = new System.Drawing.Point(28, 495);
+            this.lblTotalPrice.Location = new System.Drawing.Point(34, 509);
             this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(106, 29);
@@ -286,9 +205,9 @@
             // 
             // btnExpiredOn
             // 
-            this.btnExpiredOn.Location = new System.Drawing.Point(220, 449);
+            this.btnExpiredOn.Location = new System.Drawing.Point(34, 424);
             this.btnExpiredOn.Name = "btnExpiredOn";
-            this.btnExpiredOn.Size = new System.Drawing.Size(175, 23);
+            this.btnExpiredOn.Size = new System.Drawing.Size(136, 23);
             this.btnExpiredOn.TabIndex = 77;
             this.btnExpiredOn.Text = "Дата на заминаване";
             this.btnExpiredOn.UseVisualStyleBackColor = true;
@@ -298,9 +217,9 @@
             // 
             this.btnBookedOn.BackColor = System.Drawing.SystemColors.Control;
             this.btnBookedOn.Enabled = false;
-            this.btnBookedOn.Location = new System.Drawing.Point(30, 449);
+            this.btnBookedOn.Location = new System.Drawing.Point(34, 369);
             this.btnBookedOn.Name = "btnBookedOn";
-            this.btnBookedOn.Size = new System.Drawing.Size(175, 23);
+            this.btnBookedOn.Size = new System.Drawing.Size(136, 23);
             this.btnBookedOn.TabIndex = 76;
             this.btnBookedOn.Text = "Дата на пристигане";
             this.btnBookedOn.UseVisualStyleBackColor = false;
@@ -416,15 +335,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.tabControlMenu);
             this.Controls.Add(this.btnDelAll);
             this.Controls.Add(this.monthCalendar);
-            this.Controls.Add(this.btnSelectMenus);
             this.Controls.Add(this.numUpDownAge);
             this.Controls.Add(this.txtBoxFirstName);
             this.Controls.Add(this.lblDateEnd);
             this.Controls.Add(this.lblDateStart);
-            this.Controls.Add(this.btnSelectRoom);
             this.Controls.Add(this.lblDuration);
             this.Controls.Add(this.radioBtnGroupRes);
             this.Controls.Add(this.radioBtnOneRes);
@@ -449,7 +365,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReservationForm";
             this.Text = "ReservationForm";
-            this.tabControlMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownAge)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -457,20 +372,12 @@
         }
 
         #endregion
-
-        private TabControl tabControlMenu;
-        private TabPage tabPageWithMenus;
-        private TabPage tabPageBuffet;
-        private TabPage tabPageALLIn;
-        private TabPage tabPageVipMenu;
         private Button btnDelAll;
         private MonthCalendar monthCalendar;
-        private Button btnSelectMenus;
         private NumericUpDown numUpDownAge;
         private TextBox txtBoxFirstName;
         private Label lblDateEnd;
         private Label lblDateStart;
-        private Button btnSelectRoom;
         private Label lblDuration;
         private RadioButton radioBtnGroupRes;
         private RadioButton radioBtnOneRes;
