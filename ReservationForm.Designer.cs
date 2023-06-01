@@ -446,6 +446,7 @@
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtBoxMiddleName);
             this.Controls.Add(this.lblMiddleName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReservationForm";
             this.Text = "ReservationForm";
             this.tabControlMenu.ResumeLayout(false);

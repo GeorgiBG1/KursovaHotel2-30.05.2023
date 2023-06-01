@@ -39,6 +39,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Name = "Restaurant";
             this.Text = "Restaurant";
+            this.TransparencyKey = System.Drawing.Color.White;
             this.ResumeLayout(false);
 
         }
