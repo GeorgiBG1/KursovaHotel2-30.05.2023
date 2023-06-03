@@ -23,7 +23,7 @@ namespace KursovaHotel2
         private Client Client = new Client();
         private Reservation Reservation = new Reservation();
         public List<Client> Clients = new List<Client>();
-        
+
         public ReservationForm()
         {
             InitializeComponent();
