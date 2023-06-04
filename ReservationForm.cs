@@ -18,6 +18,7 @@ namespace KursovaHotel2
         private HotelBusiness HotelBusiness = new HotelBusiness();
         private DateTime BookedOnDate;
         private DateTime ExpiredOnDate;
+        TimeSpan Duration => Reservation.ExpiredOn.Date - Reservation.BookedOn.Date;
         private bool IsEnabledbtnExpiredOn = false;
         private bool IsAllowedAddClient = true;
         private int clientIndex = 0;
@@ -25,7 +26,10 @@ namespace KursovaHotel2
         private Room ClientRoom = new Room();
         private int roomId;
         private Reservation Reservation = new Reservation();
-        public List<Client> Clients = new List<Client>();
+        private List<Client> Clients = new List<Client>();
+        private int menuIndex = 0;
+        private List<Menu> Menus = new List<Menu>();
+        private Menu Menu = new Menu();
 
         public ReservationForm()
         {
@@ -87,8 +91,7 @@ namespace KursovaHotel2
                 }
                 btnBookedOn.Enabled = true;
             }
-            TimeSpan duration = Reservation.ExpiredOn.Date - Reservation.BookedOn.Date;
-            int durationInDays = duration.Days;
+            int durationInDays = Duration.Days;
             if (durationInDays > 0 && Reservation.BookedOn.Year > 1)
             { lblDuration.Text = $"Продължителност на престоя: {durationInDays} нощувки"; }
         }
@@ -224,6 +227,8 @@ namespace KursovaHotel2
                 AddNewClient(roomId);
                 ResetRegistrationForm();
                 HotelBusiness.AddClientsWithTheirReservation(Clients, Reservation);
+                AddAllMenus();
+                ResetAllTabPages();
                 BookedOnDate = new DateTime();
                 ExpiredOnDate = new DateTime();
                 Reservation = new Reservation();
@@ -236,6 +241,8 @@ namespace KursovaHotel2
                 AddNewClient(roomId);
                 ResetRegistrationForm();
                 HotelBusiness.AddClientsWithTheirReservation(Clients, Reservation);
+                AddAllMenus();
+                ResetAllTabPages();
                 BookedOnDate = new DateTime();
                 ExpiredOnDate = new DateTime();
                 Reservation = new Reservation();
@@ -245,7 +252,6 @@ namespace KursovaHotel2
                 ShowAllRooms();
             }
         }
-
         private void btnDelAll_Click(object sender, EventArgs e)
         {
             HotelBusiness.DeleteAll();
@@ -302,132 +308,337 @@ namespace KursovaHotel2
             SelectRoom(btnRoom10);
             ShowAllRooms(10);
         }
-
         private void btnRoom11_Click(object sender, EventArgs e)
         {
             roomId = 2;
             SelectRoom(btnRoom11);
             ShowAllRooms(11);
         }
-
         private void btnRoom12_Click(object sender, EventArgs e)
         {
             roomId = 3;
             SelectRoom(btnRoom12);
             ShowAllRooms(12);
         }
-
         private void btnRoom13_Click(object sender, EventArgs e)
         {
             roomId = 4;
             SelectRoom(btnRoom13);
             ShowAllRooms(13);
         }
-
         private void btnRoom14_Click(object sender, EventArgs e)
         {
             roomId = 5;
             SelectRoom(btnRoom14);
             ShowAllRooms(14);
         }
-
         private void btnRoom15_Click(object sender, EventArgs e)
         {
             roomId = 6;
             SelectRoom(btnRoom15);
             ShowAllRooms(15);
         }
-
         private void btnRoom20_Click(object sender, EventArgs e)
         {
             roomId = 7;
             SelectRoom(btnRoom20);
             ShowAllRooms(20);
         }
-
         private void btnRoom21_Click(object sender, EventArgs e)
         {
             roomId = 8;
             SelectRoom(btnRoom22);
             ShowAllRooms(21);
         }
-
         private void btnRoom22_Click(object sender, EventArgs e)
         {
             roomId = 9;
             SelectRoom(btnRoom22);
             ShowAllRooms(22);
         }
-
         private void btnRoom23_Click(object sender, EventArgs e)
         {
             roomId = 10;
             SelectRoom(btnRoom23);
             ShowAllRooms(23);
         }
-
         private void btnRoom24_Click(object sender, EventArgs e)
         {
             roomId = 11;
             SelectRoom(btnRoom24);
             ShowAllRooms(24);
         }
-
         private void btnRoom25_Click(object sender, EventArgs e)
         {
             roomId = 12;
             SelectRoom(btnRoom25);
             ShowAllRooms(25);
         }
-
         private void btnRoom30_Click(object sender, EventArgs e)
         {
             roomId = 13;
             SelectRoom(btnRoom30);
             ShowAllRooms(30);
         }
-
         private void btnRoom31_Click(object sender, EventArgs e)
         {
             roomId = 14;
             SelectRoom(btnRoom31);
             ShowAllRooms(31);
         }
-
         private void btnRoom32_Click(object sender, EventArgs e)
         {
             roomId = 15;
             SelectRoom(btnRoom32);
             ShowAllRooms(32);
         }
-
         private void btnRoom33_Click(object sender, EventArgs e)
         {
             roomId = 16;
             SelectRoom(btnRoom33);
             ShowAllRooms(33);
         }
-
         private void btnRoom34_Click(object sender, EventArgs e)
         {
             roomId = 17;
             SelectRoom(btnRoom34);
             ShowAllRooms(34);
         }
-
         private void btnRoom35_Click(object sender, EventArgs e)
         {
             roomId = 18;
             SelectRoom(btnRoom35);
             ShowAllRooms(35);
         }
-
+        private bool AddMenu()
+        {
+            Menus = new List<Menu>();
+            if (Duration.Days > 1)
+            {
+                lblMenuOnOffPage1.Enabled = false;
+                lblMenuOnOffPage1.Visible = false;
+                lblMenuOnOffPage2.Enabled = false;
+                lblMenuOnOffPage2.Visible = false;
+                lblMenuOnOffPage3.Enabled = false;
+                lblMenuOnOffPage3.Visible = false;
+                lblMenuOnOffPage4.Enabled = false;
+                lblMenuOnOffPage4.Visible = false;
+                DateTime menuDate = Reservation.BookedOn.Date;
+                int bookedOnDay = Reservation.BookedOn.Day;
+                bookedOnDay--;
+                int expiredOnDay = Reservation.ExpiredOn.Day;
+                while (bookedOnDay < expiredOnDay)
+                {
+                    Menus.Add(new Menu()
+                    {
+                        Date = menuDate.AddDays(bookedOnDay)
+                    });
+                    bookedOnDay++;
+                }
+                return true;
+            }
+            return false;
+        }
         private void tabPageWithMenus_Click(object sender, EventArgs e)
         {
-            if (true)
+            if (AddMenu())
             {
-
+                lblMenuDate.Enabled = true;
+                lblMenuDate.Visible = true;
+                lblMenuDate.Text = $"{Reservation.BookedOn.ToShortDateString()}";
+                lblSelectedMenu.Enabled = true;
+                lblSelectedMenu.Visible = true;
+                checkedListBoxMenu.Enabled = true;
+                checkedListBoxMenu.Visible = true;
+                checkedListBoxMenu.CheckOnClick = true;
+                btnNextDay.Enabled = true;
+                btnNextDay.Visible = true;
+                btnPreviousDay.Enabled = true;
+                btnPreviousDay.Visible = true;
             }
+        }
+        private void tabPageBuffet_Click(object sender, EventArgs e)
+        {
+            AddMenu();
+        }
+        private void tabPageALLIn_Click(object sender, EventArgs e)
+        {
+            AddMenu();
+        }
+        private void tabPageVipMenu_Click(object sender, EventArgs e)
+        {
+            AddMenu();
+        }
+        private void AddMenuOption()
+        {
+            var checkedItems = checkedListBoxMenu.CheckedItems;
+            if (checkedItems.Count < 2)
+            {
+                if (checkedItems[0] == "Закуска")
+                {
+                    Menus[menuIndex].MenuOptionId = 2;
+                    lblBreakfast.Enabled = true;
+                    lblBreakfast.Visible = true;
+                    lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
+                }
+                else if (checkedItems[0] == "Обяд")
+                {
+                    Menus[menuIndex].MenuOptionId = 4;
+                    lblLunch.Enabled = true;
+                    lblLunch.Visible = true;
+                    lblLunch.Text = "Обяд от 11:30ч до 12:30ч";
+                }
+                else
+                {
+                    Menus[menuIndex].MenuOptionId = 6;
+                    lblDinner.Enabled = true;
+                    lblDinner.Visible = true;
+                    lblDinner.Text = "Вечеря от 19:00ч до 20:30ч";
+                }
+            }
+            else if (checkedItems.Count == 2)
+            {
+                if (checkedItems[0] == "Закуска" && checkedItems[1] == "Обяд")
+                {
+                    Menus[menuIndex].MenuOptionId = 3;
+                    lblBreakfast.Enabled = true;
+                    lblBreakfast.Visible = true;
+                    lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
+                    lblLunch.Enabled = true;
+                    lblLunch.Visible = true;
+                    lblLunch.Text = "Обяд от 11:30ч до 12:30ч";
+                }
+                else if (checkedItems[0] == "Обяд" && checkedItems[1] == "Вечеря")
+                {
+                    Menus[menuIndex].MenuOptionId = 5;
+                    lblBreakfast.Enabled = true;
+                    lblBreakfast.Visible = true;
+                    lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
+                    lblDinner.Enabled = true;
+                    lblDinner.Visible = true;
+                    lblDinner.Text = "Вечеря от 19:00ч до 20:30ч";
+                }
+                else if (checkedItems[0] == "Закуска" && checkedItems[1] == "Вечеря")
+                {
+                    Menus[menuIndex].MenuOptionId = 7;
+                    lblBreakfast.Enabled = true;
+                    lblBreakfast.Visible = true;
+                    lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
+                    lblDinner.Enabled = true;
+                    lblDinner.Visible = true;
+                    lblDinner.Text = "Вечеря от 19:00ч до 20:30ч";
+                }
+            }
+            else
+            {
+                Menus[menuIndex].MenuOptionId = 8;
+                lblBreakfast.Enabled = true;
+                lblBreakfast.Visible = true;
+                lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
+                lblLunch.Enabled = true;
+                lblLunch.Visible = true;
+                lblLunch.Text = "Обяд от 11:30ч до 12:30ч";
+                lblDinner.Enabled = true;
+                lblDinner.Visible = true;
+                lblDinner.Text = "Вечеря от 19:00ч до 20:30ч";
+            }
+        }
+        private void btnNextDay_Click(object sender, EventArgs e)
+        {
+            if (checkedListBoxMenu.CheckedItems.Count > 0 && menuIndex < Menus.Count - 1)
+            {
+                AddMenuOption();
+                menuIndex++;
+                lblMenuDate.Text = Menus[menuIndex].Date.ToShortDateString();
+                if (Menus[menuIndex].Date == Reservation.ExpiredOn)
+                {
+                    btnNextDay.Text = "Завършек";
+                }
+            }
+            else
+            {
+                AddMenuOption();
+            }
+        }
+        private void btnPreviousDay_Click(object sender, EventArgs e)
+        {
+            if (checkedListBoxMenu.CheckedItems.Count > 0 && menuIndex >= 1)
+            {
+                AddMenuOption();
+                menuIndex--;
+                lblMenuDate.Text = Menus[menuIndex].Date.ToShortDateString();
+            }
+        }
+        private void checkedListBoxMenu_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            //SelectMenuOption();
+        }
+        private void AddAllMenus()
+        {
+            SelectMenuVariety();
+            HotelBusiness.AddClientMenus(Menus);
+        }
+        private void SelectMenuVariety()
+        {
+            if (tabControlMenu.SelectedIndex == 0)
+            {
+                foreach (var menu in Menus)
+                {
+                    menu.MenuVarietyId = 4;
+                }
+            }
+            else if (tabControlMenu.SelectedIndex == 1)
+            {
+                foreach (var menu in Menus)
+                {
+                    menu.MenuOptionId = 1;
+                    menu.MenuVarietyId = 3;
+                }
+            }
+            else if (tabControlMenu.SelectedIndex == 2)
+            {
+                foreach (var menu in Menus)
+                {
+                    menu.MenuOptionId = 1;
+                    menu.MenuVarietyId = 2;
+                }
+            }
+            else if (tabControlMenu.SelectedIndex == 3)
+            {
+                foreach (var menu in Menus)
+                {
+                    menu.MenuOptionId = 1;
+                    menu.MenuVarietyId = 1;
+                }
+            }
+        }
+        private void ResetAllTabPages()
+        {
+            lblMenuOnOffPage1.Enabled = true;
+            lblMenuOnOffPage1.Visible = true;
+            lblMenuOnOffPage2.Enabled = true;
+            lblMenuOnOffPage2.Visible = true;
+            lblMenuOnOffPage3.Enabled = true;
+            lblMenuOnOffPage3.Visible = true;
+            lblMenuOnOffPage4.Enabled = true;
+            lblMenuOnOffPage4.Visible = true;
+            lblMenuDate.Enabled = false;
+            lblMenuDate.Visible = false;
+            lblSelectedMenu.Enabled = false;
+            lblSelectedMenu.Visible = false;
+            checkedListBoxMenu.Enabled = false;
+            checkedListBoxMenu.Visible = false;
+            checkedListBoxMenu.Items.Clear();
+            lblBreakfast.Enabled = false;
+            lblBreakfast.Visible = false;
+            lblLunch.Enabled = false;
+            lblLunch.Visible = false;
+            lblDinner.Enabled = false;
+            lblDinner.Visible = false;
+            btnPreviousDay.Enabled = false;
+            btnPreviousDay.Visible = false;
+            btnNextDay.Enabled = false;
+            btnNextDay.Visible = false;
         }
     }
 }

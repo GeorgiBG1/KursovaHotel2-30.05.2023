@@ -14,13 +14,13 @@ namespace KursovaHotel.Business
 
         public HotelBusiness()
         {
-            AddMenuTypes();
+            AddRoomTypes();
             AddRooms();
             AddMenuVarieties();
             AddMenuOptions();
         }
 
-        public void AddMenuTypes()
+        public void AddRoomTypes()
         {
             if (!dbContext.RoomTypes.Any())
             {
@@ -216,34 +216,48 @@ namespace KursovaHotel.Business
             if (!dbContext.MenuOptions.Any())
             {
                 MenuOption menuOption = new MenuOption();
-                menuOption.Type = "Breakfast";
+                menuOption.Type = "Включено всичко";
                 dbContext.MenuOptions.Add(menuOption);
 
                 MenuOption menuOption2 = new MenuOption();
-                menuOption2.Type = "Breakfast + Lunch";
+                menuOption2.Type = "Закуска";
                 dbContext.MenuOptions.Add(menuOption2);
 
                 MenuOption menuOption3 = new MenuOption();
-                menuOption3.Type = "Lunch";
+                menuOption3.Type = "Закуска + Обяд";
                 dbContext.MenuOptions.Add(menuOption3);
 
                 MenuOption menuOption4 = new MenuOption();
-                menuOption4.Type = "Lunch + Dinner";
+                menuOption4.Type = "Обяд";
                 dbContext.MenuOptions.Add(menuOption4);
 
                 MenuOption menuOption5 = new MenuOption();
-                menuOption5.Type = "Dinner";
+                menuOption5.Type = "Обяд + Вечеря";
                 dbContext.MenuOptions.Add(menuOption5);
 
                 MenuOption menuOption6 = new MenuOption();
-                menuOption6.Type = "Dinner + Breakfast";
+                menuOption6.Type = "Вечеря";
                 dbContext.MenuOptions.Add(menuOption6);
 
                 MenuOption menuOption7 = new MenuOption();
-                menuOption7.Type = "Breakfast + Lunch + Dinner";
+                menuOption7.Type = "Вечеря + Закуска";
                 dbContext.MenuOptions.Add(menuOption7);
+
+                MenuOption menuOption8 = new MenuOption();
+                menuOption8.Type = "Закуска + Обяд + Вечеря";
+                dbContext.MenuOptions.Add(menuOption8);
                 dbContext.SaveChanges();
             }
+        }
+        public void AddClientMenus(List<Menu> menus)
+        {
+            var currentReservation = dbContext.Reservations.OrderBy(x => x.Id).Last();
+            foreach (var menu in menus)
+            {
+                menu.ReservationId = currentReservation.Id;
+                dbContext.Menus.Add(menu);
+            }
+            dbContext.SaveChanges();
         }
         public void AddReservation(Reservation reservation)
         {
@@ -296,6 +310,10 @@ namespace KursovaHotel.Business
         {
             var allClients = dbContext.Clients.ToList();
             return allClients;
+        }
+        public List<MenuOption> GetMenuOptions()
+        {
+            return dbContext.MenuOptions.ToList();
         }
         public List<MenuVariety> GetAllMenuVarieties()
         {

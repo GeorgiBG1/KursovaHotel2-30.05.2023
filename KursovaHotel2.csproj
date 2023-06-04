@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="ReservationForm.Designer.cs~RFef7520d.TMP" />
+    <None Remove="ReservationForm.resx~RF3f8f203.TMP" />
   </ItemGroup>
 
   <ItemGroup>

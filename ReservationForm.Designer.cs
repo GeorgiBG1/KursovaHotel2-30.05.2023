@@ -79,16 +79,28 @@
             this.btnRoom10 = new System.Windows.Forms.Button();
             this.tabControlMenu = new System.Windows.Forms.TabControl();
             this.tabPageWithMenus = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblMenuOnOffPage1 = new System.Windows.Forms.Label();
+            this.lblDinner = new System.Windows.Forms.Label();
+            this.lblLunch = new System.Windows.Forms.Label();
+            this.lblBreakfast = new System.Windows.Forms.Label();
+            this.btnPreviousDay = new System.Windows.Forms.Button();
+            this.lblSelectedMenu = new System.Windows.Forms.Label();
+            this.btnNextDay = new System.Windows.Forms.Button();
             this.lblMenuDate = new System.Windows.Forms.Label();
             this.checkedListBoxMenu = new System.Windows.Forms.CheckedListBox();
             this.tabPageBuffet = new System.Windows.Forms.TabPage();
+            this.lblMenuOnOffPage2 = new System.Windows.Forms.Label();
             this.tabPageALLIn = new System.Windows.Forms.TabPage();
+            this.lblMenuOnOffPage3 = new System.Windows.Forms.Label();
             this.tabPageVipMenu = new System.Windows.Forms.TabPage();
+            this.lblMenuOnOffPage4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownAge)).BeginInit();
             this.tableRooms.SuspendLayout();
             this.tabControlMenu.SuspendLayout();
             this.tabPageWithMenus.SuspendLayout();
+            this.tabPageBuffet.SuspendLayout();
+            this.tabPageALLIn.SuspendLayout();
+            this.tabPageVipMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDelAll
@@ -104,7 +116,7 @@
             // monthCalendar
             // 
             this.monthCalendar.Enabled = false;
-            this.monthCalendar.Location = new System.Drawing.Point(265, 334);
+            this.monthCalendar.Location = new System.Drawing.Point(336, 334);
             this.monthCalendar.Name = "monthCalendar";
             this.monthCalendar.TabIndex = 91;
             this.monthCalendar.Visible = false;
@@ -649,10 +661,17 @@
             this.tabControlMenu.SelectedIndex = 0;
             this.tabControlMenu.Size = new System.Drawing.Size(635, 372);
             this.tabControlMenu.TabIndex = 94;
+            this.tabControlMenu.Click += new System.EventHandler(this.tabPageWithMenus_Click);
             // 
             // tabPageWithMenus
             // 
-            this.tabPageWithMenus.Controls.Add(this.button1);
+            this.tabPageWithMenus.Controls.Add(this.lblMenuOnOffPage1);
+            this.tabPageWithMenus.Controls.Add(this.lblDinner);
+            this.tabPageWithMenus.Controls.Add(this.lblLunch);
+            this.tabPageWithMenus.Controls.Add(this.lblBreakfast);
+            this.tabPageWithMenus.Controls.Add(this.btnPreviousDay);
+            this.tabPageWithMenus.Controls.Add(this.lblSelectedMenu);
+            this.tabPageWithMenus.Controls.Add(this.btnNextDay);
             this.tabPageWithMenus.Controls.Add(this.lblMenuDate);
             this.tabPageWithMenus.Controls.Add(this.checkedListBoxMenu);
             this.tabPageWithMenus.Location = new System.Drawing.Point(4, 24);
@@ -664,42 +683,126 @@
             this.tabPageWithMenus.UseVisualStyleBackColor = true;
             this.tabPageWithMenus.Click += new System.EventHandler(this.tabPageWithMenus_Click);
             // 
-            // button1
+            // lblMenuOnOffPage1
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(14, 302);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 33);
-            this.button1.TabIndex = 88;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
+            this.lblMenuOnOffPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.lblMenuOnOffPage1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblMenuOnOffPage1.Location = new System.Drawing.Point(175, 144);
+            this.lblMenuOnOffPage1.Name = "lblMenuOnOffPage1";
+            this.lblMenuOnOffPage1.Size = new System.Drawing.Size(276, 56);
+            this.lblMenuOnOffPage1.TabIndex = 94;
+            this.lblMenuOnOffPage1.Text = "Изберете дати\r\nна резервацията!";
+            this.lblMenuOnOffPage1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDinner
+            // 
+            this.lblDinner.BackColor = System.Drawing.SystemColors.Control;
+            this.lblDinner.Enabled = false;
+            this.lblDinner.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblDinner.Location = new System.Drawing.Point(330, 129);
+            this.lblDinner.Name = "lblDinner";
+            this.lblDinner.Size = new System.Drawing.Size(260, 26);
+            this.lblDinner.TabIndex = 93;
+            this.lblDinner.Text = "Вечеря";
+            this.lblDinner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDinner.Visible = false;
+            // 
+            // lblLunch
+            // 
+            this.lblLunch.BackColor = System.Drawing.SystemColors.Control;
+            this.lblLunch.Enabled = false;
+            this.lblLunch.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblLunch.Location = new System.Drawing.Point(330, 89);
+            this.lblLunch.Name = "lblLunch";
+            this.lblLunch.Size = new System.Drawing.Size(260, 26);
+            this.lblLunch.TabIndex = 92;
+            this.lblLunch.Text = "Обяд";
+            this.lblLunch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLunch.Visible = false;
+            // 
+            // lblBreakfast
+            // 
+            this.lblBreakfast.BackColor = System.Drawing.SystemColors.Control;
+            this.lblBreakfast.Enabled = false;
+            this.lblBreakfast.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblBreakfast.Location = new System.Drawing.Point(330, 51);
+            this.lblBreakfast.Name = "lblBreakfast";
+            this.lblBreakfast.Size = new System.Drawing.Size(260, 26);
+            this.lblBreakfast.TabIndex = 91;
+            this.lblBreakfast.Text = "Закуска";
+            this.lblBreakfast.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBreakfast.Visible = false;
+            // 
+            // btnPreviousDay
+            // 
+            this.btnPreviousDay.Enabled = false;
+            this.btnPreviousDay.Location = new System.Drawing.Point(30, 281);
+            this.btnPreviousDay.Name = "btnPreviousDay";
+            this.btnPreviousDay.Size = new System.Drawing.Size(115, 38);
+            this.btnPreviousDay.TabIndex = 90;
+            this.btnPreviousDay.Text = "Предишен ден";
+            this.btnPreviousDay.UseVisualStyleBackColor = true;
+            this.btnPreviousDay.Visible = false;
+            this.btnPreviousDay.Click += new System.EventHandler(this.btnPreviousDay_Click);
+            // 
+            // lblSelectedMenu
+            // 
+            this.lblSelectedMenu.BackColor = System.Drawing.SystemColors.Control;
+            this.lblSelectedMenu.Enabled = false;
+            this.lblSelectedMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblSelectedMenu.Location = new System.Drawing.Point(330, 14);
+            this.lblSelectedMenu.Name = "lblSelectedMenu";
+            this.lblSelectedMenu.Size = new System.Drawing.Size(260, 26);
+            this.lblSelectedMenu.TabIndex = 89;
+            this.lblSelectedMenu.Text = "Избраното меню";
+            this.lblSelectedMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSelectedMenu.Visible = false;
+            // 
+            // btnNextDay
+            // 
+            this.btnNextDay.Enabled = false;
+            this.btnNextDay.Location = new System.Drawing.Point(175, 281);
+            this.btnNextDay.Name = "btnNextDay";
+            this.btnNextDay.Size = new System.Drawing.Size(115, 38);
+            this.btnNextDay.TabIndex = 88;
+            this.btnNextDay.Text = "Следващ ден";
+            this.btnNextDay.UseVisualStyleBackColor = true;
+            this.btnNextDay.Visible = false;
+            this.btnNextDay.Click += new System.EventHandler(this.btnNextDay_Click);
             // 
             // lblMenuDate
             // 
             this.lblMenuDate.BackColor = System.Drawing.SystemColors.Control;
             this.lblMenuDate.Enabled = false;
             this.lblMenuDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblMenuDate.Location = new System.Drawing.Point(14, 14);
+            this.lblMenuDate.Location = new System.Drawing.Point(30, 14);
             this.lblMenuDate.Name = "lblMenuDate";
-            this.lblMenuDate.Size = new System.Drawing.Size(173, 26);
+            this.lblMenuDate.Size = new System.Drawing.Size(260, 26);
             this.lblMenuDate.TabIndex = 87;
             this.lblMenuDate.Text = "Дата 3";
-            this.lblMenuDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMenuDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMenuDate.Visible = false;
             // 
             // checkedListBoxMenu
             // 
+            this.checkedListBoxMenu.BackColor = System.Drawing.SystemColors.Control;
             this.checkedListBoxMenu.Enabled = false;
+            this.checkedListBoxMenu.Font = new System.Drawing.Font("Garamond", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.checkedListBoxMenu.FormattingEnabled = true;
-            this.checkedListBoxMenu.Location = new System.Drawing.Point(14, 51);
+            this.checkedListBoxMenu.Items.AddRange(new object[] {
+            "Закуска",
+            "Обяд",
+            "Вечеря"});
+            this.checkedListBoxMenu.Location = new System.Drawing.Point(30, 51);
             this.checkedListBoxMenu.Name = "checkedListBoxMenu";
-            this.checkedListBoxMenu.Size = new System.Drawing.Size(173, 238);
+            this.checkedListBoxMenu.Size = new System.Drawing.Size(260, 202);
             this.checkedListBoxMenu.TabIndex = 0;
             this.checkedListBoxMenu.Visible = false;
+            this.checkedListBoxMenu.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxMenu_ItemCheck);
             // 
             // tabPageBuffet
             // 
+            this.tabPageBuffet.Controls.Add(this.lblMenuOnOffPage2);
             this.tabPageBuffet.Location = new System.Drawing.Point(4, 24);
             this.tabPageBuffet.Name = "tabPageBuffet";
             this.tabPageBuffet.Padding = new System.Windows.Forms.Padding(3);
@@ -707,9 +810,22 @@
             this.tabPageBuffet.TabIndex = 1;
             this.tabPageBuffet.Text = "Блок маса";
             this.tabPageBuffet.UseVisualStyleBackColor = true;
+            this.tabPageBuffet.Click += new System.EventHandler(this.tabPageBuffet_Click);
+            // 
+            // lblMenuOnOffPage2
+            // 
+            this.lblMenuOnOffPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.lblMenuOnOffPage2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblMenuOnOffPage2.Location = new System.Drawing.Point(175, 144);
+            this.lblMenuOnOffPage2.Name = "lblMenuOnOffPage2";
+            this.lblMenuOnOffPage2.Size = new System.Drawing.Size(276, 56);
+            this.lblMenuOnOffPage2.TabIndex = 95;
+            this.lblMenuOnOffPage2.Text = "Изберете дати\r\nна резервацията!";
+            this.lblMenuOnOffPage2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabPageALLIn
             // 
+            this.tabPageALLIn.Controls.Add(this.lblMenuOnOffPage3);
             this.tabPageALLIn.Location = new System.Drawing.Point(4, 24);
             this.tabPageALLIn.Name = "tabPageALLIn";
             this.tabPageALLIn.Padding = new System.Windows.Forms.Padding(3);
@@ -717,9 +833,22 @@
             this.tabPageALLIn.TabIndex = 2;
             this.tabPageALLIn.Text = "All Inclusive";
             this.tabPageALLIn.UseVisualStyleBackColor = true;
+            this.tabPageALLIn.Click += new System.EventHandler(this.tabPageALLIn_Click);
+            // 
+            // lblMenuOnOffPage3
+            // 
+            this.lblMenuOnOffPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.lblMenuOnOffPage3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblMenuOnOffPage3.Location = new System.Drawing.Point(175, 144);
+            this.lblMenuOnOffPage3.Name = "lblMenuOnOffPage3";
+            this.lblMenuOnOffPage3.Size = new System.Drawing.Size(276, 56);
+            this.lblMenuOnOffPage3.TabIndex = 96;
+            this.lblMenuOnOffPage3.Text = "Изберете дати\r\nна резервацията!";
+            this.lblMenuOnOffPage3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabPageVipMenu
             // 
+            this.tabPageVipMenu.Controls.Add(this.lblMenuOnOffPage4);
             this.tabPageVipMenu.Location = new System.Drawing.Point(4, 24);
             this.tabPageVipMenu.Name = "tabPageVipMenu";
             this.tabPageVipMenu.Padding = new System.Windows.Forms.Padding(3);
@@ -727,6 +856,18 @@
             this.tabPageVipMenu.TabIndex = 3;
             this.tabPageVipMenu.Text = "VIP меню";
             this.tabPageVipMenu.UseVisualStyleBackColor = true;
+            this.tabPageVipMenu.Click += new System.EventHandler(this.tabPageVipMenu_Click);
+            // 
+            // lblMenuOnOffPage4
+            // 
+            this.lblMenuOnOffPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.lblMenuOnOffPage4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblMenuOnOffPage4.Location = new System.Drawing.Point(175, 144);
+            this.lblMenuOnOffPage4.Name = "lblMenuOnOffPage4";
+            this.lblMenuOnOffPage4.Size = new System.Drawing.Size(276, 56);
+            this.lblMenuOnOffPage4.TabIndex = 96;
+            this.lblMenuOnOffPage4.Text = "Изберете дати\r\nна резервацията!";
+            this.lblMenuOnOffPage4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ReservationForm
             // 
@@ -769,6 +910,9 @@
             this.tableRooms.ResumeLayout(false);
             this.tabControlMenu.ResumeLayout(false);
             this.tabPageWithMenus.ResumeLayout(false);
+            this.tabPageBuffet.ResumeLayout(false);
+            this.tabPageALLIn.ResumeLayout(false);
+            this.tabPageVipMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -831,6 +975,15 @@
         private TabPage tabPageVipMenu;
         private CheckedListBox checkedListBoxMenu;
         private Label lblMenuDate;
-        private Button button1;
+        private Button btnNextDay;
+        private Label lblSelectedMenu;
+        private Button btnPreviousDay;
+        private Label lblDinner;
+        private Label lblLunch;
+        private Label lblBreakfast;
+        private Label lblMenuOnOffPage1;
+        private Label lblMenuOnOffPage2;
+        private Label lblMenuOnOffPage3;
+        private Label lblMenuOnOffPage4;
     }
 }
