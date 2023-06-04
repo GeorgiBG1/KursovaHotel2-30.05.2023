@@ -257,7 +257,7 @@ namespace KursovaHotel.Business
             foreach (var client in clients)
             {
                 client.ReservationId = currentReservation.Id;
-                //UpdateRoomsStatus(client);
+                UpdateRoomsStatus(client);
                 dbContext.Clients.Add(client);
             }
             dbContext.SaveChanges();
@@ -268,7 +268,7 @@ namespace KursovaHotel.Business
             clientRoom!.IsBooked = true;
             dbContext.SaveChanges();
         }
-        public void UpdateReservationAndRoomStatus(Reservation reservation = null!)
+        public void UpdateReservationStatus(Reservation reservation = null!)
         {
             if (reservation != null)
             {
@@ -285,6 +285,7 @@ namespace KursovaHotel.Business
                 }
                 dbContext.SaveChanges();
             }
+
         }
         public List<Room> GetAllRooms()
         {

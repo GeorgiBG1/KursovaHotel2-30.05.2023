@@ -23,6 +23,6 @@ namespace KursovaHotel.Data.Models
         [ForeignKey("Room")]
         [Required]
         public int RoomId { get; set; }
-        public virtual ICollection<Room>? Rooms { get; set; }
+        public virtual ICollection<Room> Rooms { get; set; } = new List<Room>();
     }
 }

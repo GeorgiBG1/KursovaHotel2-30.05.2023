@@ -28,686 +28,750 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnDelAll = new Button();
-            monthCalendar = new MonthCalendar();
-            numUpDownAge = new NumericUpDown();
-            txtBoxFirstName = new TextBox();
-            lblDateEnd = new Label();
-            lblDateStart = new Label();
-            lblDuration = new Label();
-            radioBtnGroupRes = new RadioButton();
-            radioBtnOneRes = new RadioButton();
-            btnNext = new Button();
-            btnBack = new Button();
-            btnSaveRes = new Button();
-            lblTotalPrice = new Label();
-            btnExpiredOn = new Button();
-            btnBookedOn = new Button();
-            lblAge = new Label();
-            txtBoxEmail = new TextBox();
-            lblEmail = new Label();
-            txtBoxPhoneNumber = new TextBox();
-            lblPhoneNumber = new Label();
-            txtBoxEGN = new TextBox();
-            lblEGN = new Label();
-            txtBoxLastName = new TextBox();
-            lblFirstName = new Label();
-            lblLastName = new Label();
-            txtBoxMiddleName = new TextBox();
-            lblMiddleName = new Label();
-            tableRooms = new TableLayoutPanel();
-            btnRoom35 = new Button();
-            btnRoom34 = new Button();
-            btnRoom33 = new Button();
-            btnRoom32 = new Button();
-            btnRoom31 = new Button();
-            btnRoom25 = new Button();
-            btnRoom24 = new Button();
-            btnRoom23 = new Button();
-            btnRoom22 = new Button();
-            btnRoom21 = new Button();
-            btnRoom20 = new Button();
-            btnRoom15 = new Button();
-            btnRoom14 = new Button();
-            btnRoom13 = new Button();
-            btnRoom12 = new Button();
-            lblFloor3 = new Label();
-            btnRoom10 = new Button();
-            btnRoom11 = new Button();
-            lblFloor1 = new Label();
-            lblFloor2 = new Label();
-            btnRoom30 = new Button();
-            tabControlMenu = new TabControl();
-            tabPageWithMenus = new TabPage();
-            tabPageBuffet = new TabPage();
-            tabPageALLIn = new TabPage();
-            tabPageVipMenu = new TabPage();
-            ((System.ComponentModel.ISupportInitialize)numUpDownAge).BeginInit();
-            tableRooms.SuspendLayout();
-            tabControlMenu.SuspendLayout();
-            SuspendLayout();
+            this.btnDelAll = new System.Windows.Forms.Button();
+            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
+            this.numUpDownAge = new System.Windows.Forms.NumericUpDown();
+            this.txtBoxFirstName = new System.Windows.Forms.TextBox();
+            this.lblDateEnd = new System.Windows.Forms.Label();
+            this.lblDateStart = new System.Windows.Forms.Label();
+            this.lblDuration = new System.Windows.Forms.Label();
+            this.radioBtnGroupRes = new System.Windows.Forms.RadioButton();
+            this.radioBtnOneRes = new System.Windows.Forms.RadioButton();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnSaveRes = new System.Windows.Forms.Button();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.btnExpiredOn = new System.Windows.Forms.Button();
+            this.btnBookedOn = new System.Windows.Forms.Button();
+            this.lblAge = new System.Windows.Forms.Label();
+            this.txtBoxEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtBoxPhoneNumber = new System.Windows.Forms.TextBox();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.txtBoxEGN = new System.Windows.Forms.TextBox();
+            this.lblEGN = new System.Windows.Forms.Label();
+            this.txtBoxLastName = new System.Windows.Forms.TextBox();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
+            this.lblMiddleName = new System.Windows.Forms.Label();
+            this.tableRooms = new System.Windows.Forms.TableLayoutPanel();
+            this.btnRoom35 = new System.Windows.Forms.Button();
+            this.btnRoom34 = new System.Windows.Forms.Button();
+            this.btnRoom33 = new System.Windows.Forms.Button();
+            this.btnRoom32 = new System.Windows.Forms.Button();
+            this.btnRoom31 = new System.Windows.Forms.Button();
+            this.btnRoom25 = new System.Windows.Forms.Button();
+            this.btnRoom24 = new System.Windows.Forms.Button();
+            this.btnRoom23 = new System.Windows.Forms.Button();
+            this.btnRoom22 = new System.Windows.Forms.Button();
+            this.btnRoom21 = new System.Windows.Forms.Button();
+            this.btnRoom20 = new System.Windows.Forms.Button();
+            this.btnRoom14 = new System.Windows.Forms.Button();
+            this.btnRoom13 = new System.Windows.Forms.Button();
+            this.btnRoom12 = new System.Windows.Forms.Button();
+            this.lblFloor3 = new System.Windows.Forms.Label();
+            this.btnRoom11 = new System.Windows.Forms.Button();
+            this.lblFloor1 = new System.Windows.Forms.Label();
+            this.lblFloor2 = new System.Windows.Forms.Label();
+            this.btnRoom30 = new System.Windows.Forms.Button();
+            this.btnRoom15 = new System.Windows.Forms.Button();
+            this.btnRoom10 = new System.Windows.Forms.Button();
+            this.tabControlMenu = new System.Windows.Forms.TabControl();
+            this.tabPageWithMenus = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblMenuDate = new System.Windows.Forms.Label();
+            this.checkedListBoxMenu = new System.Windows.Forms.CheckedListBox();
+            this.tabPageBuffet = new System.Windows.Forms.TabPage();
+            this.tabPageALLIn = new System.Windows.Forms.TabPage();
+            this.tabPageVipMenu = new System.Windows.Forms.TabPage();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownAge)).BeginInit();
+            this.tableRooms.SuspendLayout();
+            this.tabControlMenu.SuspendLayout();
+            this.tabPageWithMenus.SuspendLayout();
+            this.SuspendLayout();
             // 
             // btnDelAll
             // 
-            btnDelAll.Location = new Point(314, 585);
-            btnDelAll.Name = "btnDelAll";
-            btnDelAll.Size = new Size(81, 23);
-            btnDelAll.TabIndex = 92;
-            btnDelAll.Text = "Зачисти БД";
-            btnDelAll.UseVisualStyleBackColor = true;
-            btnDelAll.Click += btnDelAll_Click;
+            this.btnDelAll.Location = new System.Drawing.Point(303, 565);
+            this.btnDelAll.Name = "btnDelAll";
+            this.btnDelAll.Size = new System.Drawing.Size(103, 35);
+            this.btnDelAll.TabIndex = 92;
+            this.btnDelAll.Text = "Зачисти БД";
+            this.btnDelAll.UseVisualStyleBackColor = true;
+            this.btnDelAll.Click += new System.EventHandler(this.btnDelAll_Click);
             // 
             // monthCalendar
             // 
-            monthCalendar.Enabled = false;
-            monthCalendar.Location = new Point(196, 368);
-            monthCalendar.Name = "monthCalendar";
-            monthCalendar.TabIndex = 91;
-            monthCalendar.Visible = false;
-            monthCalendar.DateChanged += monthCalendar_DateChanged;
+            this.monthCalendar.Enabled = false;
+            this.monthCalendar.Location = new System.Drawing.Point(265, 334);
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.TabIndex = 91;
+            this.monthCalendar.Visible = false;
+            this.monthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateChanged);
+            this.monthCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateSelected);
             // 
             // numUpDownAge
             // 
-            numUpDownAge.Location = new Point(204, 340);
-            numUpDownAge.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
-            numUpDownAge.Name = "numUpDownAge";
-            numUpDownAge.Size = new Size(54, 23);
-            numUpDownAge.TabIndex = 89;
+            this.numUpDownAge.Location = new System.Drawing.Point(12, 351);
+            this.numUpDownAge.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.numUpDownAge.Name = "numUpDownAge";
+            this.numUpDownAge.Size = new System.Drawing.Size(100, 23);
+            this.numUpDownAge.TabIndex = 89;
             // 
             // txtBoxFirstName
             // 
-            txtBoxFirstName.Location = new Point(29, 52);
-            txtBoxFirstName.Name = "txtBoxFirstName";
-            txtBoxFirstName.Size = new Size(365, 23);
-            txtBoxFirstName.TabIndex = 88;
+            this.txtBoxFirstName.Location = new System.Drawing.Point(12, 40);
+            this.txtBoxFirstName.Name = "txtBoxFirstName";
+            this.txtBoxFirstName.Size = new System.Drawing.Size(369, 23);
+            this.txtBoxFirstName.TabIndex = 88;
             // 
             // lblDateEnd
             // 
-            lblDateEnd.Enabled = false;
-            lblDateEnd.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            lblDateEnd.Location = new Point(34, 449);
-            lblDateEnd.Name = "lblDateEnd";
-            lblDateEnd.Size = new Size(173, 26);
-            lblDateEnd.TabIndex = 87;
-            lblDateEnd.Text = "Дата 2";
-            lblDateEnd.TextAlign = ContentAlignment.MiddleLeft;
-            lblDateEnd.Visible = false;
+            this.lblDateEnd.Enabled = false;
+            this.lblDateEnd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblDateEnd.Location = new System.Drawing.Point(12, 474);
+            this.lblDateEnd.Name = "lblDateEnd";
+            this.lblDateEnd.Size = new System.Drawing.Size(173, 26);
+            this.lblDateEnd.TabIndex = 87;
+            this.lblDateEnd.Text = "Дата 2";
+            this.lblDateEnd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDateEnd.Visible = false;
             // 
             // lblDateStart
             // 
-            lblDateStart.BackColor = SystemColors.Control;
-            lblDateStart.Enabled = false;
-            lblDateStart.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            lblDateStart.Location = new Point(34, 395);
-            lblDateStart.Name = "lblDateStart";
-            lblDateStart.Size = new Size(173, 26);
-            lblDateStart.TabIndex = 86;
-            lblDateStart.Text = "Дата 1";
-            lblDateStart.TextAlign = ContentAlignment.MiddleLeft;
-            lblDateStart.Visible = false;
+            this.lblDateStart.BackColor = System.Drawing.SystemColors.Control;
+            this.lblDateStart.Enabled = false;
+            this.lblDateStart.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblDateStart.Location = new System.Drawing.Point(12, 416);
+            this.lblDateStart.Name = "lblDateStart";
+            this.lblDateStart.Size = new System.Drawing.Size(173, 26);
+            this.lblDateStart.TabIndex = 86;
+            this.lblDateStart.Text = "Дата 1";
+            this.lblDateStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDateStart.Visible = false;
             // 
             // lblDuration
             // 
-            lblDuration.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDuration.Location = new Point(34, 539);
-            lblDuration.Name = "lblDuration";
-            lblDuration.Size = new Size(365, 23);
-            lblDuration.TabIndex = 84;
-            lblDuration.Text = "Продължителност на престоя: ";
-            lblDuration.TextAlign = ContentAlignment.MiddleLeft;
+            this.lblDuration.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDuration.Location = new System.Drawing.Point(11, 527);
+            this.lblDuration.Name = "lblDuration";
+            this.lblDuration.Size = new System.Drawing.Size(545, 23);
+            this.lblDuration.TabIndex = 84;
+            this.lblDuration.Text = "Продължителност на престоя: ";
+            this.lblDuration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // radioBtnGroupRes
             // 
-            radioBtnGroupRes.AutoSize = true;
-            radioBtnGroupRes.Location = new Point(28, 589);
-            radioBtnGroupRes.Name = "radioBtnGroupRes";
-            radioBtnGroupRes.Size = new Size(142, 19);
-            radioBtnGroupRes.TabIndex = 83;
-            radioBtnGroupRes.Text = "Групова регистрация";
-            radioBtnGroupRes.UseVisualStyleBackColor = true;
-            radioBtnGroupRes.Click += radioBtnGroupRes_CheckedChanged;
+            this.radioBtnGroupRes.AutoSize = true;
+            this.radioBtnGroupRes.Location = new System.Drawing.Point(12, 585);
+            this.radioBtnGroupRes.Name = "radioBtnGroupRes";
+            this.radioBtnGroupRes.Size = new System.Drawing.Size(142, 19);
+            this.radioBtnGroupRes.TabIndex = 83;
+            this.radioBtnGroupRes.Text = "Групова регистрация";
+            this.radioBtnGroupRes.UseVisualStyleBackColor = true;
+            this.radioBtnGroupRes.CheckedChanged += new System.EventHandler(this.radioBtnGroupRes_CheckedChanged);
             // 
             // radioBtnOneRes
             // 
-            radioBtnOneRes.AutoSize = true;
-            radioBtnOneRes.Checked = true;
-            radioBtnOneRes.Location = new Point(28, 564);
-            radioBtnOneRes.Name = "radioBtnOneRes";
-            radioBtnOneRes.Size = new Size(150, 19);
-            radioBtnOneRes.TabIndex = 82;
-            radioBtnOneRes.TabStop = true;
-            radioBtnOneRes.Text = "Единична регистрация";
-            radioBtnOneRes.UseVisualStyleBackColor = true;
-            radioBtnOneRes.Click += radioBtnOneRes_CheckedChanged_1;
+            this.radioBtnOneRes.AutoSize = true;
+            this.radioBtnOneRes.Checked = true;
+            this.radioBtnOneRes.Location = new System.Drawing.Point(12, 565);
+            this.radioBtnOneRes.Name = "radioBtnOneRes";
+            this.radioBtnOneRes.Size = new System.Drawing.Size(150, 19);
+            this.radioBtnOneRes.TabIndex = 82;
+            this.radioBtnOneRes.TabStop = true;
+            this.radioBtnOneRes.Text = "Единична регистрация";
+            this.radioBtnOneRes.UseVisualStyleBackColor = true;
+            this.radioBtnOneRes.CheckedChanged += new System.EventHandler(this.radioBtnOneRes_CheckedChanged);
             // 
             // btnNext
             // 
-            btnNext.BackColor = SystemColors.Control;
-            btnNext.Enabled = false;
-            btnNext.Location = new Point(152, 614);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new Size(138, 43);
-            btnNext.TabIndex = 81;
-            btnNext.Text = "Следващ";
-            btnNext.UseVisualStyleBackColor = false;
-            btnNext.Visible = false;
-            btnNext.Click += btnNext_Click;
+            this.btnNext.BackColor = System.Drawing.SystemColors.Control;
+            this.btnNext.Enabled = false;
+            this.btnNext.Location = new System.Drawing.Point(135, 609);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(138, 43);
+            this.btnNext.TabIndex = 81;
+            this.btnNext.Text = "Следващ";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Visible = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnBack
             // 
-            btnBack.BackColor = SystemColors.Control;
-            btnBack.Enabled = false;
-            btnBack.Location = new Point(19, 614);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(127, 42);
-            btnBack.TabIndex = 80;
-            btnBack.Text = "Назад";
-            btnBack.UseVisualStyleBackColor = false;
-            btnBack.Visible = false;
-            btnBack.Click += btnBack_Click;
+            this.btnBack.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBack.Enabled = false;
+            this.btnBack.Location = new System.Drawing.Point(2, 610);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(127, 42);
+            this.btnBack.TabIndex = 80;
+            this.btnBack.Text = "Назад";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Visible = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnSaveRes
             // 
-            btnSaveRes.BackColor = SystemColors.Control;
-            btnSaveRes.Location = new Point(296, 614);
-            btnSaveRes.Name = "btnSaveRes";
-            btnSaveRes.Size = new Size(127, 43);
-            btnSaveRes.TabIndex = 79;
-            btnSaveRes.Text = "Завършване на регистрацията";
-            btnSaveRes.UseVisualStyleBackColor = false;
-            btnSaveRes.Click += btnSaveRes_Click;
+            this.btnSaveRes.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSaveRes.Location = new System.Drawing.Point(279, 609);
+            this.btnSaveRes.Name = "btnSaveRes";
+            this.btnSaveRes.Size = new System.Drawing.Size(127, 43);
+            this.btnSaveRes.TabIndex = 79;
+            this.btnSaveRes.Text = "Завършване на регистрацията";
+            this.btnSaveRes.UseVisualStyleBackColor = false;
+            this.btnSaveRes.Click += new System.EventHandler(this.btnSaveRes_Click);
             // 
             // lblTotalPrice
             // 
-            lblTotalPrice.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTotalPrice.Location = new Point(34, 509);
-            lblTotalPrice.Margin = new Padding(2, 0, 2, 0);
-            lblTotalPrice.Name = "lblTotalPrice";
-            lblTotalPrice.Size = new Size(106, 29);
-            lblTotalPrice.TabIndex = 78;
-            lblTotalPrice.Text = "Обща Цена:";
-            lblTotalPrice.TextAlign = ContentAlignment.MiddleLeft;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalPrice.Location = new System.Drawing.Point(11, 498);
+            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(256, 29);
+            this.lblTotalPrice.TabIndex = 78;
+            this.lblTotalPrice.Text = "Обща цена:";
+            this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnExpiredOn
             // 
-            btnExpiredOn.Location = new Point(34, 424);
-            btnExpiredOn.Name = "btnExpiredOn";
-            btnExpiredOn.Size = new Size(136, 23);
-            btnExpiredOn.TabIndex = 77;
-            btnExpiredOn.Text = "Дата на заминаване";
-            btnExpiredOn.UseVisualStyleBackColor = true;
-            btnExpiredOn.Click += btnExpiredOn_Click;
+            this.btnExpiredOn.Location = new System.Drawing.Point(12, 445);
+            this.btnExpiredOn.Name = "btnExpiredOn";
+            this.btnExpiredOn.Size = new System.Drawing.Size(241, 26);
+            this.btnExpiredOn.TabIndex = 77;
+            this.btnExpiredOn.Text = "Дата на заминаване";
+            this.btnExpiredOn.UseVisualStyleBackColor = true;
+            this.btnExpiredOn.Click += new System.EventHandler(this.btnExpiredOn_Click);
             // 
             // btnBookedOn
             // 
-            btnBookedOn.BackColor = SystemColors.Control;
-            btnBookedOn.Enabled = false;
-            btnBookedOn.Location = new Point(34, 369);
-            btnBookedOn.Name = "btnBookedOn";
-            btnBookedOn.Size = new Size(136, 23);
-            btnBookedOn.TabIndex = 76;
-            btnBookedOn.Text = "Дата на пристигане";
-            btnBookedOn.UseVisualStyleBackColor = false;
-            btnBookedOn.Click += btnBookedOn_Click;
+            this.btnBookedOn.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBookedOn.Enabled = false;
+            this.btnBookedOn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnBookedOn.Location = new System.Drawing.Point(12, 387);
+            this.btnBookedOn.Name = "btnBookedOn";
+            this.btnBookedOn.Size = new System.Drawing.Size(241, 26);
+            this.btnBookedOn.TabIndex = 76;
+            this.btnBookedOn.Text = "Дата на пристигане";
+            this.btnBookedOn.UseVisualStyleBackColor = false;
+            this.btnBookedOn.Click += new System.EventHandler(this.btnBookedOn_Click);
             // 
             // lblAge
             // 
-            lblAge.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblAge.Location = new Point(28, 336);
-            lblAge.Name = "lblAge";
-            lblAge.Size = new Size(170, 23);
-            lblAge.TabIndex = 75;
-            lblAge.Text = "Възраст на клиента";
-            lblAge.TextAlign = ContentAlignment.MiddleLeft;
+            this.lblAge.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAge.Location = new System.Drawing.Point(12, 325);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(307, 23);
+            this.lblAge.TabIndex = 75;
+            this.lblAge.Text = "Възраст на клиента";
+            this.lblAge.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtBoxEmail
             // 
-            txtBoxEmail.Location = new Point(30, 310);
-            txtBoxEmail.Name = "txtBoxEmail";
-            txtBoxEmail.Size = new Size(365, 23);
-            txtBoxEmail.TabIndex = 74;
+            this.txtBoxEmail.Location = new System.Drawing.Point(12, 299);
+            this.txtBoxEmail.Name = "txtBoxEmail";
+            this.txtBoxEmail.Size = new System.Drawing.Size(369, 23);
+            this.txtBoxEmail.TabIndex = 74;
             // 
             // lblEmail
             // 
-            lblEmail.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblEmail.Location = new Point(30, 284);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(365, 23);
-            lblEmail.TabIndex = 73;
-            lblEmail.Text = "Имейл адрес";
-            lblEmail.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblEmail.Location = new System.Drawing.Point(12, 273);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(369, 23);
+            this.lblEmail.TabIndex = 73;
+            this.lblEmail.Text = "Имейл адрес";
+            this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtBoxPhoneNumber
             // 
-            txtBoxPhoneNumber.Location = new Point(30, 258);
-            txtBoxPhoneNumber.Name = "txtBoxPhoneNumber";
-            txtBoxPhoneNumber.Size = new Size(365, 23);
-            txtBoxPhoneNumber.TabIndex = 72;
+            this.txtBoxPhoneNumber.Location = new System.Drawing.Point(12, 247);
+            this.txtBoxPhoneNumber.Name = "txtBoxPhoneNumber";
+            this.txtBoxPhoneNumber.Size = new System.Drawing.Size(369, 23);
+            this.txtBoxPhoneNumber.TabIndex = 72;
             // 
             // lblPhoneNumber
             // 
-            lblPhoneNumber.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPhoneNumber.Location = new Point(30, 232);
-            lblPhoneNumber.Name = "lblPhoneNumber";
-            lblPhoneNumber.Size = new Size(365, 23);
-            lblPhoneNumber.TabIndex = 71;
-            lblPhoneNumber.Text = "Телефонен номер на клиента";
-            lblPhoneNumber.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(12, 221);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(369, 23);
+            this.lblPhoneNumber.TabIndex = 71;
+            this.lblPhoneNumber.Text = "Телефонен номер на клиента";
+            this.lblPhoneNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtBoxEGN
             // 
-            txtBoxEGN.Location = new Point(30, 206);
-            txtBoxEGN.Name = "txtBoxEGN";
-            txtBoxEGN.Size = new Size(365, 23);
-            txtBoxEGN.TabIndex = 70;
+            this.txtBoxEGN.Location = new System.Drawing.Point(12, 195);
+            this.txtBoxEGN.Name = "txtBoxEGN";
+            this.txtBoxEGN.Size = new System.Drawing.Size(369, 23);
+            this.txtBoxEGN.TabIndex = 70;
             // 
             // lblEGN
             // 
-            lblEGN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblEGN.Location = new Point(30, 179);
-            lblEGN.Name = "lblEGN";
-            lblEGN.Size = new Size(365, 23);
-            lblEGN.TabIndex = 69;
-            lblEGN.Text = "ЕГН на клиента";
-            lblEGN.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblEGN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblEGN.Location = new System.Drawing.Point(12, 169);
+            this.lblEGN.Name = "lblEGN";
+            this.lblEGN.Size = new System.Drawing.Size(369, 23);
+            this.lblEGN.TabIndex = 69;
+            this.lblEGN.Text = "ЕГН на клиента";
+            this.lblEGN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtBoxLastName
             // 
-            txtBoxLastName.Location = new Point(30, 153);
-            txtBoxLastName.Name = "txtBoxLastName";
-            txtBoxLastName.Size = new Size(365, 23);
-            txtBoxLastName.TabIndex = 68;
+            this.txtBoxLastName.Location = new System.Drawing.Point(12, 144);
+            this.txtBoxLastName.Name = "txtBoxLastName";
+            this.txtBoxLastName.Size = new System.Drawing.Size(369, 23);
+            this.txtBoxLastName.TabIndex = 68;
             // 
             // lblFirstName
             // 
-            lblFirstName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblFirstName.Location = new Point(30, 26);
-            lblFirstName.Name = "lblFirstName";
-            lblFirstName.Size = new Size(365, 23);
-            lblFirstName.TabIndex = 67;
-            lblFirstName.Text = "Първо име на клиента";
-            lblFirstName.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblFirstName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFirstName.Location = new System.Drawing.Point(12, 14);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(369, 23);
+            this.lblFirstName.TabIndex = 67;
+            this.lblFirstName.Text = "Първо име на клиента";
+            this.lblFirstName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLastName
             // 
-            lblLastName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblLastName.Location = new Point(30, 127);
-            lblLastName.Name = "lblLastName";
-            lblLastName.Size = new Size(365, 23);
-            lblLastName.TabIndex = 66;
-            lblLastName.Text = "Фамилия на клиента";
-            lblLastName.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblLastName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblLastName.Location = new System.Drawing.Point(12, 118);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(369, 23);
+            this.lblLastName.TabIndex = 66;
+            this.lblLastName.Text = "Фамилия на клиента";
+            this.lblLastName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtBoxMiddleName
             // 
-            txtBoxMiddleName.Location = new Point(30, 101);
-            txtBoxMiddleName.Name = "txtBoxMiddleName";
-            txtBoxMiddleName.Size = new Size(365, 23);
-            txtBoxMiddleName.TabIndex = 65;
+            this.txtBoxMiddleName.Location = new System.Drawing.Point(12, 92);
+            this.txtBoxMiddleName.Name = "txtBoxMiddleName";
+            this.txtBoxMiddleName.Size = new System.Drawing.Size(369, 23);
+            this.txtBoxMiddleName.TabIndex = 65;
             // 
             // lblMiddleName
             // 
-            lblMiddleName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMiddleName.Location = new Point(30, 75);
-            lblMiddleName.Name = "lblMiddleName";
-            lblMiddleName.Size = new Size(365, 23);
-            lblMiddleName.TabIndex = 64;
-            lblMiddleName.Text = "Презиме на клиента";
-            lblMiddleName.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblMiddleName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMiddleName.Location = new System.Drawing.Point(12, 66);
+            this.lblMiddleName.Name = "lblMiddleName";
+            this.lblMiddleName.Size = new System.Drawing.Size(369, 23);
+            this.lblMiddleName.TabIndex = 64;
+            this.lblMiddleName.Text = "Презиме на клиента";
+            this.lblMiddleName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableRooms
             // 
-            tableRooms.BackColor = SystemColors.ActiveCaption;
-            tableRooms.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset;
-            tableRooms.ColumnCount = 7;
-            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
-            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
-            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
-            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
-            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
-            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
-            tableRooms.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 13F));
-            tableRooms.Controls.Add(btnRoom35, 6, 2);
-            tableRooms.Controls.Add(btnRoom34, 5, 2);
-            tableRooms.Controls.Add(btnRoom33, 4, 2);
-            tableRooms.Controls.Add(btnRoom32, 3, 2);
-            tableRooms.Controls.Add(btnRoom31, 2, 2);
-            tableRooms.Controls.Add(btnRoom25, 6, 1);
-            tableRooms.Controls.Add(btnRoom24, 5, 1);
-            tableRooms.Controls.Add(btnRoom23, 4, 1);
-            tableRooms.Controls.Add(btnRoom22, 3, 1);
-            tableRooms.Controls.Add(btnRoom21, 2, 1);
-            tableRooms.Controls.Add(btnRoom20, 1, 1);
-            tableRooms.Controls.Add(btnRoom15, 6, 0);
-            tableRooms.Controls.Add(btnRoom14, 5, 0);
-            tableRooms.Controls.Add(btnRoom13, 4, 0);
-            tableRooms.Controls.Add(btnRoom12, 3, 0);
-            tableRooms.Controls.Add(lblFloor3, 0, 2);
-            tableRooms.Controls.Add(btnRoom10, 1, 0);
-            tableRooms.Controls.Add(btnRoom11, 2, 0);
-            tableRooms.Controls.Add(lblFloor1, 0, 0);
-            tableRooms.Controls.Add(lblFloor2, 0, 1);
-            tableRooms.Controls.Add(btnRoom30, 1, 2);
-            tableRooms.Enabled = false;
-            tableRooms.Location = new Point(424, 165);
-            tableRooms.Name = "tableRooms";
-            tableRooms.RowCount = 3;
-            tableRooms.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tableRooms.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tableRooms.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tableRooms.Size = new Size(396, 116);
-            tableRooms.TabIndex = 93;
-            tableRooms.Visible = false;
+            this.tableRooms.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableRooms.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tableRooms.ColumnCount = 7;
+            this.tableRooms.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
+            this.tableRooms.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableRooms.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableRooms.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableRooms.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableRooms.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableRooms.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableRooms.Controls.Add(this.btnRoom35, 6, 2);
+            this.tableRooms.Controls.Add(this.btnRoom34, 5, 2);
+            this.tableRooms.Controls.Add(this.btnRoom33, 4, 2);
+            this.tableRooms.Controls.Add(this.btnRoom32, 3, 2);
+            this.tableRooms.Controls.Add(this.btnRoom31, 2, 2);
+            this.tableRooms.Controls.Add(this.btnRoom25, 6, 1);
+            this.tableRooms.Controls.Add(this.btnRoom24, 5, 1);
+            this.tableRooms.Controls.Add(this.btnRoom23, 4, 1);
+            this.tableRooms.Controls.Add(this.btnRoom22, 3, 1);
+            this.tableRooms.Controls.Add(this.btnRoom21, 2, 1);
+            this.tableRooms.Controls.Add(this.btnRoom20, 1, 1);
+            this.tableRooms.Controls.Add(this.btnRoom14, 5, 0);
+            this.tableRooms.Controls.Add(this.btnRoom13, 4, 0);
+            this.tableRooms.Controls.Add(this.btnRoom12, 3, 0);
+            this.tableRooms.Controls.Add(this.lblFloor3, 0, 2);
+            this.tableRooms.Controls.Add(this.btnRoom11, 2, 0);
+            this.tableRooms.Controls.Add(this.lblFloor1, 0, 0);
+            this.tableRooms.Controls.Add(this.lblFloor2, 0, 1);
+            this.tableRooms.Controls.Add(this.btnRoom30, 1, 2);
+            this.tableRooms.Controls.Add(this.btnRoom15, 6, 0);
+            this.tableRooms.Controls.Add(this.btnRoom10, 1, 0);
+            this.tableRooms.Location = new System.Drawing.Point(423, 40);
+            this.tableRooms.Name = "tableRooms";
+            this.tableRooms.RowCount = 3;
+            this.tableRooms.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableRooms.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableRooms.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableRooms.Size = new System.Drawing.Size(635, 176);
+            this.tableRooms.TabIndex = 93;
             // 
             // btnRoom35
             // 
-            btnRoom35.Location = new Point(339, 78);
-            btnRoom35.Margin = new Padding(0);
-            btnRoom35.Name = "btnRoom35";
-            btnRoom35.Size = new Size(55, 36);
-            btnRoom35.TabIndex = 65;
-            btnRoom35.Text = "Ап 35";
-            btnRoom35.UseVisualStyleBackColor = true;
+            this.btnRoom35.Location = new System.Drawing.Point(543, 118);
+            this.btnRoom35.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom35.Name = "btnRoom35";
+            this.btnRoom35.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom35.TabIndex = 65;
+            this.btnRoom35.Text = "Ап 35";
+            this.btnRoom35.UseVisualStyleBackColor = true;
+            this.btnRoom35.Click += new System.EventHandler(this.btnRoom35_Click);
             // 
             // btnRoom34
             // 
-            btnRoom34.Location = new Point(282, 78);
-            btnRoom34.Margin = new Padding(0);
-            btnRoom34.Name = "btnRoom34";
-            btnRoom34.Size = new Size(55, 36);
-            btnRoom34.TabIndex = 65;
-            btnRoom34.Text = "Ап 34";
-            btnRoom34.UseVisualStyleBackColor = true;
+            this.btnRoom34.Location = new System.Drawing.Point(451, 118);
+            this.btnRoom34.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom34.Name = "btnRoom34";
+            this.btnRoom34.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom34.TabIndex = 65;
+            this.btnRoom34.Text = "Ап 34";
+            this.btnRoom34.UseVisualStyleBackColor = true;
+            this.btnRoom34.Click += new System.EventHandler(this.btnRoom34_Click);
             // 
             // btnRoom33
             // 
-            btnRoom33.Location = new Point(225, 78);
-            btnRoom33.Margin = new Padding(0);
-            btnRoom33.Name = "btnRoom33";
-            btnRoom33.Size = new Size(55, 36);
-            btnRoom33.TabIndex = 65;
-            btnRoom33.Text = "Ап 33";
-            btnRoom33.UseVisualStyleBackColor = true;
+            this.btnRoom33.Location = new System.Drawing.Point(359, 118);
+            this.btnRoom33.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom33.Name = "btnRoom33";
+            this.btnRoom33.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom33.TabIndex = 65;
+            this.btnRoom33.Text = "Ап 33";
+            this.btnRoom33.UseVisualStyleBackColor = true;
+            this.btnRoom33.Click += new System.EventHandler(this.btnRoom33_Click);
             // 
             // btnRoom32
             // 
-            btnRoom32.Location = new Point(168, 78);
-            btnRoom32.Margin = new Padding(0);
-            btnRoom32.Name = "btnRoom32";
-            btnRoom32.Size = new Size(55, 36);
-            btnRoom32.TabIndex = 65;
-            btnRoom32.Text = "Ап 32";
-            btnRoom32.UseVisualStyleBackColor = true;
+            this.btnRoom32.Location = new System.Drawing.Point(267, 118);
+            this.btnRoom32.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom32.Name = "btnRoom32";
+            this.btnRoom32.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom32.TabIndex = 65;
+            this.btnRoom32.Text = "Ап 32";
+            this.btnRoom32.UseVisualStyleBackColor = true;
+            this.btnRoom32.Click += new System.EventHandler(this.btnRoom32_Click);
             // 
             // btnRoom31
             // 
-            btnRoom31.Location = new Point(111, 78);
-            btnRoom31.Margin = new Padding(0);
-            btnRoom31.Name = "btnRoom31";
-            btnRoom31.Size = new Size(55, 36);
-            btnRoom31.TabIndex = 65;
-            btnRoom31.Text = "Ап 31";
-            btnRoom31.UseVisualStyleBackColor = true;
+            this.btnRoom31.Location = new System.Drawing.Point(175, 118);
+            this.btnRoom31.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom31.Name = "btnRoom31";
+            this.btnRoom31.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom31.TabIndex = 65;
+            this.btnRoom31.Text = "Ап 31";
+            this.btnRoom31.UseVisualStyleBackColor = true;
+            this.btnRoom31.Click += new System.EventHandler(this.btnRoom31_Click);
             // 
             // btnRoom25
             // 
-            btnRoom25.Location = new Point(339, 40);
-            btnRoom25.Margin = new Padding(0);
-            btnRoom25.Name = "btnRoom25";
-            btnRoom25.Size = new Size(55, 36);
-            btnRoom25.TabIndex = 65;
-            btnRoom25.Text = "Ап 25";
-            btnRoom25.UseVisualStyleBackColor = true;
+            this.btnRoom25.Location = new System.Drawing.Point(543, 60);
+            this.btnRoom25.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom25.Name = "btnRoom25";
+            this.btnRoom25.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom25.TabIndex = 65;
+            this.btnRoom25.Text = "Ап 25";
+            this.btnRoom25.UseVisualStyleBackColor = true;
+            this.btnRoom25.Click += new System.EventHandler(this.btnRoom25_Click);
             // 
             // btnRoom24
             // 
-            btnRoom24.Location = new Point(282, 40);
-            btnRoom24.Margin = new Padding(0);
-            btnRoom24.Name = "btnRoom24";
-            btnRoom24.Size = new Size(55, 36);
-            btnRoom24.TabIndex = 65;
-            btnRoom24.Text = "Стая 24";
-            btnRoom24.UseVisualStyleBackColor = true;
+            this.btnRoom24.Location = new System.Drawing.Point(451, 60);
+            this.btnRoom24.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom24.Name = "btnRoom24";
+            this.btnRoom24.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom24.TabIndex = 65;
+            this.btnRoom24.Text = "Стая 24";
+            this.btnRoom24.UseVisualStyleBackColor = true;
+            this.btnRoom24.Click += new System.EventHandler(this.btnRoom24_Click);
             // 
             // btnRoom23
             // 
-            btnRoom23.Location = new Point(225, 40);
-            btnRoom23.Margin = new Padding(0);
-            btnRoom23.Name = "btnRoom23";
-            btnRoom23.Size = new Size(55, 36);
-            btnRoom23.TabIndex = 65;
-            btnRoom23.Text = "Стая 23";
-            btnRoom23.UseVisualStyleBackColor = true;
+            this.btnRoom23.Location = new System.Drawing.Point(359, 60);
+            this.btnRoom23.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom23.Name = "btnRoom23";
+            this.btnRoom23.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom23.TabIndex = 65;
+            this.btnRoom23.Text = "Стая 23";
+            this.btnRoom23.UseVisualStyleBackColor = true;
+            this.btnRoom23.Click += new System.EventHandler(this.btnRoom23_Click);
             // 
             // btnRoom22
             // 
-            btnRoom22.Location = new Point(168, 40);
-            btnRoom22.Margin = new Padding(0);
-            btnRoom22.Name = "btnRoom22";
-            btnRoom22.Size = new Size(55, 36);
-            btnRoom22.TabIndex = 65;
-            btnRoom22.Text = "Стая 22";
-            btnRoom22.UseVisualStyleBackColor = true;
+            this.btnRoom22.Location = new System.Drawing.Point(267, 60);
+            this.btnRoom22.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom22.Name = "btnRoom22";
+            this.btnRoom22.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom22.TabIndex = 65;
+            this.btnRoom22.Text = "Стая 22";
+            this.btnRoom22.UseVisualStyleBackColor = true;
+            this.btnRoom22.Click += new System.EventHandler(this.btnRoom22_Click);
             // 
             // btnRoom21
             // 
-            btnRoom21.Location = new Point(111, 40);
-            btnRoom21.Margin = new Padding(0);
-            btnRoom21.Name = "btnRoom21";
-            btnRoom21.Size = new Size(55, 36);
-            btnRoom21.TabIndex = 65;
-            btnRoom21.Text = "Стая 21";
-            btnRoom21.UseVisualStyleBackColor = true;
+            this.btnRoom21.Location = new System.Drawing.Point(175, 60);
+            this.btnRoom21.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom21.Name = "btnRoom21";
+            this.btnRoom21.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom21.TabIndex = 65;
+            this.btnRoom21.Text = "Стая 21";
+            this.btnRoom21.UseVisualStyleBackColor = true;
+            this.btnRoom21.Click += new System.EventHandler(this.btnRoom21_Click);
             // 
             // btnRoom20
             // 
-            btnRoom20.Location = new Point(54, 40);
-            btnRoom20.Margin = new Padding(0);
-            btnRoom20.Name = "btnRoom20";
-            btnRoom20.Size = new Size(55, 36);
-            btnRoom20.TabIndex = 65;
-            btnRoom20.Text = "Стая 20";
-            btnRoom20.UseVisualStyleBackColor = true;
-            // 
-            // btnRoom15
-            // 
-            btnRoom15.Location = new Point(339, 2);
-            btnRoom15.Margin = new Padding(0);
-            btnRoom15.Name = "btnRoom15";
-            btnRoom15.Size = new Size(55, 36);
-            btnRoom15.TabIndex = 67;
-            btnRoom15.Text = "Ап 15";
-            btnRoom15.UseVisualStyleBackColor = true;
+            this.btnRoom20.Location = new System.Drawing.Point(83, 60);
+            this.btnRoom20.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom20.Name = "btnRoom20";
+            this.btnRoom20.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom20.TabIndex = 65;
+            this.btnRoom20.Text = "Стая 20";
+            this.btnRoom20.UseVisualStyleBackColor = true;
+            this.btnRoom20.Click += new System.EventHandler(this.btnRoom20_Click);
             // 
             // btnRoom14
             // 
-            btnRoom14.Location = new Point(282, 2);
-            btnRoom14.Margin = new Padding(0);
-            btnRoom14.Name = "btnRoom14";
-            btnRoom14.Size = new Size(55, 36);
-            btnRoom14.TabIndex = 67;
-            btnRoom14.Text = "Ап 14";
-            btnRoom14.UseVisualStyleBackColor = true;
+            this.btnRoom14.Location = new System.Drawing.Point(451, 2);
+            this.btnRoom14.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom14.Name = "btnRoom14";
+            this.btnRoom14.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom14.TabIndex = 67;
+            this.btnRoom14.Text = "Ап 14\r\nЗает";
+            this.btnRoom14.UseVisualStyleBackColor = true;
+            this.btnRoom14.Click += new System.EventHandler(this.btnRoom14_Click);
             // 
             // btnRoom13
             // 
-            btnRoom13.Location = new Point(225, 2);
-            btnRoom13.Margin = new Padding(0);
-            btnRoom13.Name = "btnRoom13";
-            btnRoom13.Size = new Size(55, 36);
-            btnRoom13.TabIndex = 66;
-            btnRoom13.Text = "Ап 13";
-            btnRoom13.UseVisualStyleBackColor = true;
+            this.btnRoom13.Location = new System.Drawing.Point(359, 2);
+            this.btnRoom13.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom13.Name = "btnRoom13";
+            this.btnRoom13.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom13.TabIndex = 66;
+            this.btnRoom13.Text = "Ап 13\r\nСвободен";
+            this.btnRoom13.UseVisualStyleBackColor = true;
+            this.btnRoom13.Click += new System.EventHandler(this.btnRoom13_Click);
             // 
             // btnRoom12
             // 
-            btnRoom12.Location = new Point(168, 2);
-            btnRoom12.Margin = new Padding(0);
-            btnRoom12.Name = "btnRoom12";
-            btnRoom12.Size = new Size(55, 36);
-            btnRoom12.TabIndex = 65;
-            btnRoom12.Text = "Стая 12";
-            btnRoom12.UseVisualStyleBackColor = true;
+            this.btnRoom12.Location = new System.Drawing.Point(267, 2);
+            this.btnRoom12.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom12.Name = "btnRoom12";
+            this.btnRoom12.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom12.TabIndex = 65;
+            this.btnRoom12.Text = "Стая 12";
+            this.btnRoom12.UseVisualStyleBackColor = true;
+            this.btnRoom12.Click += new System.EventHandler(this.btnRoom12_Click);
             // 
             // lblFloor3
             // 
-            lblFloor3.BackColor = SystemColors.AppWorkspace;
-            lblFloor3.Location = new Point(2, 78);
-            lblFloor3.Margin = new Padding(0);
-            lblFloor3.Name = "lblFloor3";
-            lblFloor3.Size = new Size(50, 36);
-            lblFloor3.TabIndex = 65;
-            lblFloor3.Text = "Етаж 3";
-            lblFloor3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnRoom10
-            // 
-            btnRoom10.Location = new Point(54, 2);
-            btnRoom10.Margin = new Padding(0);
-            btnRoom10.Name = "btnRoom10";
-            btnRoom10.Size = new Size(55, 36);
-            btnRoom10.TabIndex = 1;
-            btnRoom10.Text = "Стая 10";
-            btnRoom10.UseVisualStyleBackColor = true;
+            this.lblFloor3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblFloor3.Location = new System.Drawing.Point(2, 118);
+            this.lblFloor3.Margin = new System.Windows.Forms.Padding(0);
+            this.lblFloor3.Name = "lblFloor3";
+            this.lblFloor3.Size = new System.Drawing.Size(79, 56);
+            this.lblFloor3.TabIndex = 65;
+            this.lblFloor3.Text = "Етаж 3";
+            this.lblFloor3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRoom11
             // 
-            btnRoom11.Location = new Point(111, 2);
-            btnRoom11.Margin = new Padding(0);
-            btnRoom11.Name = "btnRoom11";
-            btnRoom11.Size = new Size(55, 36);
-            btnRoom11.TabIndex = 0;
-            btnRoom11.Text = "Стая 11";
-            btnRoom11.UseVisualStyleBackColor = true;
+            this.btnRoom11.Location = new System.Drawing.Point(175, 2);
+            this.btnRoom11.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom11.Name = "btnRoom11";
+            this.btnRoom11.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom11.TabIndex = 0;
+            this.btnRoom11.Text = "Стая 11\r\nЗаета";
+            this.btnRoom11.UseVisualStyleBackColor = true;
+            this.btnRoom11.Click += new System.EventHandler(this.btnRoom11_Click);
             // 
             // lblFloor1
             // 
-            lblFloor1.BackColor = SystemColors.AppWorkspace;
-            lblFloor1.Location = new Point(2, 2);
-            lblFloor1.Margin = new Padding(0);
-            lblFloor1.Name = "lblFloor1";
-            lblFloor1.Size = new Size(50, 36);
-            lblFloor1.TabIndex = 2;
-            lblFloor1.Text = "Етаж 1";
-            lblFloor1.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblFloor1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblFloor1.Location = new System.Drawing.Point(2, 2);
+            this.lblFloor1.Margin = new System.Windows.Forms.Padding(0);
+            this.lblFloor1.Name = "lblFloor1";
+            this.lblFloor1.Size = new System.Drawing.Size(79, 56);
+            this.lblFloor1.TabIndex = 2;
+            this.lblFloor1.Text = "Етаж 1";
+            this.lblFloor1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblFloor2
             // 
-            lblFloor2.BackColor = SystemColors.AppWorkspace;
-            lblFloor2.Location = new Point(2, 40);
-            lblFloor2.Margin = new Padding(0);
-            lblFloor2.Name = "lblFloor2";
-            lblFloor2.Size = new Size(50, 36);
-            lblFloor2.TabIndex = 3;
-            lblFloor2.Text = "Етаж 2";
-            lblFloor2.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblFloor2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblFloor2.Location = new System.Drawing.Point(2, 60);
+            this.lblFloor2.Margin = new System.Windows.Forms.Padding(0);
+            this.lblFloor2.Name = "lblFloor2";
+            this.lblFloor2.Size = new System.Drawing.Size(79, 56);
+            this.lblFloor2.TabIndex = 3;
+            this.lblFloor2.Text = "Етаж 2";
+            this.lblFloor2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRoom30
             // 
-            btnRoom30.Location = new Point(54, 78);
-            btnRoom30.Margin = new Padding(0);
-            btnRoom30.Name = "btnRoom30";
-            btnRoom30.Size = new Size(55, 36);
-            btnRoom30.TabIndex = 65;
-            btnRoom30.Text = "Стая 30";
-            btnRoom30.UseVisualStyleBackColor = true;
+            this.btnRoom30.Location = new System.Drawing.Point(83, 118);
+            this.btnRoom30.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom30.Name = "btnRoom30";
+            this.btnRoom30.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom30.TabIndex = 65;
+            this.btnRoom30.Text = "Стая 30";
+            this.btnRoom30.UseVisualStyleBackColor = true;
+            this.btnRoom30.Click += new System.EventHandler(this.btnRoom30_Click);
+            // 
+            // btnRoom15
+            // 
+            this.btnRoom15.Location = new System.Drawing.Point(543, 2);
+            this.btnRoom15.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom15.Name = "btnRoom15";
+            this.btnRoom15.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom15.TabIndex = 67;
+            this.btnRoom15.Text = "Ап 15";
+            this.btnRoom15.UseVisualStyleBackColor = true;
+            this.btnRoom15.Click += new System.EventHandler(this.btnRoom15_Click);
+            // 
+            // btnRoom10
+            // 
+            this.btnRoom10.Location = new System.Drawing.Point(83, 2);
+            this.btnRoom10.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRoom10.Name = "btnRoom10";
+            this.btnRoom10.Size = new System.Drawing.Size(90, 56);
+            this.btnRoom10.TabIndex = 1;
+            this.btnRoom10.Text = "Стая 10\r\nСвободна";
+            this.btnRoom10.UseVisualStyleBackColor = true;
+            this.btnRoom10.Click += new System.EventHandler(this.btnRoom10_Click);
             // 
             // tabControlMenu
             // 
-            tabControlMenu.Controls.Add(tabPageWithMenus);
-            tabControlMenu.Controls.Add(tabPageBuffet);
-            tabControlMenu.Controls.Add(tabPageALLIn);
-            tabControlMenu.Controls.Add(tabPageVipMenu);
-            tabControlMenu.Enabled = false;
-            tabControlMenu.Location = new Point(440, 310);
-            tabControlMenu.Name = "tabControlMenu";
-            tabControlMenu.SelectedIndex = 0;
-            tabControlMenu.Size = new Size(396, 258);
-            tabControlMenu.TabIndex = 94;
-            tabControlMenu.Visible = false;
+            this.tabControlMenu.Controls.Add(this.tabPageWithMenus);
+            this.tabControlMenu.Controls.Add(this.tabPageBuffet);
+            this.tabControlMenu.Controls.Add(this.tabPageALLIn);
+            this.tabControlMenu.Controls.Add(this.tabPageVipMenu);
+            this.tabControlMenu.Location = new System.Drawing.Point(423, 232);
+            this.tabControlMenu.Name = "tabControlMenu";
+            this.tabControlMenu.SelectedIndex = 0;
+            this.tabControlMenu.Size = new System.Drawing.Size(635, 372);
+            this.tabControlMenu.TabIndex = 94;
             // 
             // tabPageWithMenus
             // 
-            tabPageWithMenus.Location = new Point(4, 24);
-            tabPageWithMenus.Name = "tabPageWithMenus";
-            tabPageWithMenus.Padding = new Padding(3);
-            tabPageWithMenus.Size = new Size(388, 230);
-            tabPageWithMenus.TabIndex = 0;
-            tabPageWithMenus.Text = "Обикновено меню";
-            tabPageWithMenus.UseVisualStyleBackColor = true;
+            this.tabPageWithMenus.Controls.Add(this.button1);
+            this.tabPageWithMenus.Controls.Add(this.lblMenuDate);
+            this.tabPageWithMenus.Controls.Add(this.checkedListBoxMenu);
+            this.tabPageWithMenus.Location = new System.Drawing.Point(4, 24);
+            this.tabPageWithMenus.Name = "tabPageWithMenus";
+            this.tabPageWithMenus.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageWithMenus.Size = new System.Drawing.Size(627, 344);
+            this.tabPageWithMenus.TabIndex = 0;
+            this.tabPageWithMenus.Text = "Обикновено меню";
+            this.tabPageWithMenus.UseVisualStyleBackColor = true;
+            this.tabPageWithMenus.Click += new System.EventHandler(this.tabPageWithMenus_Click);
+            // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(14, 302);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 33);
+            this.button1.TabIndex = 88;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            // 
+            // lblMenuDate
+            // 
+            this.lblMenuDate.BackColor = System.Drawing.SystemColors.Control;
+            this.lblMenuDate.Enabled = false;
+            this.lblMenuDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblMenuDate.Location = new System.Drawing.Point(14, 14);
+            this.lblMenuDate.Name = "lblMenuDate";
+            this.lblMenuDate.Size = new System.Drawing.Size(173, 26);
+            this.lblMenuDate.TabIndex = 87;
+            this.lblMenuDate.Text = "Дата 3";
+            this.lblMenuDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMenuDate.Visible = false;
+            // 
+            // checkedListBoxMenu
+            // 
+            this.checkedListBoxMenu.Enabled = false;
+            this.checkedListBoxMenu.FormattingEnabled = true;
+            this.checkedListBoxMenu.Location = new System.Drawing.Point(14, 51);
+            this.checkedListBoxMenu.Name = "checkedListBoxMenu";
+            this.checkedListBoxMenu.Size = new System.Drawing.Size(173, 238);
+            this.checkedListBoxMenu.TabIndex = 0;
+            this.checkedListBoxMenu.Visible = false;
             // 
             // tabPageBuffet
             // 
-            tabPageBuffet.Location = new Point(4, 24);
-            tabPageBuffet.Name = "tabPageBuffet";
-            tabPageBuffet.Padding = new Padding(3);
-            tabPageBuffet.Size = new Size(388, 230);
-            tabPageBuffet.TabIndex = 1;
-            tabPageBuffet.Text = "Блок маса";
-            tabPageBuffet.UseVisualStyleBackColor = true;
+            this.tabPageBuffet.Location = new System.Drawing.Point(4, 24);
+            this.tabPageBuffet.Name = "tabPageBuffet";
+            this.tabPageBuffet.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageBuffet.Size = new System.Drawing.Size(627, 344);
+            this.tabPageBuffet.TabIndex = 1;
+            this.tabPageBuffet.Text = "Блок маса";
+            this.tabPageBuffet.UseVisualStyleBackColor = true;
             // 
             // tabPageALLIn
             // 
-            tabPageALLIn.Location = new Point(4, 24);
-            tabPageALLIn.Name = "tabPageALLIn";
-            tabPageALLIn.Padding = new Padding(3);
-            tabPageALLIn.Size = new Size(388, 230);
-            tabPageALLIn.TabIndex = 2;
-            tabPageALLIn.Text = "All Inclusive";
-            tabPageALLIn.UseVisualStyleBackColor = true;
+            this.tabPageALLIn.Location = new System.Drawing.Point(4, 24);
+            this.tabPageALLIn.Name = "tabPageALLIn";
+            this.tabPageALLIn.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageALLIn.Size = new System.Drawing.Size(627, 344);
+            this.tabPageALLIn.TabIndex = 2;
+            this.tabPageALLIn.Text = "All Inclusive";
+            this.tabPageALLIn.UseVisualStyleBackColor = true;
             // 
             // tabPageVipMenu
             // 
-            tabPageVipMenu.Location = new Point(4, 24);
-            tabPageVipMenu.Name = "tabPageVipMenu";
-            tabPageVipMenu.Padding = new Padding(3);
-            tabPageVipMenu.Size = new Size(388, 230);
-            tabPageVipMenu.TabIndex = 3;
-            tabPageVipMenu.Text = "VIP меню";
-            tabPageVipMenu.UseVisualStyleBackColor = true;
+            this.tabPageVipMenu.Location = new System.Drawing.Point(4, 24);
+            this.tabPageVipMenu.Name = "tabPageVipMenu";
+            this.tabPageVipMenu.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageVipMenu.Size = new System.Drawing.Size(627, 344);
+            this.tabPageVipMenu.TabIndex = 3;
+            this.tabPageVipMenu.Text = "VIP меню";
+            this.tabPageVipMenu.UseVisualStyleBackColor = true;
             // 
             // ReservationForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1264, 681);
-            Controls.Add(tabControlMenu);
-            Controls.Add(tableRooms);
-            Controls.Add(btnDelAll);
-            Controls.Add(monthCalendar);
-            Controls.Add(numUpDownAge);
-            Controls.Add(txtBoxFirstName);
-            Controls.Add(lblDateEnd);
-            Controls.Add(lblDateStart);
-            Controls.Add(lblDuration);
-            Controls.Add(radioBtnGroupRes);
-            Controls.Add(radioBtnOneRes);
-            Controls.Add(btnNext);
-            Controls.Add(btnBack);
-            Controls.Add(btnSaveRes);
-            Controls.Add(lblTotalPrice);
-            Controls.Add(btnExpiredOn);
-            Controls.Add(btnBookedOn);
-            Controls.Add(lblAge);
-            Controls.Add(txtBoxEmail);
-            Controls.Add(lblEmail);
-            Controls.Add(txtBoxPhoneNumber);
-            Controls.Add(lblPhoneNumber);
-            Controls.Add(txtBoxEGN);
-            Controls.Add(lblEGN);
-            Controls.Add(txtBoxLastName);
-            Controls.Add(lblFirstName);
-            Controls.Add(lblLastName);
-            Controls.Add(txtBoxMiddleName);
-            Controls.Add(lblMiddleName);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "ReservationForm";
-            Text = "ReservationForm";
-            ((System.ComponentModel.ISupportInitialize)numUpDownAge).EndInit();
-            tableRooms.ResumeLayout(false);
-            tabControlMenu.ResumeLayout(false);
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1081, 657);
+            this.Controls.Add(this.monthCalendar);
+            this.Controls.Add(this.tabControlMenu);
+            this.Controls.Add(this.tableRooms);
+            this.Controls.Add(this.btnDelAll);
+            this.Controls.Add(this.numUpDownAge);
+            this.Controls.Add(this.txtBoxFirstName);
+            this.Controls.Add(this.lblDateEnd);
+            this.Controls.Add(this.lblDateStart);
+            this.Controls.Add(this.lblDuration);
+            this.Controls.Add(this.radioBtnGroupRes);
+            this.Controls.Add(this.radioBtnOneRes);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnSaveRes);
+            this.Controls.Add(this.lblTotalPrice);
+            this.Controls.Add(this.btnExpiredOn);
+            this.Controls.Add(this.btnBookedOn);
+            this.Controls.Add(this.lblAge);
+            this.Controls.Add(this.txtBoxEmail);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.txtBoxPhoneNumber);
+            this.Controls.Add(this.lblPhoneNumber);
+            this.Controls.Add(this.txtBoxEGN);
+            this.Controls.Add(this.lblEGN);
+            this.Controls.Add(this.txtBoxLastName);
+            this.Controls.Add(this.lblFirstName);
+            this.Controls.Add(this.lblLastName);
+            this.Controls.Add(this.txtBoxMiddleName);
+            this.Controls.Add(this.lblMiddleName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "ReservationForm";
+            this.Text = "ReservationForm";
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownAge)).EndInit();
+            this.tableRooms.ResumeLayout(false);
+            this.tabControlMenu.ResumeLayout(false);
+            this.tabPageWithMenus.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -765,5 +829,8 @@
         private TabPage tabPageBuffet;
         private TabPage tabPageALLIn;
         private TabPage tabPageVipMenu;
+        private CheckedListBox checkedListBoxMenu;
+        private Label lblMenuDate;
+        private Button button1;
     }
 }
