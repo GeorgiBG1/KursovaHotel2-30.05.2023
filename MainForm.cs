@@ -14,6 +14,7 @@ namespace KursovaHotel2
     {
         private ReservationForm _reservationForm = new ReservationForm();
         private RoomForm _roomForm = new RoomForm();
+        private InformationForm _informationForm = new InformationForm();
         public MainForm()
         {
             InitializeComponent();
@@ -35,6 +36,14 @@ namespace KursovaHotel2
             this.splitContainer.Panel2.Controls.Add(_roomForm);
             this.splitContainer.Panel2.Tag = _roomForm;
             _roomForm.Show();
+        }
+        private void loadInformationForm()
+        {
+            _informationForm.TopLevel = false;
+            _informationForm.Dock = DockStyle.Fill;
+            this.splitContainer.Panel2.Controls.Add(_informationForm);
+            this.splitContainer.Panel2.Tag = _informationForm;
+            _informationForm.Show();
         }
 
         private void btnRoomForm_Click(object sender, EventArgs e)

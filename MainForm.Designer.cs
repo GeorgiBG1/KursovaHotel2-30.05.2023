@@ -29,65 +29,65 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.lblName = new System.Windows.Forms.Label();
-            this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.btnRoomForm = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
-            this.splitContainer.Panel2.SuspendLayout();
-            this.splitContainer.SuspendLayout();
-            this.SuspendLayout();
+            lblName = new Label();
+            splitContainer = new SplitContainer();
+            btnRoomForm = new Button();
+            ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
+            splitContainer.Panel2.SuspendLayout();
+            splitContainer.SuspendLayout();
+            SuspendLayout();
             // 
             // lblName
             // 
-            this.lblName.Font = new System.Drawing.Font("Segoe Script", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblName.Location = new System.Drawing.Point(359, 9);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(500, 45);
-            this.lblName.TabIndex = 7;
-            this.lblName.Text = "Хотел Арте";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblName.Font = new Font("Segoe Script", 27.75F, FontStyle.Italic, GraphicsUnit.Point);
+            lblName.Location = new Point(359, 9);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(500, 45);
+            lblName.TabIndex = 7;
+            lblName.Text = "Хотел Арте";
+            lblName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // splitContainer
             // 
-            this.splitContainer.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.splitContainer.Location = new System.Drawing.Point(12, 103);
-            this.splitContainer.Name = "splitContainer";
+            splitContainer.BackColor = SystemColors.ControlDark;
+            splitContainer.Location = new Point(12, 103);
+            splitContainer.Name = "splitContainer";
             // 
             // splitContainer.Panel2
             // 
-            this.splitContainer.Panel2.Controls.Add(this.btnRoomForm);
-            this.splitContainer.Size = new System.Drawing.Size(1240, 566);
-            this.splitContainer.SplitterDistance = 934;
-            this.splitContainer.TabIndex = 8;
+            splitContainer.Panel2.Controls.Add(btnRoomForm);
+            splitContainer.Size = new Size(1240, 566);
+            splitContainer.SplitterDistance = 934;
+            splitContainer.TabIndex = 8;
             // 
             // btnRoomForm
             // 
-            this.btnRoomForm.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnRoomForm.Location = new System.Drawing.Point(0, 0);
-            this.btnRoomForm.Name = "btnRoomForm";
-            this.btnRoomForm.Size = new System.Drawing.Size(18, 566);
-            this.btnRoomForm.TabIndex = 0;
-            this.btnRoomForm.Text = "Разгърни";
-            this.btnRoomForm.UseVisualStyleBackColor = true;
-            this.btnRoomForm.Click += new System.EventHandler(this.btnRoomForm_Click);
+            btnRoomForm.Dock = DockStyle.Left;
+            btnRoomForm.Location = new Point(0, 0);
+            btnRoomForm.Name = "btnRoomForm";
+            btnRoomForm.Size = new Size(18, 566);
+            btnRoomForm.TabIndex = 0;
+            btnRoomForm.Text = "Разгърни";
+            btnRoomForm.UseVisualStyleBackColor = true;
+            btnRoomForm.Click += btnRoomForm_Click;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.splitContainer);
-            this.Controls.Add(this.lblName);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MainForm";
-            this.Text = "MainForm";
-            this.splitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
-            this.splitContainer.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1264, 681);
+            Controls.Add(splitContainer);
+            Controls.Add(lblName);
+            Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            Name = "MainForm";
+            Text = "Хотел Арте";
+            splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer).EndInit();
+            splitContainer.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
