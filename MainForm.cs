@@ -18,6 +18,7 @@ namespace KursovaHotel2
         {
             InitializeComponent();
             loadReservationForm();
+            loadRoomForm();
         }
         private void loadReservationForm()
         {
@@ -27,26 +28,18 @@ namespace KursovaHotel2
             this.splitContainer.Panel1.Tag = _reservationForm;
             _reservationForm.Show();
         }
-        private void loadForm(Form form)
+        private void loadRoomForm()
         {
-            form.TopLevel = false;
-            form.Dock = DockStyle.Fill;
-            this.splitContainer.Panel2.Controls.Add(form);
-            this.splitContainer.Panel2.Tag = form;
-            form.Show();
-        }
-        private void hideForm(Form form)
-        {
-            form.Hide();
-        }
-        private void btnSelectRoom_Click(object sender, EventArgs e)
-        {
-            loadForm(_roomForm);
+            _roomForm.TopLevel = false;
+            _roomForm.Dock = DockStyle.Fill;
+            this.splitContainer.Panel2.Controls.Add(_roomForm);
+            this.splitContainer.Panel2.Tag = _roomForm;
+            _roomForm.Show();
         }
 
-        private void btnHideForm_Click(object sender, EventArgs e)
+        private void btnRoomForm_Click(object sender, EventArgs e)
         {
-            hideForm(new RoomForm());
+            //this.splitContainer.Panel2.Size
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReservationForm));
             this.btnDelAll = new System.Windows.Forms.Button();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.numUpDownAge = new System.Windows.Forms.NumericUpDown();
@@ -105,17 +106,20 @@
             // 
             // btnDelAll
             // 
+            this.btnDelAll.BackColor = System.Drawing.Color.LightGray;
+            this.btnDelAll.FlatAppearance.BorderSize = 0;
             this.btnDelAll.Location = new System.Drawing.Point(303, 565);
             this.btnDelAll.Name = "btnDelAll";
             this.btnDelAll.Size = new System.Drawing.Size(103, 35);
             this.btnDelAll.TabIndex = 92;
             this.btnDelAll.Text = "Зачисти БД";
-            this.btnDelAll.UseVisualStyleBackColor = true;
+            this.btnDelAll.UseVisualStyleBackColor = false;
             this.btnDelAll.Click += new System.EventHandler(this.btnDelAll_Click);
             // 
             // monthCalendar
             // 
             this.monthCalendar.Enabled = false;
+            this.monthCalendar.ForeColor = System.Drawing.Color.OrangeRed;
             this.monthCalendar.Location = new System.Drawing.Point(336, 334);
             this.monthCalendar.Name = "monthCalendar";
             this.monthCalendar.TabIndex = 91;
@@ -125,6 +129,7 @@
             // 
             // numUpDownAge
             // 
+            this.numUpDownAge.BackColor = System.Drawing.Color.LightGray;
             this.numUpDownAge.Location = new System.Drawing.Point(12, 351);
             this.numUpDownAge.Maximum = new decimal(new int[] {
             120,
@@ -137,6 +142,7 @@
             // 
             // txtBoxFirstName
             // 
+            this.txtBoxFirstName.BackColor = System.Drawing.Color.LightGray;
             this.txtBoxFirstName.Location = new System.Drawing.Point(12, 40);
             this.txtBoxFirstName.Name = "txtBoxFirstName";
             this.txtBoxFirstName.Size = new System.Drawing.Size(369, 23);
@@ -144,8 +150,10 @@
             // 
             // lblDateEnd
             // 
+            this.lblDateEnd.BackColor = System.Drawing.Color.Transparent;
             this.lblDateEnd.Enabled = false;
             this.lblDateEnd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblDateEnd.ForeColor = System.Drawing.Color.SkyBlue;
             this.lblDateEnd.Location = new System.Drawing.Point(12, 474);
             this.lblDateEnd.Name = "lblDateEnd";
             this.lblDateEnd.Size = new System.Drawing.Size(173, 26);
@@ -156,9 +164,10 @@
             // 
             // lblDateStart
             // 
-            this.lblDateStart.BackColor = System.Drawing.SystemColors.Control;
+            this.lblDateStart.BackColor = System.Drawing.Color.Transparent;
             this.lblDateStart.Enabled = false;
             this.lblDateStart.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblDateStart.ForeColor = System.Drawing.Color.SkyBlue;
             this.lblDateStart.Location = new System.Drawing.Point(12, 416);
             this.lblDateStart.Name = "lblDateStart";
             this.lblDateStart.Size = new System.Drawing.Size(173, 26);
@@ -169,7 +178,9 @@
             // 
             // lblDuration
             // 
+            this.lblDuration.BackColor = System.Drawing.Color.Transparent;
             this.lblDuration.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDuration.ForeColor = System.Drawing.Color.SkyBlue;
             this.lblDuration.Location = new System.Drawing.Point(11, 527);
             this.lblDuration.Name = "lblDuration";
             this.lblDuration.Size = new System.Drawing.Size(545, 23);
@@ -180,31 +191,36 @@
             // radioBtnGroupRes
             // 
             this.radioBtnGroupRes.AutoSize = true;
+            this.radioBtnGroupRes.BackColor = System.Drawing.Color.Transparent;
+            this.radioBtnGroupRes.ForeColor = System.Drawing.Color.SkyBlue;
             this.radioBtnGroupRes.Location = new System.Drawing.Point(12, 585);
             this.radioBtnGroupRes.Name = "radioBtnGroupRes";
             this.radioBtnGroupRes.Size = new System.Drawing.Size(142, 19);
             this.radioBtnGroupRes.TabIndex = 83;
             this.radioBtnGroupRes.Text = "Групова регистрация";
-            this.radioBtnGroupRes.UseVisualStyleBackColor = true;
+            this.radioBtnGroupRes.UseVisualStyleBackColor = false;
             this.radioBtnGroupRes.CheckedChanged += new System.EventHandler(this.radioBtnGroupRes_CheckedChanged);
             // 
             // radioBtnOneRes
             // 
             this.radioBtnOneRes.AutoSize = true;
+            this.radioBtnOneRes.BackColor = System.Drawing.Color.Transparent;
             this.radioBtnOneRes.Checked = true;
+            this.radioBtnOneRes.ForeColor = System.Drawing.Color.SkyBlue;
             this.radioBtnOneRes.Location = new System.Drawing.Point(12, 565);
             this.radioBtnOneRes.Name = "radioBtnOneRes";
             this.radioBtnOneRes.Size = new System.Drawing.Size(150, 19);
             this.radioBtnOneRes.TabIndex = 82;
             this.radioBtnOneRes.TabStop = true;
             this.radioBtnOneRes.Text = "Единична регистрация";
-            this.radioBtnOneRes.UseVisualStyleBackColor = true;
+            this.radioBtnOneRes.UseVisualStyleBackColor = false;
             this.radioBtnOneRes.CheckedChanged += new System.EventHandler(this.radioBtnOneRes_CheckedChanged);
             // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.SystemColors.Control;
+            this.btnNext.BackColor = System.Drawing.Color.LightGray;
             this.btnNext.Enabled = false;
+            this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.Location = new System.Drawing.Point(135, 609);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(138, 43);
@@ -216,8 +232,9 @@
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBack.BackColor = System.Drawing.Color.LightGray;
             this.btnBack.Enabled = false;
+            this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.Location = new System.Drawing.Point(2, 610);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(127, 42);
@@ -229,7 +246,8 @@
             // 
             // btnSaveRes
             // 
-            this.btnSaveRes.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSaveRes.BackColor = System.Drawing.Color.LightGray;
+            this.btnSaveRes.FlatAppearance.BorderSize = 0;
             this.btnSaveRes.Location = new System.Drawing.Point(279, 609);
             this.btnSaveRes.Name = "btnSaveRes";
             this.btnSaveRes.Size = new System.Drawing.Size(127, 43);
@@ -240,7 +258,9 @@
             // 
             // lblTotalPrice
             // 
+            this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalPrice.ForeColor = System.Drawing.Color.SkyBlue;
             this.lblTotalPrice.Location = new System.Drawing.Point(11, 498);
             this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
@@ -251,18 +271,20 @@
             // 
             // btnExpiredOn
             // 
+            this.btnExpiredOn.BackColor = System.Drawing.Color.LightGray;
             this.btnExpiredOn.Location = new System.Drawing.Point(12, 445);
             this.btnExpiredOn.Name = "btnExpiredOn";
             this.btnExpiredOn.Size = new System.Drawing.Size(241, 26);
             this.btnExpiredOn.TabIndex = 77;
             this.btnExpiredOn.Text = "Дата на заминаване";
-            this.btnExpiredOn.UseVisualStyleBackColor = true;
+            this.btnExpiredOn.UseVisualStyleBackColor = false;
             this.btnExpiredOn.Click += new System.EventHandler(this.btnExpiredOn_Click);
             // 
             // btnBookedOn
             // 
-            this.btnBookedOn.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBookedOn.BackColor = System.Drawing.Color.LightGray;
             this.btnBookedOn.Enabled = false;
+            this.btnBookedOn.FlatAppearance.BorderSize = 0;
             this.btnBookedOn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnBookedOn.Location = new System.Drawing.Point(12, 387);
             this.btnBookedOn.Name = "btnBookedOn";
@@ -274,7 +296,9 @@
             // 
             // lblAge
             // 
+            this.lblAge.BackColor = System.Drawing.Color.Transparent;
             this.lblAge.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAge.ForeColor = System.Drawing.Color.SkyBlue;
             this.lblAge.Location = new System.Drawing.Point(12, 325);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(307, 23);
@@ -284,6 +308,7 @@
             // 
             // txtBoxEmail
             // 
+            this.txtBoxEmail.BackColor = System.Drawing.Color.LightGray;
             this.txtBoxEmail.Location = new System.Drawing.Point(12, 299);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(369, 23);
@@ -291,7 +316,9 @@
             // 
             // lblEmail
             // 
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblEmail.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblEmail.Location = new System.Drawing.Point(12, 273);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(369, 23);
@@ -301,6 +328,7 @@
             // 
             // txtBoxPhoneNumber
             // 
+            this.txtBoxPhoneNumber.BackColor = System.Drawing.Color.LightGray;
             this.txtBoxPhoneNumber.Location = new System.Drawing.Point(12, 247);
             this.txtBoxPhoneNumber.Name = "txtBoxPhoneNumber";
             this.txtBoxPhoneNumber.Size = new System.Drawing.Size(369, 23);
@@ -308,7 +336,9 @@
             // 
             // lblPhoneNumber
             // 
+            this.lblPhoneNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPhoneNumber.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblPhoneNumber.Location = new System.Drawing.Point(12, 221);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(369, 23);
@@ -318,6 +348,7 @@
             // 
             // txtBoxEGN
             // 
+            this.txtBoxEGN.BackColor = System.Drawing.Color.LightGray;
             this.txtBoxEGN.Location = new System.Drawing.Point(12, 195);
             this.txtBoxEGN.Name = "txtBoxEGN";
             this.txtBoxEGN.Size = new System.Drawing.Size(369, 23);
@@ -325,7 +356,9 @@
             // 
             // lblEGN
             // 
+            this.lblEGN.BackColor = System.Drawing.Color.Transparent;
             this.lblEGN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblEGN.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblEGN.Location = new System.Drawing.Point(12, 169);
             this.lblEGN.Name = "lblEGN";
             this.lblEGN.Size = new System.Drawing.Size(369, 23);
@@ -335,6 +368,7 @@
             // 
             // txtBoxLastName
             // 
+            this.txtBoxLastName.BackColor = System.Drawing.Color.LightGray;
             this.txtBoxLastName.Location = new System.Drawing.Point(12, 144);
             this.txtBoxLastName.Name = "txtBoxLastName";
             this.txtBoxLastName.Size = new System.Drawing.Size(369, 23);
@@ -342,7 +376,9 @@
             // 
             // lblFirstName
             // 
+            this.lblFirstName.BackColor = System.Drawing.Color.Transparent;
             this.lblFirstName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFirstName.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblFirstName.Location = new System.Drawing.Point(12, 14);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(369, 23);
@@ -352,7 +388,9 @@
             // 
             // lblLastName
             // 
+            this.lblLastName.BackColor = System.Drawing.Color.Transparent;
             this.lblLastName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblLastName.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblLastName.Location = new System.Drawing.Point(12, 118);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(369, 23);
@@ -362,6 +400,7 @@
             // 
             // txtBoxMiddleName
             // 
+            this.txtBoxMiddleName.BackColor = System.Drawing.Color.LightGray;
             this.txtBoxMiddleName.Location = new System.Drawing.Point(12, 92);
             this.txtBoxMiddleName.Name = "txtBoxMiddleName";
             this.txtBoxMiddleName.Size = new System.Drawing.Size(369, 23);
@@ -369,7 +408,9 @@
             // 
             // lblMiddleName
             // 
+            this.lblMiddleName.BackColor = System.Drawing.Color.Transparent;
             this.lblMiddleName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMiddleName.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblMiddleName.Location = new System.Drawing.Point(12, 66);
             this.lblMiddleName.Name = "lblMiddleName";
             this.lblMiddleName.Size = new System.Drawing.Size(369, 23);
@@ -379,7 +420,7 @@
             // 
             // tableRooms
             // 
-            this.tableRooms.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableRooms.BackColor = System.Drawing.Color.Transparent;
             this.tableRooms.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.tableRooms.ColumnCount = 7;
             this.tableRooms.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
@@ -421,6 +462,7 @@
             // 
             // btnRoom35
             // 
+            this.btnRoom35.FlatAppearance.BorderSize = 0;
             this.btnRoom35.Location = new System.Drawing.Point(543, 118);
             this.btnRoom35.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom35.Name = "btnRoom35";
@@ -432,6 +474,7 @@
             // 
             // btnRoom34
             // 
+            this.btnRoom34.FlatAppearance.BorderSize = 0;
             this.btnRoom34.Location = new System.Drawing.Point(451, 118);
             this.btnRoom34.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom34.Name = "btnRoom34";
@@ -443,6 +486,7 @@
             // 
             // btnRoom33
             // 
+            this.btnRoom33.FlatAppearance.BorderSize = 0;
             this.btnRoom33.Location = new System.Drawing.Point(359, 118);
             this.btnRoom33.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom33.Name = "btnRoom33";
@@ -454,6 +498,7 @@
             // 
             // btnRoom32
             // 
+            this.btnRoom32.FlatAppearance.BorderSize = 0;
             this.btnRoom32.Location = new System.Drawing.Point(267, 118);
             this.btnRoom32.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom32.Name = "btnRoom32";
@@ -465,6 +510,7 @@
             // 
             // btnRoom31
             // 
+            this.btnRoom31.FlatAppearance.BorderSize = 0;
             this.btnRoom31.Location = new System.Drawing.Point(175, 118);
             this.btnRoom31.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom31.Name = "btnRoom31";
@@ -476,6 +522,7 @@
             // 
             // btnRoom25
             // 
+            this.btnRoom25.FlatAppearance.BorderSize = 0;
             this.btnRoom25.Location = new System.Drawing.Point(543, 60);
             this.btnRoom25.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom25.Name = "btnRoom25";
@@ -487,6 +534,7 @@
             // 
             // btnRoom24
             // 
+            this.btnRoom24.FlatAppearance.BorderSize = 0;
             this.btnRoom24.Location = new System.Drawing.Point(451, 60);
             this.btnRoom24.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom24.Name = "btnRoom24";
@@ -498,6 +546,7 @@
             // 
             // btnRoom23
             // 
+            this.btnRoom23.FlatAppearance.BorderSize = 0;
             this.btnRoom23.Location = new System.Drawing.Point(359, 60);
             this.btnRoom23.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom23.Name = "btnRoom23";
@@ -509,6 +558,7 @@
             // 
             // btnRoom22
             // 
+            this.btnRoom22.FlatAppearance.BorderSize = 0;
             this.btnRoom22.Location = new System.Drawing.Point(267, 60);
             this.btnRoom22.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom22.Name = "btnRoom22";
@@ -520,6 +570,7 @@
             // 
             // btnRoom21
             // 
+            this.btnRoom21.FlatAppearance.BorderSize = 0;
             this.btnRoom21.Location = new System.Drawing.Point(175, 60);
             this.btnRoom21.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom21.Name = "btnRoom21";
@@ -531,6 +582,7 @@
             // 
             // btnRoom20
             // 
+            this.btnRoom20.FlatAppearance.BorderSize = 0;
             this.btnRoom20.Location = new System.Drawing.Point(83, 60);
             this.btnRoom20.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom20.Name = "btnRoom20";
@@ -542,6 +594,7 @@
             // 
             // btnRoom14
             // 
+            this.btnRoom14.FlatAppearance.BorderSize = 0;
             this.btnRoom14.Location = new System.Drawing.Point(451, 2);
             this.btnRoom14.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom14.Name = "btnRoom14";
@@ -553,6 +606,7 @@
             // 
             // btnRoom13
             // 
+            this.btnRoom13.FlatAppearance.BorderSize = 0;
             this.btnRoom13.Location = new System.Drawing.Point(359, 2);
             this.btnRoom13.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom13.Name = "btnRoom13";
@@ -564,6 +618,7 @@
             // 
             // btnRoom12
             // 
+            this.btnRoom12.FlatAppearance.BorderSize = 0;
             this.btnRoom12.Location = new System.Drawing.Point(267, 2);
             this.btnRoom12.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom12.Name = "btnRoom12";
@@ -575,7 +630,7 @@
             // 
             // lblFloor3
             // 
-            this.lblFloor3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblFloor3.BackColor = System.Drawing.Color.LightGray;
             this.lblFloor3.Location = new System.Drawing.Point(2, 118);
             this.lblFloor3.Margin = new System.Windows.Forms.Padding(0);
             this.lblFloor3.Name = "lblFloor3";
@@ -586,6 +641,7 @@
             // 
             // btnRoom11
             // 
+            this.btnRoom11.FlatAppearance.BorderSize = 0;
             this.btnRoom11.Location = new System.Drawing.Point(175, 2);
             this.btnRoom11.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom11.Name = "btnRoom11";
@@ -597,7 +653,7 @@
             // 
             // lblFloor1
             // 
-            this.lblFloor1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblFloor1.BackColor = System.Drawing.Color.LightGray;
             this.lblFloor1.Location = new System.Drawing.Point(2, 2);
             this.lblFloor1.Margin = new System.Windows.Forms.Padding(0);
             this.lblFloor1.Name = "lblFloor1";
@@ -608,7 +664,7 @@
             // 
             // lblFloor2
             // 
-            this.lblFloor2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblFloor2.BackColor = System.Drawing.Color.LightGray;
             this.lblFloor2.Location = new System.Drawing.Point(2, 60);
             this.lblFloor2.Margin = new System.Windows.Forms.Padding(0);
             this.lblFloor2.Name = "lblFloor2";
@@ -619,6 +675,7 @@
             // 
             // btnRoom30
             // 
+            this.btnRoom30.FlatAppearance.BorderSize = 0;
             this.btnRoom30.Location = new System.Drawing.Point(83, 118);
             this.btnRoom30.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom30.Name = "btnRoom30";
@@ -630,6 +687,7 @@
             // 
             // btnRoom15
             // 
+            this.btnRoom15.FlatAppearance.BorderSize = 0;
             this.btnRoom15.Location = new System.Drawing.Point(543, 2);
             this.btnRoom15.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom15.Name = "btnRoom15";
@@ -641,13 +699,15 @@
             // 
             // btnRoom10
             // 
+            this.btnRoom10.BackColor = System.Drawing.Color.Transparent;
+            this.btnRoom10.FlatAppearance.BorderSize = 0;
             this.btnRoom10.Location = new System.Drawing.Point(83, 2);
             this.btnRoom10.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom10.Name = "btnRoom10";
             this.btnRoom10.Size = new System.Drawing.Size(90, 56);
             this.btnRoom10.TabIndex = 1;
             this.btnRoom10.Text = "Стая 10\r\nСвободна";
-            this.btnRoom10.UseVisualStyleBackColor = true;
+            this.btnRoom10.UseVisualStyleBackColor = false;
             this.btnRoom10.Click += new System.EventHandler(this.btnRoom10_Click);
             // 
             // tabControlMenu
@@ -873,6 +933,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1081, 657);
             this.Controls.Add(this.monthCalendar);
             this.Controls.Add(this.tabControlMenu);

@@ -59,5 +59,15 @@ namespace KursovaHotel2.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arte_spa_park_hotel_grey {
+            get {
+                object obj = ResourceManager.GetObject("arte-spa-park-hotel-grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
