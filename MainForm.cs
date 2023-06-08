@@ -18,7 +18,7 @@ namespace KursovaHotel2
         public MainForm()
         {
             InitializeComponent();
-            loadReservationForm();
+            loadInformationForm();
             loadRoomForm();
         }
         private void loadReservationForm()
@@ -41,14 +41,28 @@ namespace KursovaHotel2
         {
             _informationForm.TopLevel = false;
             _informationForm.Dock = DockStyle.Fill;
-            this.splitContainer.Panel2.Controls.Add(_informationForm);
-            this.splitContainer.Panel2.Tag = _informationForm;
+            this.splitContainer.Panel1.Controls.Add(_informationForm);
+            this.splitContainer.Panel1.Tag = _informationForm;
             _informationForm.Show();
         }
 
+        private void btnReservationForm_Click(object sender, EventArgs e)
+        {
+            if (btnReservationForm.Text == "Нова регистрация")
+            {
+                loadInformationForm();
+                btnReservationForm.Text = "Назад";
+            }
+            else if (btnReservationForm.Text == "Назад")
+            {
+                loadReservationForm();
+                btnReservationForm.Text = "Нова регистрация";
+            }
+        }
         private void btnRoomForm_Click(object sender, EventArgs e)
         {
             //this.splitContainer.Panel2.Size
         }
+
     }
 }

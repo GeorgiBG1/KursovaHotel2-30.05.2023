@@ -423,18 +423,24 @@ namespace KursovaHotel2
                 lblMenuOnOffPage3.Visible = false;
                 lblMenuOnOffPage4.Enabled = false;
                 lblMenuOnOffPage4.Visible = false;
+
                 DateTime menuDate = Reservation.BookedOn.Date;
-                int bookedOnDay = Reservation.BookedOn.Day;
-                bookedOnDay--;
-                int expiredOnDay = Reservation.ExpiredOn.Day;
-                while (bookedOnDay < expiredOnDay)
+                //int bookedOnDay = Reservation.BookedOn.Day;
+                int counter = Duration.Days;
+                while (counter >= 1)
                 {
+                    if (!Menus.Any())
+                    {
+                        Menus.Add(new Menu()
+                        { Date = menuDate });
+                    }
                     Menus.Add(new Menu()
                     {
-                        Date = menuDate.AddDays(bookedOnDay)
+                        Date = menuDate.AddDays(counter)
                     });
-                    bookedOnDay++;
+                    counter--;
                 }
+                Menus = Menus.OrderBy(m => m.Date).ToList();
                 return true;
             }
             return false;
@@ -568,6 +574,10 @@ namespace KursovaHotel2
                 menuIndex--;
                 lblMenuDate.Text = Menus[menuIndex].Date.ToShortDateString();
             }
+            if (btnNextDay.Text == "Завършек")
+            {
+                btnNextDay.Text = "Следващ ден";
+            }
         }
         private void checkedListBoxMenu_ItemCheck(object sender, ItemCheckEventArgs e)
         {
@@ -642,4 +652,3 @@ namespace KursovaHotel2
         }
     }
 }
-
