@@ -79,6 +79,7 @@
             this.btnReservationForm.TabIndex = 9;
             this.btnReservationForm.Text = "Нова регистрация";
             this.btnReservationForm.UseVisualStyleBackColor = true;
+            this.btnReservationForm.Click += new System.EventHandler(this.btnReservationForm_Click);
             // 
             // MainForm
             // 
