@@ -1,5 +1,6 @@
 ﻿using KursovaHotel.Data;
 using KursovaHotel.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -310,6 +311,21 @@ namespace KursovaHotel.Business
         {
             var allClients = dbContext.Clients.ToList();
             return allClients;
+        }
+        public List<Reservation> GetAllActiveReservations()
+        {
+            return dbContext.Reservations.Where(r => r.IsActive == true).ToList();
+        }
+        public List<Client> GetAllClientsOrderedByActiveReservations()
+        {
+            var allActiveReservations = GetAllActiveReservations();
+            var allClients = dbContext.Clients.Include(c=>c.Reservation).ToList();
+            return allClients;
+        }
+        public List<Reservation> GetAllReservations()
+        {
+            var allReservations = dbContext.Reservations.ToList();
+            return allReservations;
         }
         public List<MenuOption> GetMenuOptions()
         {

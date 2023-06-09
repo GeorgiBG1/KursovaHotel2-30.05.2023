@@ -9,6 +9,10 @@ namespace KursovaHotel.Data.Models
 {
     public class Reservation
     {
+        public Reservation()
+        {
+            Clients = new HashSet<Client>();
+        }
         public int Id { get; set; }
         public DateTime BookedOn { get; set; }
         public DateTime ExpiredOn { get; set; }
