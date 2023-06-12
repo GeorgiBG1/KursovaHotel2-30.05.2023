@@ -30,6 +30,10 @@
         {
             listBoxClients = new ListBox();
             listBoxReservations = new ListBox();
+            btnDisableRes = new Button();
+            numResIndex = new NumericUpDown();
+            btnRefresh = new Button();
+            ((System.ComponentModel.ISupportInitialize)numResIndex).BeginInit();
             SuspendLayout();
             // 
             // listBoxClients
@@ -53,11 +57,41 @@
             listBoxReservations.Size = new Size(566, 148);
             listBoxReservations.TabIndex = 2;
             // 
+            // btnDisableRes
+            // 
+            btnDisableRes.Location = new Point(654, 404);
+            btnDisableRes.Name = "btnDisableRes";
+            btnDisableRes.Size = new Size(197, 31);
+            btnDisableRes.TabIndex = 3;
+            btnDisableRes.Text = "Прекрати резервация";
+            btnDisableRes.UseVisualStyleBackColor = true;
+            btnDisableRes.Click += btnDisableRes_Click;
+            // 
+            // numResIndex
+            // 
+            numResIndex.Location = new Point(589, 404);
+            numResIndex.Name = "numResIndex";
+            numResIndex.Size = new Size(59, 27);
+            numResIndex.TabIndex = 4;
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.Location = new Point(861, 405);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(86, 30);
+            btnRefresh.TabIndex = 5;
+            btnRefresh.Text = "Опресни";
+            btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click;
+            // 
             // InformationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1217, 733);
+            Controls.Add(btnRefresh);
+            Controls.Add(numResIndex);
+            Controls.Add(btnDisableRes);
             Controls.Add(listBoxReservations);
             Controls.Add(listBoxClients);
             Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
@@ -65,6 +99,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "InformationForm";
             Text = "InformationForm";
+            ((System.ComponentModel.ISupportInitialize)numResIndex).EndInit();
             ResumeLayout(false);
         }
 
@@ -72,5 +107,8 @@
 
         private ListBox listBoxClients;
         private ListBox listBoxReservations;
+        private Button btnDisableRes;
+        private NumericUpDown numResIndex;
+        private Button btnRefresh;
     }
 }

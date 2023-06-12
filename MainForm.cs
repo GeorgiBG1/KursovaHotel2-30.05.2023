@@ -61,8 +61,7 @@ namespace KursovaHotel2
         }
         private void btnRoomForm_Click(object sender, EventArgs e)
         {
-            //this.splitContainer.Panel2.Size
+            this.splitContainer.Panel2.Scale(4.3f);
         }
-
     }
 }

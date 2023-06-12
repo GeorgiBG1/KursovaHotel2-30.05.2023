@@ -278,7 +278,7 @@ namespace KursovaHotel.Business
             dbContext.SaveChanges();
         }
         public void UpdateRoomsStatus()
-        {   var allClients = GetAllClients();
+        {   var allClients = GetAllClientsWithTheirReservationAndRoom();
             foreach (var client in allClients)
             {
                 if (client.Reservation!.IsActive)
@@ -313,13 +313,19 @@ namespace KursovaHotel.Business
         }
         public List<Room> GetAllRooms()
         {
-            var allRooms = dbContext.Rooms.ToList();
+            var allRooms = dbContext.Rooms
+                .Include(r=>r.RoomType).ToList();
             return allRooms;
         }
         public List<Client> GetAllClients()
         {
+            var allClients = dbContext.Clients.ToList();
+            return allClients;
+        }
+        public List<Client> GetAllClientsWithTheirReservationAndRoom()
+        {
             var allClients = dbContext.Clients
-                .Include(c=>c.Reservation)
+                .Include(c => c.Reservation)
                 .Include(c=>c.Room).ToList();
             return allClients;
         }
@@ -327,9 +333,8 @@ namespace KursovaHotel.Business
         {
             return dbContext.Reservations.Where(r => r.IsActive == true).ToList();
         }
-        public List<Client> GetAllClientsOrderedByActiveReservations()
+        public List<Client> GetAllClientsOrderedByReservations()
         {
-            var allActiveReservations = GetAllActiveReservations();
             var allClients = dbContext.Clients.Include(c => c.Reservation)
                 .Include(c => c.Room).ToList();
             return allClients;
@@ -339,13 +344,11 @@ namespace KursovaHotel.Business
             var allReservations = dbContext.Reservations.ToList();
             return allReservations;
         }
-        public List<MenuOption> GetMenuOptions()
+        public MenuVariety GetMenuVarietyByName(string name)
         {
-            return dbContext.MenuOptions.ToList();
-        }
-        public List<MenuVariety> GetAllMenuVarieties()
-        {
-            return dbContext.MenuVarieties.ToList();
+            var menuVariety = dbContext.MenuVarieties
+                .FirstOrDefault(mv => mv.Name == name);
+            return menuVariety!;
         }
         public void DeleteAll()
         {

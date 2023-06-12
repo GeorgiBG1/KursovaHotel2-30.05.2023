@@ -78,6 +78,7 @@ namespace KursovaHotel2
                     lblDateStart.Text = BookedOnDate.ToShortDateString();
                     lblDateStart.Visible = true;
                     Reservation.BookedOn = BookedOnDate;
+                    ResetAllTabPages();
                 }
             }
             else
@@ -189,10 +190,10 @@ namespace KursovaHotel2
             ClientRoom = HotelBusiness.GetAllRooms().FirstOrDefault(r => r.Id == roomId)!;
             ClientRoom.IsBooked = true;
             if (!HotelBusiness.GetAllClients().Any(c => c.RoomId == roomId))
-            {
-                Clients.Add(Client);
-                Reservation.IsActive = true;
+            { //Ponqkoga ne vliza tuk!!!
             }
+            Clients.Add(Client);
+            Reservation.IsActive = true;
         }
         private void PartialResetRegistrationForm()
         {
@@ -291,134 +292,115 @@ namespace KursovaHotel2
                 if (!room.IsBooked && room.Id != ClientRoom.Id)
                 {
                     rooms[room.RoomNumber].BackColor = Color.LightGreen;
+                    rooms[room.RoomNumber].Text = $"{rooms[room.RoomNumber].Text}\nсвободно";
                 }
                 else
                 {
                     rooms[room.RoomNumber].BackColor = Color.IndianRed;
+                    rooms[room.RoomNumber].Text = $"{rooms[room.RoomNumber].Text}\nзаето";
                 }
             }
             if (roomNumber != 0)
             {
                 var selectedRoom = rooms.FirstOrDefault(r => r.Key == roomNumber);
-                selectedRoom.Value.BackColor = Color.IndianRed;
+                selectedRoom.Value.BackColor = Color.CadetBlue;
+                selectedRoom.Value.Text = $"{selectedRoom.Value.Text}\n{Clients.Count}";
             }
-        }
-        private void SelectRoom(Button room)
-        {
-            room.BackColor = Color.IndianRed;
         }
         private void btnRoom10_Click(object sender, EventArgs e)
         {
             roomId = 1;
-            SelectRoom(btnRoom10);
             ShowAllRooms(10);
         }
         private void btnRoom11_Click(object sender, EventArgs e)
         {
             roomId = 2;
-            SelectRoom(btnRoom11);
             ShowAllRooms(11);
         }
         private void btnRoom12_Click(object sender, EventArgs e)
         {
             roomId = 3;
-            SelectRoom(btnRoom12);
             ShowAllRooms(12);
         }
         private void btnRoom13_Click(object sender, EventArgs e)
         {
             roomId = 4;
-            SelectRoom(btnRoom13);
             ShowAllRooms(13);
         }
         private void btnRoom14_Click(object sender, EventArgs e)
         {
             roomId = 5;
-            SelectRoom(btnRoom14);
             ShowAllRooms(14);
         }
         private void btnRoom15_Click(object sender, EventArgs e)
         {
             roomId = 6;
-            SelectRoom(btnRoom15);
             ShowAllRooms(15);
         }
         private void btnRoom20_Click(object sender, EventArgs e)
         {
             roomId = 7;
-            SelectRoom(btnRoom20);
             ShowAllRooms(20);
         }
         private void btnRoom21_Click(object sender, EventArgs e)
         {
             roomId = 8;
-            SelectRoom(btnRoom22);
             ShowAllRooms(21);
         }
         private void btnRoom22_Click(object sender, EventArgs e)
         {
             roomId = 9;
-            SelectRoom(btnRoom22);
             ShowAllRooms(22);
         }
         private void btnRoom23_Click(object sender, EventArgs e)
         {
             roomId = 10;
-            SelectRoom(btnRoom23);
             ShowAllRooms(23);
         }
         private void btnRoom24_Click(object sender, EventArgs e)
         {
             roomId = 11;
-            SelectRoom(btnRoom24);
             ShowAllRooms(24);
         }
         private void btnRoom25_Click(object sender, EventArgs e)
         {
             roomId = 12;
-            SelectRoom(btnRoom25);
             ShowAllRooms(25);
         }
         private void btnRoom30_Click(object sender, EventArgs e)
         {
             roomId = 13;
-            SelectRoom(btnRoom30);
             ShowAllRooms(30);
         }
         private void btnRoom31_Click(object sender, EventArgs e)
         {
             roomId = 14;
-            SelectRoom(btnRoom31);
             ShowAllRooms(31);
         }
         private void btnRoom32_Click(object sender, EventArgs e)
         {
             roomId = 15;
-            SelectRoom(btnRoom32);
             ShowAllRooms(32);
         }
         private void btnRoom33_Click(object sender, EventArgs e)
         {
             roomId = 16;
-            SelectRoom(btnRoom33);
             ShowAllRooms(33);
         }
         private void btnRoom34_Click(object sender, EventArgs e)
         {
             roomId = 17;
-            SelectRoom(btnRoom34);
             ShowAllRooms(34);
         }
         private void btnRoom35_Click(object sender, EventArgs e)
         {
             roomId = 18;
-            SelectRoom(btnRoom35);
             ShowAllRooms(35);
         }
         private bool AddMenu()
         {
             Menus = new List<Menu>();
-            if (Duration.Days > 1)
+            if (Duration.Days >= 1 && Reservation.BookedOn.Year != 1)
             {
                 lblMenuOnOffPage1.Enabled = false;
                 lblMenuOnOffPage1.Visible = false;
@@ -470,15 +452,45 @@ namespace KursovaHotel2
         }
         private void tabPageBuffet_Click(object sender, EventArgs e)
         {
-            AddMenu();
+            if (AddMenu())
+            {
+                var menuVarietyBuffet = HotelBusiness
+                    .GetMenuVarietyByName("Buffet");
+                lblBuffetInfo.Enabled = true;
+                lblBuffetInfo.Visible = true;
+                lblBuffetInfo.Text += $"{menuVarietyBuffet.Description}\n" +
+                    $"Закуска: ✓\n" +
+                    $"Обяд: ✓\n" +
+                    $"Вечеря: ✓";
+            }
         }
         private void tabPageALLIn_Click(object sender, EventArgs e)
         {
-            AddMenu();
+            if (AddMenu())
+            {
+                var menuVarietyAllIn = HotelBusiness
+                    .GetMenuVarietyByName("All Inclusive");
+                lblAllInclusiveInfo.Enabled = true;
+                lblAllInclusiveInfo.Visible = true;
+                lblAllInclusiveInfo.Text += $"{menuVarietyAllIn.Description}\n" +
+                    $"Закуска: ✓\n" +
+                    $"Обяд: ✓\n" +
+                    $"Вечеря: ✓";
+            }
         }
         private void tabPageVipMenu_Click(object sender, EventArgs e)
         {
-            AddMenu();
+            if (AddMenu())
+            {
+                var menuVarietyVip = HotelBusiness
+                    .GetMenuVarietyByName("VIP");
+                lblVipMenuInfo.Enabled = true;
+                lblVipMenuInfo.Visible = true;
+                lblVipMenuInfo.Text += $"{menuVarietyVip.Description}\n" +
+                    $"Закуска: ✓\n" +
+                    $"Обяд: ✓\n" +
+                    $"Вечеря: ✓";
+            }
         }
         private void AddMenuOption()
         {
@@ -583,10 +595,6 @@ namespace KursovaHotel2
             {
                 btnNextDay.Text = "Следващ ден";
             }
-        }
-        private void checkedListBoxMenu_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            //SelectMenuOption();
         }
         private void AddAllMenus()
         {

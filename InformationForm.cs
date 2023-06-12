@@ -17,11 +17,11 @@ namespace KursovaHotel2
         public InformationForm()
         {
             InitializeComponent();
-            ShowAllClientsWithActiveReservation();
+            ShowAllClientsAndReservations();
         }
-        public void ShowAllClientsWithActiveReservation()
+        public void ShowAllClientsAndReservations()
         {
-            var allClients = HotelBusiness.GetAllClientsOrderedByActiveReservations();
+            var allClients = HotelBusiness.GetAllClientsOrderedByReservations();
             foreach (var client in allClients)
             {
                 Label reservationStatus = new Label();
@@ -36,14 +36,32 @@ namespace KursovaHotel2
                 listBoxClients.Items.Add($"{client.FirstName} " +
                     $"{client.MiddleName} {client.SurName} " +
                     $"ЕГН: {client.EGN} Email: {client.Email} " +
-                    $"Телефон: {client.PhoneNumber} Стая: {client.Room?.RoomNumber}");
+                    $"Телефон: {client.PhoneNumber} Стая: {client.Room?.RoomNumber} " +
+                    $"Резервация №{client.ReservationId}");
 
-                var selectedClient = listBoxClients.SelectedItem;
                 listBoxReservations.Items.Add(
                     $"Номер на резервацията: {client.Reservation?.Id}. " +
                     $"Престой: {client.Reservation?.Duration} нощувки Цена: {client.Reservation?.Price}лв " +
                     $"{reservationStatus.Text}");
             }
+        }
+
+        private void btnDisableRes_Click(object sender, EventArgs e)
+        {
+            var allRes = HotelBusiness.GetAllReservations();
+            HotelBusiness.UpdateReservationsStatus(allRes.FirstOrDefault(r => r.Id == numResIndex.Value)!);
+            HotelBusiness.UpdateRoomsStatus();
+            listBoxClients.Items.Clear();
+            listBoxReservations.Items.Clear();
+            ShowAllClientsAndReservations();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            HotelBusiness.UpdateRoomsStatus();
+            listBoxClients.Items.Clear();
+            listBoxReservations.Items.Clear();
+            ShowAllClientsAndReservations();
         }
     }
 }

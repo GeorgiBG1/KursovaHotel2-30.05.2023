@@ -28,7 +28,7 @@ namespace KursovaHotel.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=.;Database=HotelDB;" +
+                optionsBuilder.UseSqlServer("Server=DESKTOP-FII733Q\\SQLEXPRESS;Database=HotelDB;" +
                     "Integrated Security=true;TrustServerCertificate=true;");
             }
         }
