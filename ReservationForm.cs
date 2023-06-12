@@ -35,7 +35,8 @@ namespace KursovaHotel2
         {
             InitializeComponent();
             ShowAllRooms();
-            HotelBusiness.UpdateReservationStatus();
+            HotelBusiness.UpdateReservationsStatus();
+            HotelBusiness.UpdateRoomsStatus();
         }
         private void radioBtnGroupRes_CheckedChanged(object sender, EventArgs e)
         {
@@ -227,6 +228,8 @@ namespace KursovaHotel2
                 AddNewClient(roomId);
                 ResetRegistrationForm();
                 HotelBusiness.AddClientsWithTheirReservation(Clients, Reservation);
+                HotelBusiness.UpdateReservationsStatus();
+                HotelBusiness.UpdateRoomsStatus();
                 AddAllMenus();
                 ResetAllTabPages();
                 BookedOnDate = new DateTime();
@@ -241,6 +244,8 @@ namespace KursovaHotel2
                 AddNewClient(roomId);
                 ResetRegistrationForm();
                 HotelBusiness.AddClientsWithTheirReservation(Clients, Reservation);
+                HotelBusiness.UpdateReservationsStatus();
+                HotelBusiness.UpdateRoomsStatus();
                 AddAllMenus();
                 ResetAllTabPages();
                 BookedOnDate = new DateTime();

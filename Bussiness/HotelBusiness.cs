@@ -272,18 +272,27 @@ namespace KursovaHotel.Business
             foreach (var client in clients)
             {
                 client.ReservationId = currentReservation.Id;
-                UpdateRoomsStatus(client);
+                UpdateRoomsStatus();
                 dbContext.Clients.Add(client);
             }
             dbContext.SaveChanges();
         }
-        public void UpdateRoomsStatus(Client client)
-        {
-            var clientRoom = dbContext.Rooms.FirstOrDefault(r => r.Id == client.RoomId);
-            clientRoom!.IsBooked = true;
+        public void UpdateRoomsStatus()
+        {   var allClients = GetAllClients();
+            foreach (var client in allClients)
+            {
+                if (client.Reservation!.IsActive)
+                {
+                    client.Room!.IsBooked = true;
+                }
+                else
+                {
+                    client.Room!.IsBooked = false;
+                }
+            }
             dbContext.SaveChanges();
         }
-        public void UpdateReservationStatus(Reservation reservation = null!)
+        public void UpdateReservationsStatus(Reservation reservation = null!)
         {
             if (reservation != null)
             {
@@ -293,7 +302,7 @@ namespace KursovaHotel.Business
             else
             {
                 var expiredReservations = dbContext.Reservations
-                    .Where(r => r.ExpiredOn == DateTime.Today).ToList();
+                    .Where(r => r.ExpiredOn <= DateTime.Today).ToList();
                 foreach (var res in expiredReservations)
                 {
                     res.IsActive = false;
@@ -309,7 +318,9 @@ namespace KursovaHotel.Business
         }
         public List<Client> GetAllClients()
         {
-            var allClients = dbContext.Clients.ToList();
+            var allClients = dbContext.Clients
+                .Include(c=>c.Reservation)
+                .Include(c=>c.Room).ToList();
             return allClients;
         }
         public List<Reservation> GetAllActiveReservations()
@@ -319,8 +330,8 @@ namespace KursovaHotel.Business
         public List<Client> GetAllClientsOrderedByActiveReservations()
         {
             var allActiveReservations = GetAllActiveReservations();
-            var allClients = dbContext.Clients.Include(c=>c.Reservation)
-                .Include(c=>c.Room).ToList();
+            var allClients = dbContext.Clients.Include(c => c.Reservation)
+                .Include(c => c.Room).ToList();
             return allClients;
         }
         public List<Reservation> GetAllReservations()

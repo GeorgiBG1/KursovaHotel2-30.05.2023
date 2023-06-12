@@ -27,13 +27,11 @@ namespace KursovaHotel2
                 Label reservationStatus = new Label();
                 if (client.Reservation!.IsActive)
                 {
-                    reservationStatus.Text = "\u2713";
-                    reservationStatus.ForeColor = Color.Green;
+                    reservationStatus.Text = "Статус: \u2713";
                 }
                 else
                 {
-                    reservationStatus.Text = "X";
-                    reservationStatus.ForeColor = Color.Red;
+                    reservationStatus.Text = "Статус: X";
                 }
                 listBoxClients.Items.Add($"{client.FirstName} " +
                     $"{client.MiddleName} {client.SurName} " +
