@@ -319,7 +319,8 @@ namespace KursovaHotel.Business
         public List<Client> GetAllClientsOrderedByActiveReservations()
         {
             var allActiveReservations = GetAllActiveReservations();
-            var allClients = dbContext.Clients.Include(c=>c.Reservation).ToList();
+            var allClients = dbContext.Clients.Include(c=>c.Reservation)
+                .Include(c=>c.Room).ToList();
             return allClients;
         }
         public List<Reservation> GetAllReservations()

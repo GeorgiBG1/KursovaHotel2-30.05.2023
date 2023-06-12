@@ -28,48 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.listBoxClients = new System.Windows.Forms.ListBox();
             this.listBoxReservations = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // listBoxClients
+            // 
+            this.listBoxClients.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listBoxClients.FormattingEnabled = true;
+            this.listBoxClients.ItemHeight = 18;
+            this.listBoxClients.Location = new System.Drawing.Point(12, 13);
+            this.listBoxClients.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listBoxClients.Name = "listBoxClients";
+            this.listBoxClients.Size = new System.Drawing.Size(1049, 382);
+            this.listBoxClients.TabIndex = 1;
             // 
             // listBoxReservations
             // 
+            this.listBoxReservations.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBoxReservations.FormattingEnabled = true;
-            this.listBoxReservations.ItemHeight = 15;
-            this.listBoxReservations.Location = new System.Drawing.Point(12, 42);
+            this.listBoxReservations.ItemHeight = 18;
+            this.listBoxReservations.Location = new System.Drawing.Point(12, 404);
             this.listBoxReservations.Name = "listBoxReservations";
-            this.listBoxReservations.Size = new System.Drawing.Size(508, 574);
-            this.listBoxReservations.TabIndex = 1;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 15;
-            this.listBox2.Location = new System.Drawing.Point(545, 42);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(508, 574);
-            this.listBox2.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(121, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.listBoxReservations.Size = new System.Drawing.Size(469, 148);
+            this.listBoxReservations.TabIndex = 2;
             // 
             // InformationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 618);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox2);
+            this.ClientSize = new System.Drawing.Size(1217, 733);
             this.Controls.Add(this.listBoxReservations);
+            this.Controls.Add(this.listBoxClients);
+            this.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "InformationForm";
             this.Text = "InformationForm";
             this.ResumeLayout(false);
@@ -78,8 +71,7 @@
 
         #endregion
 
+        private ListBox listBoxClients;
         private ListBox listBoxReservations;
-        private ListBox listBox2;
-        private Button button1;
     }
 }

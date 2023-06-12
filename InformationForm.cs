@@ -17,20 +17,35 @@ namespace KursovaHotel2
         public InformationForm()
         {
             InitializeComponent();
-            
+            ShowAllClientsWithActiveReservation();
         }
-        public void ShowAllClients()
+        public void ShowAllClientsWithActiveReservation()
         {
             var allClients = HotelBusiness.GetAllClientsOrderedByActiveReservations();
             foreach (var client in allClients)
             {
-                listBoxReservations.Items.Add($"{client.FirstName}");
-            }
-        }
+                Label reservationStatus = new Label();
+                if (client.Reservation!.IsActive)
+                {
+                    reservationStatus.Text = "\u2713";
+                    reservationStatus.ForeColor = Color.Green;
+                }
+                else
+                {
+                    reservationStatus.Text = "X";
+                    reservationStatus.ForeColor = Color.Red;
+                }
+                listBoxClients.Items.Add($"{client.FirstName} " +
+                    $"{client.MiddleName} {client.SurName} " +
+                    $"ЕГН: {client.EGN} Email: {client.Email} " +
+                    $"Телефон: {client.PhoneNumber} Стая: {client.Room?.RoomNumber}");
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ShowAllClients();
+                var selectedClient = listBoxClients.SelectedItem;
+                listBoxReservations.Items.Add(
+                    $"Номер на резервацията: {client.Reservation?.Id}. " +
+                    $"Престой: {client.Reservation?.Duration} нощувки Цена: {client.Reservation?.Price}лв " +
+                    $"{reservationStatus.Text}");
+            }
         }
     }
 }

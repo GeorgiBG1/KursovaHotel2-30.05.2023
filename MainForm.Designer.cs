@@ -57,8 +57,9 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.Controls.Add(this.btnRoomForm);
+            this.splitContainer.Panel2MinSize = 161;
             this.splitContainer.Size = new System.Drawing.Size(1240, 566);
-            this.splitContainer.SplitterDistance = 934;
+            this.splitContainer.SplitterDistance = 1075;
             this.splitContainer.TabIndex = 8;
             // 
             // btnRoomForm
