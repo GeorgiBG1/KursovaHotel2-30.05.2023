@@ -80,6 +80,7 @@
             btnRoom10 = new Button();
             tabControlMenu = new TabControl();
             tabPageWithMenus = new TabPage();
+            checkedListBoxMenu = new CheckedListBox();
             lblMenuOnOffPage1 = new Label();
             lblDinner = new Label();
             lblLunch = new Label();
@@ -88,16 +89,15 @@
             lblSelectedMenu = new Label();
             btnNextDay = new Button();
             lblMenuDate = new Label();
-            checkedListBoxMenu = new CheckedListBox();
             tabPageBuffet = new TabPage();
             lblBuffetInfo = new Label();
             lblMenuOnOffPage2 = new Label();
             tabPageALLIn = new TabPage();
+            lblAllInclusiveInfo = new Label();
             lblMenuOnOffPage3 = new Label();
             tabPageVipMenu = new TabPage();
-            lblMenuOnOffPage4 = new Label();
-            lblAllInclusiveInfo = new Label();
             lblVipMenuInfo = new Label();
+            lblMenuOnOffPage4 = new Label();
             ((System.ComponentModel.ISupportInitialize)numUpDownAge).BeginInit();
             tableRooms.SuspendLayout();
             tabControlMenu.SuspendLayout();
@@ -724,6 +724,7 @@
             // 
             // tabPageWithMenus
             // 
+            tabPageWithMenus.Controls.Add(checkedListBoxMenu);
             tabPageWithMenus.Controls.Add(lblMenuOnOffPage1);
             tabPageWithMenus.Controls.Add(lblDinner);
             tabPageWithMenus.Controls.Add(lblLunch);
@@ -732,7 +733,6 @@
             tabPageWithMenus.Controls.Add(lblSelectedMenu);
             tabPageWithMenus.Controls.Add(btnNextDay);
             tabPageWithMenus.Controls.Add(lblMenuDate);
-            tabPageWithMenus.Controls.Add(checkedListBoxMenu);
             tabPageWithMenus.Location = new Point(4, 24);
             tabPageWithMenus.Name = "tabPageWithMenus";
             tabPageWithMenus.Padding = new Padding(3);
@@ -741,6 +741,19 @@
             tabPageWithMenus.Text = "Обикновено меню";
             tabPageWithMenus.UseVisualStyleBackColor = true;
             tabPageWithMenus.Click += tabPageWithMenus_Click;
+            // 
+            // checkedListBoxMenu
+            // 
+            checkedListBoxMenu.BackColor = SystemColors.Control;
+            checkedListBoxMenu.Enabled = false;
+            checkedListBoxMenu.Font = new Font("Garamond", 20.25F, FontStyle.Italic, GraphicsUnit.Point);
+            checkedListBoxMenu.FormattingEnabled = true;
+            checkedListBoxMenu.Items.AddRange(new object[] { "Закуска", "Обяд", "Вечеря" });
+            checkedListBoxMenu.Location = new Point(30, 51);
+            checkedListBoxMenu.Name = "checkedListBoxMenu";
+            checkedListBoxMenu.Size = new Size(260, 202);
+            checkedListBoxMenu.TabIndex = 95;
+            checkedListBoxMenu.Visible = false;
             // 
             // lblMenuOnOffPage1
             // 
@@ -842,19 +855,6 @@
             lblMenuDate.TextAlign = ContentAlignment.MiddleCenter;
             lblMenuDate.Visible = false;
             // 
-            // checkedListBoxMenu
-            // 
-            checkedListBoxMenu.BackColor = SystemColors.Control;
-            checkedListBoxMenu.Enabled = false;
-            checkedListBoxMenu.Font = new Font("Garamond", 20.25F, FontStyle.Italic, GraphicsUnit.Point);
-            checkedListBoxMenu.FormattingEnabled = true;
-            checkedListBoxMenu.Items.AddRange(new object[] { "Закуска", "Обяд", "Вечеря" });
-            checkedListBoxMenu.Location = new Point(30, 51);
-            checkedListBoxMenu.Name = "checkedListBoxMenu";
-            checkedListBoxMenu.Size = new Size(260, 202);
-            checkedListBoxMenu.TabIndex = 0;
-            checkedListBoxMenu.Visible = false;
-            // 
             // tabPageBuffet
             // 
             tabPageBuffet.Controls.Add(lblBuffetInfo);
@@ -905,6 +905,19 @@
             tabPageALLIn.UseVisualStyleBackColor = true;
             tabPageALLIn.Click += tabPageALLIn_Click;
             // 
+            // lblAllInclusiveInfo
+            // 
+            lblAllInclusiveInfo.BackColor = SystemColors.Control;
+            lblAllInclusiveInfo.Enabled = false;
+            lblAllInclusiveInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblAllInclusiveInfo.Location = new Point(113, 10);
+            lblAllInclusiveInfo.Name = "lblAllInclusiveInfo";
+            lblAllInclusiveInfo.Size = new Size(400, 284);
+            lblAllInclusiveInfo.TabIndex = 97;
+            lblAllInclusiveInfo.Text = "Описание на All Inclusive пакет:\r\n";
+            lblAllInclusiveInfo.TextAlign = ContentAlignment.TopCenter;
+            lblAllInclusiveInfo.Visible = false;
+            // 
             // lblMenuOnOffPage3
             // 
             lblMenuOnOffPage3.BackColor = SystemColors.Control;
@@ -929,30 +942,6 @@
             tabPageVipMenu.UseVisualStyleBackColor = true;
             tabPageVipMenu.Click += tabPageVipMenu_Click;
             // 
-            // lblMenuOnOffPage4
-            // 
-            lblMenuOnOffPage4.BackColor = SystemColors.Control;
-            lblMenuOnOffPage4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            lblMenuOnOffPage4.Location = new Point(175, 144);
-            lblMenuOnOffPage4.Name = "lblMenuOnOffPage4";
-            lblMenuOnOffPage4.Size = new Size(276, 56);
-            lblMenuOnOffPage4.TabIndex = 96;
-            lblMenuOnOffPage4.Text = "Изберете дати\r\nна резервацията!";
-            lblMenuOnOffPage4.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblAllInclusiveInfo
-            // 
-            lblAllInclusiveInfo.BackColor = SystemColors.Control;
-            lblAllInclusiveInfo.Enabled = false;
-            lblAllInclusiveInfo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            lblAllInclusiveInfo.Location = new Point(113, 10);
-            lblAllInclusiveInfo.Name = "lblAllInclusiveInfo";
-            lblAllInclusiveInfo.Size = new Size(400, 284);
-            lblAllInclusiveInfo.TabIndex = 97;
-            lblAllInclusiveInfo.Text = "Описание на All Inclusive пакет:\r\n";
-            lblAllInclusiveInfo.TextAlign = ContentAlignment.TopCenter;
-            lblAllInclusiveInfo.Visible = false;
-            // 
             // lblVipMenuInfo
             // 
             lblVipMenuInfo.BackColor = SystemColors.Control;
@@ -965,6 +954,17 @@
             lblVipMenuInfo.Text = "Описание на VIP менюто:\r\n";
             lblVipMenuInfo.TextAlign = ContentAlignment.TopCenter;
             lblVipMenuInfo.Visible = false;
+            // 
+            // lblMenuOnOffPage4
+            // 
+            lblMenuOnOffPage4.BackColor = SystemColors.Control;
+            lblMenuOnOffPage4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblMenuOnOffPage4.Location = new Point(175, 144);
+            lblMenuOnOffPage4.Name = "lblMenuOnOffPage4";
+            lblMenuOnOffPage4.Size = new Size(276, 56);
+            lblMenuOnOffPage4.TabIndex = 96;
+            lblMenuOnOffPage4.Text = "Изберете дати\r\nна резервацията!";
+            lblMenuOnOffPage4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ReservationForm
             // 

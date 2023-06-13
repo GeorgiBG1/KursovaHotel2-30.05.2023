@@ -90,6 +90,7 @@ namespace KursovaHotel2
                     lblDateEnd.Text = ExpiredOnDate.ToShortDateString();
                     lblDateEnd.Visible = true;
                     Reservation.ExpiredOn = ExpiredOnDate;
+                    ResetAllTabPages();
                 }
                 btnBookedOn.Enabled = true;
             }
@@ -397,6 +398,39 @@ namespace KursovaHotel2
             roomId = 18;
             ShowAllRooms(35);
         }
+        private void ResetAllTabPages()
+        {
+            lblMenuOnOffPage1.Enabled = true;
+            lblMenuOnOffPage1.Visible = true;
+            lblMenuOnOffPage2.Enabled = true;
+            lblMenuOnOffPage2.Visible = true;
+            lblMenuOnOffPage3.Enabled = true;
+            lblMenuOnOffPage3.Visible = true;
+            lblMenuOnOffPage4.Enabled = true;
+            lblMenuOnOffPage4.Visible = true;
+            lblMenuDate.Enabled = false;
+            lblMenuDate.Visible = false;
+            lblSelectedMenu.Enabled = false;
+            lblSelectedMenu.Visible = false;
+            checkedListBoxMenu.Enabled = false;
+            checkedListBoxMenu.Visible = false;
+            checkedListBoxMenu.Items.Clear();
+            checkedListBoxMenu.Items.Add("Закуска");
+            checkedListBoxMenu.Items.Add("Обяд");
+            checkedListBoxMenu.Items.Add("Вечеря");
+            Menus = new List<Menu>();
+            menuIndex = 0;
+            lblBreakfast.Enabled = false;
+            lblBreakfast.Visible = false;
+            lblLunch.Enabled = false;
+            lblLunch.Visible = false;
+            lblDinner.Enabled = false;
+            lblDinner.Visible = false;
+            btnPreviousDay.Enabled = false;
+            btnPreviousDay.Visible = false;
+            btnNextDay.Enabled = false;
+            btnNextDay.Visible = false;
+        }
         private bool AddMenu()
         {
             Menus = new List<Menu>();
@@ -634,34 +668,6 @@ namespace KursovaHotel2
                     menu.MenuVarietyId = 1;
                 }
             }
-        }
-        private void ResetAllTabPages()
-        {
-            lblMenuOnOffPage1.Enabled = true;
-            lblMenuOnOffPage1.Visible = true;
-            lblMenuOnOffPage2.Enabled = true;
-            lblMenuOnOffPage2.Visible = true;
-            lblMenuOnOffPage3.Enabled = true;
-            lblMenuOnOffPage3.Visible = true;
-            lblMenuOnOffPage4.Enabled = true;
-            lblMenuOnOffPage4.Visible = true;
-            lblMenuDate.Enabled = false;
-            lblMenuDate.Visible = false;
-            lblSelectedMenu.Enabled = false;
-            lblSelectedMenu.Visible = false;
-            checkedListBoxMenu.Enabled = false;
-            checkedListBoxMenu.Visible = false;
-            checkedListBoxMenu.Items.Clear();
-            lblBreakfast.Enabled = false;
-            lblBreakfast.Visible = false;
-            lblLunch.Enabled = false;
-            lblLunch.Visible = false;
-            lblDinner.Enabled = false;
-            lblDinner.Visible = false;
-            btnPreviousDay.Enabled = false;
-            btnPreviousDay.Visible = false;
-            btnNextDay.Enabled = false;
-            btnNextDay.Visible = false;
         }
     }
 }
