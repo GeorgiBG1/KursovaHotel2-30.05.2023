@@ -30,6 +30,9 @@ namespace KursovaHotel2
         private int menuIndex = 0;
         private List<Menu> Menus = new List<Menu>();
         private Menu Menu = new Menu();
+        private MenuVariety menuVarietyBuffet = new MenuVariety();
+        private MenuVariety menuVarietyAllIn = new MenuVariety();
+        private MenuVariety menuVarietyVip = new MenuVariety();
 
         public ReservationForm()
         {
@@ -293,19 +296,16 @@ namespace KursovaHotel2
                 if (!room.IsBooked && room.Id != ClientRoom.Id)
                 {
                     rooms[room.RoomNumber].BackColor = Color.LightGreen;
-                    rooms[room.RoomNumber].Text = $"{rooms[room.RoomNumber].Text}\nсвободно";
                 }
                 else
                 {
                     rooms[room.RoomNumber].BackColor = Color.IndianRed;
-                    rooms[room.RoomNumber].Text = $"{rooms[room.RoomNumber].Text}\nзаето";
                 }
             }
             if (roomNumber != 0)
             {
                 var selectedRoom = rooms.FirstOrDefault(r => r.Key == roomNumber);
                 selectedRoom.Value.BackColor = Color.CadetBlue;
-                selectedRoom.Value.Text = $"{selectedRoom.Value.Text}\n{Clients.Count}";
             }
         }
         private void btnRoom10_Click(object sender, EventArgs e)
@@ -430,6 +430,7 @@ namespace KursovaHotel2
             btnPreviousDay.Visible = false;
             btnNextDay.Enabled = false;
             btnNextDay.Visible = false;
+            btnNextDay.Text = "Следващ ден";
         }
         private bool AddMenu()
         {
@@ -486,9 +487,9 @@ namespace KursovaHotel2
         }
         private void tabPageBuffet_Click(object sender, EventArgs e)
         {
-            if (AddMenu())
+            if (AddMenu() && menuVarietyBuffet.Name == null)
             {
-                var menuVarietyBuffet = HotelBusiness
+                menuVarietyBuffet = HotelBusiness
                     .GetMenuVarietyByName("Buffet");
                 lblBuffetInfo.Enabled = true;
                 lblBuffetInfo.Visible = true;
@@ -500,9 +501,9 @@ namespace KursovaHotel2
         }
         private void tabPageALLIn_Click(object sender, EventArgs e)
         {
-            if (AddMenu())
+            if (AddMenu() && menuVarietyAllIn.Name == null)
             {
-                var menuVarietyAllIn = HotelBusiness
+                menuVarietyAllIn = HotelBusiness
                     .GetMenuVarietyByName("All Inclusive");
                 lblAllInclusiveInfo.Enabled = true;
                 lblAllInclusiveInfo.Visible = true;
@@ -514,9 +515,9 @@ namespace KursovaHotel2
         }
         private void tabPageVipMenu_Click(object sender, EventArgs e)
         {
-            if (AddMenu())
+            if (AddMenu() && menuVarietyVip.Name == null)
             {
-                var menuVarietyVip = HotelBusiness
+                menuVarietyVip = HotelBusiness
                     .GetMenuVarietyByName("VIP");
                 lblVipMenuInfo.Enabled = true;
                 lblVipMenuInfo.Visible = true;

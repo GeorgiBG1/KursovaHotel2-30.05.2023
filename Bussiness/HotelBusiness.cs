@@ -335,7 +335,7 @@ namespace KursovaHotel.Business
         }
         public List<Client> GetAllClientsOrderedByReservations()
         {
-            var allClients = dbContext.Clients.Include(c => c.Reservation)
+            var allClients = dbContext.Clients.Include(c => c.Reservation).ThenInclude(r=>r!.Menus)
                 .Include(c => c.Room).ToList();
             return allClients;
         }
@@ -348,6 +348,12 @@ namespace KursovaHotel.Business
         {
             var menuVariety = dbContext.MenuVarieties
                 .FirstOrDefault(mv => mv.Name == name);
+            return menuVariety!;
+        }
+        public MenuVariety GetMenuVarietyById(int id)
+        {
+            var menuVariety = dbContext.MenuVarieties
+                .FirstOrDefault(mv => mv.Id == id);
             return menuVariety!;
         }
         public void DeleteAll()

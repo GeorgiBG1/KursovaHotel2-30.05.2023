@@ -1,4 +1,5 @@
 ﻿using KursovaHotel.Business;
+using KursovaHotel.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,13 @@ namespace KursovaHotel2
             foreach (var client in allClients)
             {
                 Label reservationStatus = new Label();
+                var menu = client.Reservation!.Menus!.FirstOrDefault();
+                var menuVariety = new MenuVariety();
+                if (menu != null)
+                {
+                    menuVariety = HotelBusiness
+                       .GetMenuVarietyById(menu!.MenuVarietyId);
+                }
                 if (client.Reservation!.IsActive)
                 {
                     reservationStatus.Text = "Статус: \u2713";
@@ -40,8 +48,9 @@ namespace KursovaHotel2
                     $"Резервация №{client.ReservationId}");
 
                 listBoxReservations.Items.Add(
-                    $"Номер на резервацията: {client.Reservation?.Id}. " +
-                    $"Престой: {client.Reservation?.Duration} нощувки Цена: {client.Reservation?.Price}лв " +
+                    $"Резервация №{client.Reservation?.Id}. " +
+                    $"Меню: {menuVariety.Name}" +
+                    $" Престой: {client.Reservation?.Duration} нощувки Цена: {client.Reservation?.Price}лв " +
                     $"{reservationStatus.Text}");
             }
         }
