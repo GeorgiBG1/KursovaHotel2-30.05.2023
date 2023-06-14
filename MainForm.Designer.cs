@@ -29,84 +29,66 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            lblName = new Label();
-            splitContainer = new SplitContainer();
-            btnRoomForm = new Button();
-            btnReservationForm = new Button();
-            ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
-            splitContainer.Panel2.SuspendLayout();
-            splitContainer.SuspendLayout();
-            SuspendLayout();
+            this.lblName = new System.Windows.Forms.Label();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.btnReservationForm = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.SuspendLayout();
+            this.SuspendLayout();
             // 
             // lblName
             // 
-            lblName.Font = new Font("Segoe Script", 27.75F, FontStyle.Italic, GraphicsUnit.Point);
-            lblName.Location = new Point(359, 9);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(500, 45);
-            lblName.TabIndex = 7;
-            lblName.Text = "Хотел Арте";
-            lblName.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblName.Font = new System.Drawing.Font("Segoe Script", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblName.Location = new System.Drawing.Point(359, 9);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(500, 45);
+            this.lblName.TabIndex = 7;
+            this.lblName.Text = "Хотел Арте";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // splitContainer
             // 
-            splitContainer.BackColor = SystemColors.ControlDark;
-            splitContainer.Location = new Point(12, 103);
-            splitContainer.Name = "splitContainer";
-            // 
-            // splitContainer.Panel2
-            // 
-            splitContainer.Panel2.Controls.Add(btnRoomForm);
-            splitContainer.Panel2MinSize = 161;
-            splitContainer.Size = new Size(1240, 566);
-            splitContainer.SplitterDistance = 1075;
-            splitContainer.TabIndex = 8;
-            // 
-            // btnRoomForm
-            // 
-            btnRoomForm.Dock = DockStyle.Left;
-            btnRoomForm.Location = new Point(0, 0);
-            btnRoomForm.Name = "btnRoomForm";
-            btnRoomForm.Size = new Size(18, 566);
-            btnRoomForm.TabIndex = 0;
-            btnRoomForm.Text = "Разгърни";
-            btnRoomForm.UseVisualStyleBackColor = true;
-            btnRoomForm.Click += btnRoomForm_Click;
+            this.splitContainer.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.splitContainer.Location = new System.Drawing.Point(12, 103);
+            this.splitContainer.Name = "splitContainer";
+            this.splitContainer.Panel2MinSize = 161;
+            this.splitContainer.Size = new System.Drawing.Size(1240, 566);
+            this.splitContainer.SplitterDistance = 1075;
+            this.splitContainer.TabIndex = 8;
             // 
             // btnReservationForm
             // 
-            btnReservationForm.Location = new Point(12, 49);
-            btnReservationForm.Name = "btnReservationForm";
-            btnReservationForm.Size = new Size(142, 48);
-            btnReservationForm.TabIndex = 9;
-            btnReservationForm.Text = "Нова регистрация";
-            btnReservationForm.UseVisualStyleBackColor = true;
-            btnReservationForm.Click += btnReservationForm_Click;
+            this.btnReservationForm.Location = new System.Drawing.Point(12, 49);
+            this.btnReservationForm.Name = "btnReservationForm";
+            this.btnReservationForm.Size = new System.Drawing.Size(142, 48);
+            this.btnReservationForm.TabIndex = 9;
+            this.btnReservationForm.Text = "Нова регистрация";
+            this.btnReservationForm.UseVisualStyleBackColor = true;
+            this.btnReservationForm.Click += new System.EventHandler(this.btnReservationForm_Click);
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(6F, 13F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1264, 681);
-            Controls.Add(btnReservationForm);
-            Controls.Add(splitContainer);
-            Controls.Add(lblName);
-            Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
-            Name = "MainForm";
-            Text = "Хотел Арте";
-            splitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)splitContainer).EndInit();
-            splitContainer.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btnReservationForm);
+            this.Controls.Add(this.splitContainer);
+            this.Controls.Add(this.lblName);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "MainForm";
+            this.Text = "Хотел Арте";
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
+            this.splitContainer.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
         private Label lblName;
         private SplitContainer splitContainer;
-        private Button btnRoomForm;
         private Button btnReservationForm;
     }
 }

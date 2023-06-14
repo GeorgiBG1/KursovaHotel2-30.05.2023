@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformationForm));
             this.listBoxClients = new System.Windows.Forms.ListBox();
             this.listBoxReservations = new System.Windows.Forms.ListBox();
             this.btnDisableRes = new System.Windows.Forms.Button();
@@ -65,6 +66,7 @@
             this.btnDisableRes.TabIndex = 3;
             this.btnDisableRes.Text = "Прекрати резервация";
             this.btnDisableRes.UseVisualStyleBackColor = true;
+            this.btnDisableRes.Click += new System.EventHandler(this.btnDisableRes_Click);
             // 
             // numResIndex
             // 
@@ -81,11 +83,14 @@
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.Text = "Опресни";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // InformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1217, 733);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.numResIndex);

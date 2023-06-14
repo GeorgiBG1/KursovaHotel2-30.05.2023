@@ -59,9 +59,6 @@ namespace KursovaHotel2
                 btnReservationForm.Text = "Нова регистрация";
             }
         }
-        private void btnRoomForm_Click(object sender, EventArgs e)
-        {
-            this.splitContainer.Panel2.Scale(4.3f);
-        }
+        
     }
 }
