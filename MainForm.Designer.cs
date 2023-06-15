@@ -58,6 +58,12 @@
             // 
             // btnReservationForm
             // 
+            this.btnReservationForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReservationForm.BackgroundImage")));
+            this.btnReservationForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReservationForm.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnReservationForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReservationForm.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReservationForm.ForeColor = System.Drawing.Color.White;
             this.btnReservationForm.Location = new System.Drawing.Point(12, 49);
             this.btnReservationForm.Name = "btnReservationForm";
             this.btnReservationForm.Size = new System.Drawing.Size(142, 48);

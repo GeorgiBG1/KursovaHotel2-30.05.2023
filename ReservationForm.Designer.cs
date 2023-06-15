@@ -110,6 +110,7 @@
             // btnDelAll
             // 
             this.btnDelAll.BackColor = System.Drawing.Color.Red;
+            this.btnDelAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelAll.FlatAppearance.BorderSize = 0;
             this.btnDelAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelAll.Location = new System.Drawing.Point(303, 565);
@@ -148,6 +149,7 @@
             // txtBoxFirstName
             // 
             this.txtBoxFirstName.BackColor = System.Drawing.Color.LightGray;
+            this.txtBoxFirstName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBoxFirstName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBoxFirstName.Location = new System.Drawing.Point(12, 40);
             this.txtBoxFirstName.Name = "txtBoxFirstName";
@@ -198,6 +200,7 @@
             // 
             this.radioBtnGroupRes.AutoSize = true;
             this.radioBtnGroupRes.BackColor = System.Drawing.Color.Transparent;
+            this.radioBtnGroupRes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioBtnGroupRes.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.radioBtnGroupRes.ForeColor = System.Drawing.Color.SkyBlue;
             this.radioBtnGroupRes.Location = new System.Drawing.Point(12, 585);
@@ -213,6 +216,7 @@
             this.radioBtnOneRes.AutoSize = true;
             this.radioBtnOneRes.BackColor = System.Drawing.Color.Transparent;
             this.radioBtnOneRes.Checked = true;
+            this.radioBtnOneRes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioBtnOneRes.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.radioBtnOneRes.ForeColor = System.Drawing.Color.SkyBlue;
             this.radioBtnOneRes.Location = new System.Drawing.Point(12, 565);
@@ -228,6 +232,7 @@
             // 
             this.btnNext.BackColor = System.Drawing.Color.LightGray;
             this.btnNext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNext.BackgroundImage")));
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNext.Enabled = false;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.ForeColor = System.Drawing.Color.SkyBlue;
@@ -244,6 +249,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.Color.Transparent;
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Enabled = false;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.ForeColor = System.Drawing.Color.SkyBlue;
@@ -260,6 +266,7 @@
             // 
             this.btnSaveRes.BackColor = System.Drawing.Color.LightGray;
             this.btnSaveRes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRes.BackgroundImage")));
+            this.btnSaveRes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveRes.ForeColor = System.Drawing.Color.SkyBlue;
             this.btnSaveRes.Location = new System.Drawing.Point(279, 609);
@@ -287,6 +294,7 @@
             // 
             this.btnExpiredOn.BackColor = System.Drawing.Color.LightGray;
             this.btnExpiredOn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExpiredOn.BackgroundImage")));
+            this.btnExpiredOn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExpiredOn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExpiredOn.ForeColor = System.Drawing.Color.SkyBlue;
             this.btnExpiredOn.Location = new System.Drawing.Point(12, 445);
@@ -312,6 +320,7 @@
             // txtBoxEmail
             // 
             this.txtBoxEmail.BackColor = System.Drawing.Color.LightGray;
+            this.txtBoxEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBoxEmail.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBoxEmail.Location = new System.Drawing.Point(12, 299);
             this.txtBoxEmail.Name = "txtBoxEmail";
@@ -333,6 +342,7 @@
             // txtBoxPhoneNumber
             // 
             this.txtBoxPhoneNumber.BackColor = System.Drawing.Color.LightGray;
+            this.txtBoxPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBoxPhoneNumber.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBoxPhoneNumber.Location = new System.Drawing.Point(12, 247);
             this.txtBoxPhoneNumber.Name = "txtBoxPhoneNumber";
@@ -354,6 +364,7 @@
             // txtBoxEGN
             // 
             this.txtBoxEGN.BackColor = System.Drawing.Color.LightGray;
+            this.txtBoxEGN.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBoxEGN.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBoxEGN.Location = new System.Drawing.Point(12, 195);
             this.txtBoxEGN.Name = "txtBoxEGN";
@@ -375,6 +386,7 @@
             // txtBoxLastName
             // 
             this.txtBoxLastName.BackColor = System.Drawing.Color.LightGray;
+            this.txtBoxLastName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBoxLastName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBoxLastName.Location = new System.Drawing.Point(12, 144);
             this.txtBoxLastName.Name = "txtBoxLastName";
@@ -408,6 +420,7 @@
             // txtBoxMiddleName
             // 
             this.txtBoxMiddleName.BackColor = System.Drawing.Color.LightGray;
+            this.txtBoxMiddleName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBoxMiddleName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBoxMiddleName.Location = new System.Drawing.Point(12, 92);
             this.txtBoxMiddleName.Name = "txtBoxMiddleName";
@@ -470,7 +483,10 @@
             // 
             // btnRoom35
             // 
+            this.btnRoom35.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom35.FlatAppearance.BorderSize = 0;
+            this.btnRoom35.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom35.ForeColor = System.Drawing.Color.White;
             this.btnRoom35.Location = new System.Drawing.Point(543, 118);
             this.btnRoom35.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom35.Name = "btnRoom35";
@@ -482,7 +498,10 @@
             // 
             // btnRoom34
             // 
+            this.btnRoom34.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom34.FlatAppearance.BorderSize = 0;
+            this.btnRoom34.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom34.ForeColor = System.Drawing.Color.White;
             this.btnRoom34.Location = new System.Drawing.Point(451, 118);
             this.btnRoom34.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom34.Name = "btnRoom34";
@@ -494,7 +513,10 @@
             // 
             // btnRoom33
             // 
+            this.btnRoom33.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom33.FlatAppearance.BorderSize = 0;
+            this.btnRoom33.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom33.ForeColor = System.Drawing.Color.White;
             this.btnRoom33.Location = new System.Drawing.Point(359, 118);
             this.btnRoom33.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom33.Name = "btnRoom33";
@@ -506,7 +528,10 @@
             // 
             // btnRoom32
             // 
+            this.btnRoom32.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom32.FlatAppearance.BorderSize = 0;
+            this.btnRoom32.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom32.ForeColor = System.Drawing.Color.White;
             this.btnRoom32.Location = new System.Drawing.Point(267, 118);
             this.btnRoom32.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom32.Name = "btnRoom32";
@@ -518,7 +543,10 @@
             // 
             // btnRoom31
             // 
+            this.btnRoom31.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom31.FlatAppearance.BorderSize = 0;
+            this.btnRoom31.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom31.ForeColor = System.Drawing.Color.White;
             this.btnRoom31.Location = new System.Drawing.Point(175, 118);
             this.btnRoom31.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom31.Name = "btnRoom31";
@@ -530,7 +558,10 @@
             // 
             // btnRoom25
             // 
+            this.btnRoom25.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom25.FlatAppearance.BorderSize = 0;
+            this.btnRoom25.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom25.ForeColor = System.Drawing.Color.White;
             this.btnRoom25.Location = new System.Drawing.Point(543, 60);
             this.btnRoom25.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom25.Name = "btnRoom25";
@@ -542,7 +573,10 @@
             // 
             // btnRoom24
             // 
+            this.btnRoom24.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom24.FlatAppearance.BorderSize = 0;
+            this.btnRoom24.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom24.ForeColor = System.Drawing.Color.White;
             this.btnRoom24.Location = new System.Drawing.Point(451, 60);
             this.btnRoom24.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom24.Name = "btnRoom24";
@@ -554,7 +588,10 @@
             // 
             // btnRoom23
             // 
+            this.btnRoom23.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom23.FlatAppearance.BorderSize = 0;
+            this.btnRoom23.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom23.ForeColor = System.Drawing.Color.White;
             this.btnRoom23.Location = new System.Drawing.Point(359, 60);
             this.btnRoom23.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom23.Name = "btnRoom23";
@@ -566,7 +603,10 @@
             // 
             // btnRoom22
             // 
+            this.btnRoom22.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom22.FlatAppearance.BorderSize = 0;
+            this.btnRoom22.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom22.ForeColor = System.Drawing.Color.White;
             this.btnRoom22.Location = new System.Drawing.Point(267, 60);
             this.btnRoom22.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom22.Name = "btnRoom22";
@@ -578,7 +618,10 @@
             // 
             // btnRoom21
             // 
+            this.btnRoom21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom21.FlatAppearance.BorderSize = 0;
+            this.btnRoom21.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom21.ForeColor = System.Drawing.Color.White;
             this.btnRoom21.Location = new System.Drawing.Point(175, 60);
             this.btnRoom21.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom21.Name = "btnRoom21";
@@ -590,7 +633,10 @@
             // 
             // btnRoom20
             // 
+            this.btnRoom20.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom20.FlatAppearance.BorderSize = 0;
+            this.btnRoom20.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom20.ForeColor = System.Drawing.Color.White;
             this.btnRoom20.Location = new System.Drawing.Point(83, 60);
             this.btnRoom20.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom20.Name = "btnRoom20";
@@ -602,7 +648,10 @@
             // 
             // btnRoom14
             // 
+            this.btnRoom14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom14.FlatAppearance.BorderSize = 0;
+            this.btnRoom14.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom14.ForeColor = System.Drawing.Color.White;
             this.btnRoom14.Location = new System.Drawing.Point(451, 2);
             this.btnRoom14.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom14.Name = "btnRoom14";
@@ -614,7 +663,10 @@
             // 
             // btnRoom13
             // 
+            this.btnRoom13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom13.FlatAppearance.BorderSize = 0;
+            this.btnRoom13.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom13.ForeColor = System.Drawing.Color.White;
             this.btnRoom13.Location = new System.Drawing.Point(359, 2);
             this.btnRoom13.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom13.Name = "btnRoom13";
@@ -626,7 +678,10 @@
             // 
             // btnRoom12
             // 
+            this.btnRoom12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom12.FlatAppearance.BorderSize = 0;
+            this.btnRoom12.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom12.ForeColor = System.Drawing.Color.White;
             this.btnRoom12.Location = new System.Drawing.Point(267, 2);
             this.btnRoom12.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom12.Name = "btnRoom12";
@@ -639,6 +694,7 @@
             // lblFloor3
             // 
             this.lblFloor3.BackColor = System.Drawing.Color.Gray;
+            this.lblFloor3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblFloor3.Location = new System.Drawing.Point(2, 118);
             this.lblFloor3.Margin = new System.Windows.Forms.Padding(0);
             this.lblFloor3.Name = "lblFloor3";
@@ -649,7 +705,10 @@
             // 
             // btnRoom11
             // 
+            this.btnRoom11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom11.FlatAppearance.BorderSize = 0;
+            this.btnRoom11.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom11.ForeColor = System.Drawing.Color.White;
             this.btnRoom11.Location = new System.Drawing.Point(175, 2);
             this.btnRoom11.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom11.Name = "btnRoom11";
@@ -662,6 +721,7 @@
             // lblFloor1
             // 
             this.lblFloor1.BackColor = System.Drawing.Color.Gray;
+            this.lblFloor1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblFloor1.Location = new System.Drawing.Point(2, 2);
             this.lblFloor1.Margin = new System.Windows.Forms.Padding(0);
             this.lblFloor1.Name = "lblFloor1";
@@ -673,6 +733,7 @@
             // lblFloor2
             // 
             this.lblFloor2.BackColor = System.Drawing.Color.Gray;
+            this.lblFloor2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblFloor2.Location = new System.Drawing.Point(2, 60);
             this.lblFloor2.Margin = new System.Windows.Forms.Padding(0);
             this.lblFloor2.Name = "lblFloor2";
@@ -683,7 +744,10 @@
             // 
             // btnRoom30
             // 
+            this.btnRoom30.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom30.FlatAppearance.BorderSize = 0;
+            this.btnRoom30.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom30.ForeColor = System.Drawing.Color.White;
             this.btnRoom30.Location = new System.Drawing.Point(83, 118);
             this.btnRoom30.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom30.Name = "btnRoom30";
@@ -695,7 +759,10 @@
             // 
             // btnRoom15
             // 
+            this.btnRoom15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom15.FlatAppearance.BorderSize = 0;
+            this.btnRoom15.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom15.ForeColor = System.Drawing.Color.White;
             this.btnRoom15.Location = new System.Drawing.Point(543, 2);
             this.btnRoom15.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom15.Name = "btnRoom15";
@@ -708,7 +775,10 @@
             // btnRoom10
             // 
             this.btnRoom10.BackColor = System.Drawing.Color.Transparent;
+            this.btnRoom10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom10.FlatAppearance.BorderSize = 0;
+            this.btnRoom10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnRoom10.ForeColor = System.Drawing.Color.White;
             this.btnRoom10.Location = new System.Drawing.Point(83, 2);
             this.btnRoom10.Margin = new System.Windows.Forms.Padding(0);
             this.btnRoom10.Name = "btnRoom10";
@@ -753,6 +823,7 @@
             // checkedListBoxMenu
             // 
             this.checkedListBoxMenu.BackColor = System.Drawing.SystemColors.Control;
+            this.checkedListBoxMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkedListBoxMenu.Enabled = false;
             this.checkedListBoxMenu.Font = new System.Drawing.Font("Garamond", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.checkedListBoxMenu.FormattingEnabled = true;
@@ -818,6 +889,7 @@
             // 
             // btnPreviousDay
             // 
+            this.btnPreviousDay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPreviousDay.Enabled = false;
             this.btnPreviousDay.Location = new System.Drawing.Point(30, 281);
             this.btnPreviousDay.Name = "btnPreviousDay";
@@ -843,6 +915,7 @@
             // 
             // btnNextDay
             // 
+            this.btnNextDay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNextDay.Enabled = false;
             this.btnNextDay.Location = new System.Drawing.Point(175, 281);
             this.btnNextDay.Name = "btnNextDay";
@@ -981,6 +1054,7 @@
             // 
             this.btnBookedOn.BackColor = System.Drawing.Color.Transparent;
             this.btnBookedOn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBookedOn.BackgroundImage")));
+            this.btnBookedOn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBookedOn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBookedOn.ForeColor = System.Drawing.Color.SkyBlue;
             this.btnBookedOn.Location = new System.Drawing.Point(12, 387);

@@ -55,11 +55,17 @@
             this.listBoxReservations.ItemHeight = 18;
             this.listBoxReservations.Location = new System.Drawing.Point(12, 404);
             this.listBoxReservations.Name = "listBoxReservations";
-            this.listBoxReservations.Size = new System.Drawing.Size(714, 148);
+            this.listBoxReservations.Size = new System.Drawing.Size(781, 148);
             this.listBoxReservations.TabIndex = 2;
             // 
             // btnDisableRes
             // 
+            this.btnDisableRes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDisableRes.BackgroundImage")));
+            this.btnDisableRes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDisableRes.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDisableRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisableRes.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDisableRes.ForeColor = System.Drawing.Color.White;
             this.btnDisableRes.Location = new System.Drawing.Point(864, 409);
             this.btnDisableRes.Name = "btnDisableRes";
             this.btnDisableRes.Size = new System.Drawing.Size(197, 37);
@@ -77,7 +83,12 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(889, 452);
+            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(893, 452);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(129, 30);
             this.btnRefresh.TabIndex = 5;

@@ -295,11 +295,11 @@ namespace KursovaHotel2
             {
                 if (!room.IsBooked && room.Id != ClientRoom.Id)
                 {
-                    rooms[room.RoomNumber].BackColor = Color.LightGreen;
+                    rooms[room.RoomNumber].BackColor = Color.DarkGreen;
                 }
                 else
                 {
-                    rooms[room.RoomNumber].BackColor = Color.IndianRed;
+                    rooms[room.RoomNumber].BackColor = Color.DarkRed;
                 }
             }
             if (roomNumber != 0)

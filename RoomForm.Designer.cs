@@ -272,6 +272,7 @@
             // 
             // pictureBox30
             // 
+            this.pictureBox30.BackColor = System.Drawing.Color.White;
             this.pictureBox30.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox30.Image")));
             this.pictureBox30.Location = new System.Drawing.Point(926, 480);
             this.pictureBox30.Name = "pictureBox30";

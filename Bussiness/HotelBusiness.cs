@@ -178,8 +178,8 @@ namespace KursovaHotel.Business
 
                 Room flat9 = new Room();
                 flat9.RoomNumber = 35;
-                flat9.Description = "Апартамент с пет кралски легла с гледка към морето и басейна, с бар, кухня с готварски прибори, с 4 бани, с 3 телевизора, с рутер в стаята, безплатен масаж, румсервиз, с три тераси, вътрешен басейн в една от баните.";
-                flat9.Price = 5000;
+                flat9.Description = "Апартамент с пет кралски легла с гледка към морето и басейна, с бар, кухня с готварски прибори, с 4 бани, с 3 телевизора, с рутер в стаята, безплатен масаж, румсервиз, с две тераси.";
+                flat9.Price = 850;
                 flat9.RoomTypeId = 5;
                 dbContext.Rooms.Add(flat9);
                 #endregion
@@ -192,22 +192,22 @@ namespace KursovaHotel.Business
             {
                 MenuVariety menuVariety = new MenuVariety();
                 menuVariety.Name = "VIP";
-                menuVariety.Description = "С тази услуга клиента може да яде специалитет, и да пие първокласни напитки.";
+                menuVariety.Description = "С тази услуга клиентите могат да консумират специалитети и да пият първокласни напитки.";
                 dbContext.MenuVarieties.Add(menuVariety);
 
                 MenuVariety menuVariety2 = new MenuVariety();
                 menuVariety2.Name = "All Inclusive";
-                menuVariety2.Description = "Тази услуга позволява клиента да се храни услуга блок маса и има безплатани напитки.";
+                menuVariety2.Description = "Тази услуга позволява клиентите да се хранят с пакет (блок маса) и са включени безплатни напитки.";
                 dbContext.MenuVarieties.Add(menuVariety2);
 
                 MenuVariety menuVariety3 = new MenuVariety();
                 menuVariety3.Name = "Buffet";
-                menuVariety3.Description = "Клиентирте могат да се хранят каквото искат но без безплатни напитки";
+                menuVariety3.Description = "Клиентите могат да се хранят с услуга (блок маса), но не са включени безплатни напитки.";
                 dbContext.MenuVarieties.Add(menuVariety3);
 
                 MenuVariety menuVariety4 = new MenuVariety();
                 menuVariety4.Name = "With menus";
-                menuVariety4.Description = "Даваме едно меню на клиента и им взимаме поръчките.";
+                menuVariety4.Description = "Клиентитеполучават меню, от което могат да поръчват храни и напитки, но ги заплащат на място.";
                 dbContext.MenuVarieties.Add(menuVariety4);
                 dbContext.SaveChanges();
             }

@@ -28,7 +28,7 @@ namespace KursovaHotel.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=PC-EMIR;Database=HotelDB;" +
+                optionsBuilder.UseSqlServer("Server=DESKTOP-QGA8MH9;Database=HotelDB;" +
                     "Integrated Security=true;TrustServerCertificate=true;");
             }
         }
