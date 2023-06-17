@@ -24,12 +24,12 @@ namespace KursovaHotel2
         private int clientIndex = 0;
         private Client Client = new Client();
         private Room ClientRoom = new Room();
+        private List<Room> ClientRooms = new List<Room>();
         private int roomId;
         private Reservation Reservation = new Reservation();
         private List<Client> Clients = new List<Client>();
         private int menuIndex = 0;
         private List<Menu> Menus = new List<Menu>();
-        private Menu Menu = new Menu();
         private MenuVariety menuVarietyBuffet = new MenuVariety();
         private MenuVariety menuVarietyAllIn = new MenuVariety();
         private MenuVariety menuVarietyVip = new MenuVariety();
@@ -193,9 +193,6 @@ namespace KursovaHotel2
             Client.RoomId = roomId;
             ClientRoom = HotelBusiness.GetAllRooms().FirstOrDefault(r => r.Id == roomId)!;
             ClientRoom.IsBooked = true;
-            if (!HotelBusiness.GetAllClients().Any(c => c.RoomId == roomId))
-            { //Ponqkoga ne vliza tuk!!!
-            }
             Clients.Add(Client);
             Reservation.IsActive = true;
         }
@@ -231,6 +228,7 @@ namespace KursovaHotel2
             if (radioBtnOneRes.Checked)
             {
                 AddNewClient(roomId);
+                CalculatePriceReservation();
                 ResetRegistrationForm();
                 HotelBusiness.AddClientsWithTheirReservation(Clients, Reservation);
                 HotelBusiness.UpdateReservationsStatus();
@@ -247,6 +245,7 @@ namespace KursovaHotel2
             else if (radioBtnGroupRes.Checked)
             {
                 AddNewClient(roomId);
+                CalculatePriceReservation();
                 ResetRegistrationForm();
                 HotelBusiness.AddClientsWithTheirReservation(Clients, Reservation);
                 HotelBusiness.UpdateReservationsStatus();
@@ -412,6 +411,12 @@ namespace KursovaHotel2
             lblMenuDate.Visible = false;
             lblSelectedMenu.Enabled = false;
             lblSelectedMenu.Visible = false;
+            lblBuffetInfo.Enabled = false;
+            lblBuffetInfo.Visible = false;
+            lblAllInclusiveInfo.Enabled = false;
+            lblAllInclusiveInfo.Visible = false;
+            lblVipMenuInfo.Enabled = false;
+            lblVipMenuInfo.Visible = false;
             checkedListBoxMenu.Enabled = false;
             checkedListBoxMenu.Visible = false;
             checkedListBoxMenu.Items.Clear();
@@ -419,6 +424,9 @@ namespace KursovaHotel2
             checkedListBoxMenu.Items.Add("Обяд");
             checkedListBoxMenu.Items.Add("Вечеря");
             Menus = new List<Menu>();
+            menuVarietyBuffet = new MenuVariety();
+            menuVarietyAllIn = new MenuVariety();
+            menuVarietyVip = new MenuVariety();
             menuIndex = 0;
             lblBreakfast.Enabled = false;
             lblBreakfast.Visible = false;
@@ -447,7 +455,6 @@ namespace KursovaHotel2
                 lblMenuOnOffPage4.Visible = false;
 
                 DateTime menuDate = Reservation.BookedOn.Date;
-                //int bookedOnDay = Reservation.BookedOn.Day;
                 int counter = Duration.Days;
                 while (counter >= 1)
                 {
@@ -493,10 +500,10 @@ namespace KursovaHotel2
                     .GetMenuVarietyByName("Buffet");
                 lblBuffetInfo.Enabled = true;
                 lblBuffetInfo.Visible = true;
-                lblBuffetInfo.Text += $"{menuVarietyBuffet.Description}\n" +
+                lblBuffetInfo.Text = $"Описание на блок масата:\r\n{menuVarietyBuffet.Description}\n" +
                     $"Закуска: ✓\n" +
                     $"Обяд: ✓\n" +
-                    $"Вечеря: ✓";
+                    $"Вечеря: ✓\n\n\n\nЦена: {menuVarietyBuffet.Price}лв";
             }
         }
         private void tabPageALLIn_Click(object sender, EventArgs e)
@@ -507,10 +514,10 @@ namespace KursovaHotel2
                     .GetMenuVarietyByName("All Inclusive");
                 lblAllInclusiveInfo.Enabled = true;
                 lblAllInclusiveInfo.Visible = true;
-                lblAllInclusiveInfo.Text += $"{menuVarietyAllIn.Description}\n" +
+                lblAllInclusiveInfo.Text = $"Описание на All Inclusive пакет:\r\n{menuVarietyAllIn.Description}\n" +
                     $"Закуска: ✓\n" +
                     $"Обяд: ✓\n" +
-                    $"Вечеря: ✓";
+                    $"Вечеря: ✓\n\n\n\nЦена: {menuVarietyAllIn.Price}лв";
             }
         }
         private void tabPageVipMenu_Click(object sender, EventArgs e)
@@ -521,10 +528,10 @@ namespace KursovaHotel2
                     .GetMenuVarietyByName("VIP");
                 lblVipMenuInfo.Enabled = true;
                 lblVipMenuInfo.Visible = true;
-                lblVipMenuInfo.Text += $"{menuVarietyVip.Description}\n" +
+                lblVipMenuInfo.Text = $"Описание на VIP менюто:\r\n{menuVarietyVip.Description}\n" +
                     $"Закуска: ✓\n" +
                     $"Обяд: ✓\n" +
-                    $"Вечеря: ✓";
+                    $"Вечеря: ✓\n\n\n\nЦена: {menuVarietyVip.Price}лв";
             }
         }
         private void AddMenuOption()
@@ -633,7 +640,6 @@ namespace KursovaHotel2
         }
         private void AddAllMenus()
         {
-            SelectMenuVariety();
             HotelBusiness.AddClientMenus(Menus);
         }
         private void SelectMenuVariety()
@@ -668,6 +674,36 @@ namespace KursovaHotel2
                     menu.MenuOptionId = 1;
                     menu.MenuVarietyId = 1;
                 }
+            }
+        }
+        private void CalculatePriceForEveryMenu()
+        {
+            foreach (var menu in Menus)
+            {
+                var menuVariety = HotelBusiness.GetMenuVarietyById(menu.MenuVarietyId);
+                var menuOption = HotelBusiness.GetMenuOptionById(menu.MenuOptionId);
+                menu.Price = menuVariety.Price + menuOption.Price;
+            }
+        }
+        private void CalculatePriceReservation()
+        {
+            SelectMenuVariety();
+            CalculatePriceForEveryMenu();
+            foreach (var menu in Menus)
+            {
+                Reservation.Price += menu.Price;
+            }
+            foreach (var client in Clients)
+            {
+                var clientRoom = HotelBusiness.GetRoomById(client!.RoomId);
+                ClientRooms.Add(clientRoom);
+            }
+            ClientRooms = ClientRooms.Distinct().ToList();
+            foreach (var clientRoom in ClientRooms)
+            {
+                decimal price = 0;
+                price += clientRoom.Price * Reservation.Duration;
+                Reservation.Price += clientRoom.Price * Reservation.Duration;
             }
         }
     }

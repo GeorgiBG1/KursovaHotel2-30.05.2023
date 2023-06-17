@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KursovaHotel2.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    [Migration("20230612081635_InitialCreate")]
+    [Migration("20230617151701_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -110,6 +110,9 @@ namespace KursovaHotel2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Type")
                         .HasColumnType("nvarchar(max)");
 
@@ -131,6 +134,9 @@ namespace KursovaHotel2.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -230,13 +236,13 @@ namespace KursovaHotel2.Migrations
             modelBuilder.Entity("KursovaHotel.Data.Models.Menu", b =>
                 {
                     b.HasOne("KursovaHotel.Data.Models.MenuOption", "MenuOption")
-                        .WithMany()
+                        .WithMany("Menus")
                         .HasForeignKey("MenuOptionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("KursovaHotel.Data.Models.MenuVariety", "MenuVariety")
-                        .WithMany()
+                        .WithMany("Menus")
                         .HasForeignKey("MenuVarietyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -263,6 +269,16 @@ namespace KursovaHotel2.Migrations
                         .IsRequired();
 
                     b.Navigation("RoomType");
+                });
+
+            modelBuilder.Entity("KursovaHotel.Data.Models.MenuOption", b =>
+                {
+                    b.Navigation("Menus");
+                });
+
+            modelBuilder.Entity("KursovaHotel.Data.Models.MenuVariety", b =>
+                {
+                    b.Navigation("Menus");
                 });
 
             modelBuilder.Entity("KursovaHotel.Data.Models.Reservation", b =>
