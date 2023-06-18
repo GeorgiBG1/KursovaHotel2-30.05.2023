@@ -41,7 +41,6 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSaveRes = new System.Windows.Forms.Button();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.btnExpiredOn = new System.Windows.Forms.Button();
             this.lblAge = new System.Windows.Forms.Label();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
@@ -79,6 +78,7 @@
             this.btnRoom10 = new System.Windows.Forms.Button();
             this.tabControlMenu = new System.Windows.Forms.TabControl();
             this.tabPageWithMenus = new System.Windows.Forms.TabPage();
+            this.lblCompletedMenu1 = new System.Windows.Forms.Label();
             this.checkedListBoxMenu = new System.Windows.Forms.CheckedListBox();
             this.lblMenuOnOffPage1 = new System.Windows.Forms.Label();
             this.lblDinner = new System.Windows.Forms.Label();
@@ -89,15 +89,20 @@
             this.btnNextDay = new System.Windows.Forms.Button();
             this.lblMenuDate = new System.Windows.Forms.Label();
             this.tabPageBuffet = new System.Windows.Forms.TabPage();
+            this.lblCompletedMenu2 = new System.Windows.Forms.Label();
             this.lblBuffetInfo = new System.Windows.Forms.Label();
             this.lblMenuOnOffPage2 = new System.Windows.Forms.Label();
             this.tabPageALLIn = new System.Windows.Forms.TabPage();
+            this.lblCompletedMenu3 = new System.Windows.Forms.Label();
             this.lblAllInclusiveInfo = new System.Windows.Forms.Label();
             this.lblMenuOnOffPage3 = new System.Windows.Forms.Label();
             this.tabPageVipMenu = new System.Windows.Forms.TabPage();
+            this.lblCompletedMenu4 = new System.Windows.Forms.Label();
             this.lblVipMenuInfo = new System.Windows.Forms.Label();
             this.lblMenuOnOffPage4 = new System.Windows.Forms.Label();
             this.btnBookedOn = new System.Windows.Forms.Button();
+            this.lblCheckResData = new System.Windows.Forms.Label();
+            this.btnCheckResData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownAge)).BeginInit();
             this.tableRooms.SuspendLayout();
             this.tabControlMenu.SuspendLayout();
@@ -278,19 +283,6 @@
             this.btnSaveRes.Text = "Завършване на регистрацията";
             this.btnSaveRes.UseVisualStyleBackColor = false;
             this.btnSaveRes.Click += new System.EventHandler(this.btnSaveRes_Click);
-            // 
-            // lblTotalPrice
-            // 
-            this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalPrice.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTotalPrice.ForeColor = System.Drawing.Color.SkyBlue;
-            this.lblTotalPrice.Location = new System.Drawing.Point(11, 498);
-            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(308, 29);
-            this.lblTotalPrice.TabIndex = 78;
-            this.lblTotalPrice.Text = "Обща цена:";
-            this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnExpiredOn
             // 
@@ -806,6 +798,7 @@
             // 
             // tabPageWithMenus
             // 
+            this.tabPageWithMenus.Controls.Add(this.lblCompletedMenu1);
             this.tabPageWithMenus.Controls.Add(this.checkedListBoxMenu);
             this.tabPageWithMenus.Controls.Add(this.lblMenuOnOffPage1);
             this.tabPageWithMenus.Controls.Add(this.lblDinner);
@@ -823,6 +816,19 @@
             this.tabPageWithMenus.Text = "Обикновено меню";
             this.tabPageWithMenus.UseVisualStyleBackColor = true;
             this.tabPageWithMenus.Click += new System.EventHandler(this.tabPageWithMenus_Click);
+            // 
+            // lblCompletedMenu1
+            // 
+            this.lblCompletedMenu1.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCompletedMenu1.Enabled = false;
+            this.lblCompletedMenu1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblCompletedMenu1.Location = new System.Drawing.Point(175, 144);
+            this.lblCompletedMenu1.Name = "lblCompletedMenu1";
+            this.lblCompletedMenu1.Size = new System.Drawing.Size(276, 56);
+            this.lblCompletedMenu1.TabIndex = 96;
+            this.lblCompletedMenu1.Text = "Менюто е попълнено!";
+            this.lblCompletedMenu1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCompletedMenu1.Visible = false;
             // 
             // checkedListBoxMenu
             // 
@@ -945,6 +951,7 @@
             // 
             // tabPageBuffet
             // 
+            this.tabPageBuffet.Controls.Add(this.lblCompletedMenu2);
             this.tabPageBuffet.Controls.Add(this.lblBuffetInfo);
             this.tabPageBuffet.Controls.Add(this.lblMenuOnOffPage2);
             this.tabPageBuffet.Location = new System.Drawing.Point(4, 24);
@@ -955,6 +962,19 @@
             this.tabPageBuffet.Text = "Блок маса";
             this.tabPageBuffet.UseVisualStyleBackColor = true;
             this.tabPageBuffet.Click += new System.EventHandler(this.tabPageBuffet_Click);
+            // 
+            // lblCompletedMenu2
+            // 
+            this.lblCompletedMenu2.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCompletedMenu2.Enabled = false;
+            this.lblCompletedMenu2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblCompletedMenu2.Location = new System.Drawing.Point(175, 144);
+            this.lblCompletedMenu2.Name = "lblCompletedMenu2";
+            this.lblCompletedMenu2.Size = new System.Drawing.Size(276, 56);
+            this.lblCompletedMenu2.TabIndex = 97;
+            this.lblCompletedMenu2.Text = "Менюто е попълнено!";
+            this.lblCompletedMenu2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCompletedMenu2.Visible = false;
             // 
             // lblBuffetInfo
             // 
@@ -982,6 +1002,7 @@
             // 
             // tabPageALLIn
             // 
+            this.tabPageALLIn.Controls.Add(this.lblCompletedMenu3);
             this.tabPageALLIn.Controls.Add(this.lblAllInclusiveInfo);
             this.tabPageALLIn.Controls.Add(this.lblMenuOnOffPage3);
             this.tabPageALLIn.Location = new System.Drawing.Point(4, 24);
@@ -992,6 +1013,19 @@
             this.tabPageALLIn.Text = "All Inclusive";
             this.tabPageALLIn.UseVisualStyleBackColor = true;
             this.tabPageALLIn.Click += new System.EventHandler(this.tabPageALLIn_Click);
+            // 
+            // lblCompletedMenu3
+            // 
+            this.lblCompletedMenu3.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCompletedMenu3.Enabled = false;
+            this.lblCompletedMenu3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblCompletedMenu3.Location = new System.Drawing.Point(175, 144);
+            this.lblCompletedMenu3.Name = "lblCompletedMenu3";
+            this.lblCompletedMenu3.Size = new System.Drawing.Size(276, 56);
+            this.lblCompletedMenu3.TabIndex = 98;
+            this.lblCompletedMenu3.Text = "Менюто е попълнено!";
+            this.lblCompletedMenu3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCompletedMenu3.Visible = false;
             // 
             // lblAllInclusiveInfo
             // 
@@ -1019,6 +1053,7 @@
             // 
             // tabPageVipMenu
             // 
+            this.tabPageVipMenu.Controls.Add(this.lblCompletedMenu4);
             this.tabPageVipMenu.Controls.Add(this.lblVipMenuInfo);
             this.tabPageVipMenu.Controls.Add(this.lblMenuOnOffPage4);
             this.tabPageVipMenu.Location = new System.Drawing.Point(4, 24);
@@ -1029,6 +1064,19 @@
             this.tabPageVipMenu.Text = "VIP меню";
             this.tabPageVipMenu.UseVisualStyleBackColor = true;
             this.tabPageVipMenu.Click += new System.EventHandler(this.tabPageVipMenu_Click);
+            // 
+            // lblCompletedMenu4
+            // 
+            this.lblCompletedMenu4.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCompletedMenu4.Enabled = false;
+            this.lblCompletedMenu4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblCompletedMenu4.Location = new System.Drawing.Point(175, 144);
+            this.lblCompletedMenu4.Name = "lblCompletedMenu4";
+            this.lblCompletedMenu4.Size = new System.Drawing.Size(276, 56);
+            this.lblCompletedMenu4.TabIndex = 99;
+            this.lblCompletedMenu4.Text = "Менюто е попълнено!";
+            this.lblCompletedMenu4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCompletedMenu4.Visible = false;
             // 
             // lblVipMenuInfo
             // 
@@ -1069,12 +1117,47 @@
             this.btnBookedOn.UseVisualStyleBackColor = false;
             this.btnBookedOn.Click += new System.EventHandler(this.btnBookedOn_Click);
             // 
+            // lblCheckResData
+            // 
+            this.lblCheckResData.BackColor = System.Drawing.Color.Silver;
+            this.lblCheckResData.Enabled = false;
+            this.lblCheckResData.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCheckResData.ForeColor = System.Drawing.Color.White;
+            this.lblCheckResData.Image = ((System.Drawing.Image)(resources.GetObject("lblCheckResData.Image")));
+            this.lblCheckResData.Location = new System.Drawing.Point(356, 307);
+            this.lblCheckResData.Name = "lblCheckResData";
+            this.lblCheckResData.Size = new System.Drawing.Size(369, 33);
+            this.lblCheckResData.TabIndex = 96;
+            this.lblCheckResData.Text = "Попълнете цялата информация!";
+            this.lblCheckResData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCheckResData.Visible = false;
+            // 
+            // btnCheckResData
+            // 
+            this.btnCheckResData.BackColor = System.Drawing.Color.LightGray;
+            this.btnCheckResData.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCheckResData.BackgroundImage")));
+            this.btnCheckResData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckResData.Enabled = false;
+            this.btnCheckResData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckResData.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCheckResData.ForeColor = System.Drawing.Color.White;
+            this.btnCheckResData.Location = new System.Drawing.Point(356, 339);
+            this.btnCheckResData.Name = "btnCheckResData";
+            this.btnCheckResData.Size = new System.Drawing.Size(67, 43);
+            this.btnCheckResData.TabIndex = 97;
+            this.btnCheckResData.Text = "OK";
+            this.btnCheckResData.UseVisualStyleBackColor = false;
+            this.btnCheckResData.Visible = false;
+            this.btnCheckResData.Click += new System.EventHandler(this.btnCheckResData_Click);
+            // 
             // ReservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1081, 657);
+            this.Controls.Add(this.btnCheckResData);
+            this.Controls.Add(this.lblCheckResData);
             this.Controls.Add(this.btnBookedOn);
             this.Controls.Add(this.monthCalendar);
             this.Controls.Add(this.tabControlMenu);
@@ -1090,7 +1173,6 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSaveRes);
-            this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.btnExpiredOn);
             this.Controls.Add(this.lblAge);
             this.Controls.Add(this.txtBoxEmail);
@@ -1107,7 +1189,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReservationForm";
             this.Text = "ReservationForm";
-            this.Click += new System.EventHandler(this.tabPageWithMenus_Click);
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownAge)).EndInit();
             this.tableRooms.ResumeLayout(false);
             this.tabControlMenu.ResumeLayout(false);
@@ -1133,7 +1214,6 @@
         private Button btnNext;
         private Button btnBack;
         private Button btnSaveRes;
-        private Label lblTotalPrice;
         private Button btnExpiredOn;
         private Label lblAge;
         private TextBox txtBoxEmail;
@@ -1190,5 +1270,11 @@
         private Label lblAllInclusiveInfo;
         private Label lblVipMenuInfo;
         private Button btnBookedOn;
+        private Label lblCompletedMenu1;
+        private Label lblCompletedMenu2;
+        private Label lblCompletedMenu3;
+        private Label lblCompletedMenu4;
+        private Label lblCheckResData;
+        private Button btnCheckResData;
     }
 }

@@ -43,29 +43,32 @@ namespace KursovaHotel2
             if (!btnOrderClientsUpDown)
             {
                 var client = HotelBusiness.GetClientById(index);
-                var menu = client.Reservation!.Menus!.FirstOrDefault();
-                var menuVariety = new MenuVariety();
-                Label reservationStatus = new Label();
-                if (menu != null)
+                if (client != null)
                 {
-                    menuVariety = HotelBusiness
-                       .GetMenuVarietyById(menu!.MenuVarietyId);
+                    var menu = client.Reservation!.Menus!.FirstOrDefault();
+                    var menuVariety = new MenuVariety();
+                    Label reservationStatus = new Label();
+                    if (menu != null)
+                    {
+                        menuVariety = HotelBusiness
+                           .GetMenuVarietyById(menu!.MenuVarietyId);
+                    }
+                    if (client.Reservation.IsActive)
+                    {
+                        reservationStatus.Text = "Статус: \u2713";
+                    }
+                    else
+                    {
+                        reservationStatus.Text = "Статус: X";
+                    }
+                    listBoxReservations.Items.Add(
+                        $"Резервация №{client.Reservation.Id}. " +
+                        $"Меню: {menuVariety!.Name}. " +
+                        $"Oт: {client.Reservation.BookedOn.ToShortDateString()} " +
+                        $"До: {client.Reservation.ExpiredOn.ToShortDateString()} " +
+                        $"- {client.Reservation.Duration} нощувки. Цена: {client.Reservation.Price}лв " +
+                        $"{reservationStatus.Text}");
                 }
-                if (client.Reservation.IsActive)
-                {
-                    reservationStatus.Text = "Статус: \u2713";
-                }
-                else
-                {
-                    reservationStatus.Text = "Статус: X";
-                }
-                listBoxReservations.Items.Add(
-                    $"Резервация №{client.Reservation.Id}. " +
-                    $"Меню: {menuVariety!.Name}. " +
-                    $"Oт: {client.Reservation.BookedOn.ToShortDateString()} " +
-                    $"До: {client.Reservation.ExpiredOn.ToShortDateString()} " +
-                    $"- {client.Reservation.Duration} нощувки. Цена: {client.Reservation.Price}лв " +
-                    $"{reservationStatus.Text}");
             }
         }
 
@@ -100,27 +103,30 @@ namespace KursovaHotel2
 
         private void btnOrderClients_Click(object sender, EventArgs e)
         {
-            if (btnOrderClientsUpDown)
+            if (AllClients.Count != 0)
             {
-                btnOrderClients.Text = char.ConvertFromUtf32(0x2191);
-                btnOrderClientsUpDown = false;
-                btnDisableRes.Enabled = true;
-                btnRefresh.Enabled = true;
-                AllClients = AllClients.OrderBy(c => c.Id).ToList();
-                listBoxClients.Items.Clear();
-                listBoxReservations.Items.Clear();
-                ShowAllClients();
-            }
-            else
-            {
-                btnOrderClients.Text = char.ConvertFromUtf32(0x2193);
-                btnOrderClientsUpDown = true;
-                btnDisableRes.Enabled = false;
-                btnRefresh.Enabled = false;
-                AllClients = AllClients.OrderByDescending(c => c.Id).ToList();
-                listBoxClients.Items.Clear();
-                listBoxReservations.Items.Clear();
-                ShowAllClients();
+                if (btnOrderClientsUpDown)
+                {
+                    btnOrderClients.Text = char.ConvertFromUtf32(0x2191);
+                    btnOrderClientsUpDown = false;
+                    btnDisableRes.Enabled = true;
+                    btnRefresh.Enabled = true;
+                    AllClients = AllClients.OrderBy(c => c.Id).ToList();
+                    listBoxClients.Items.Clear();
+                    listBoxReservations.Items.Clear();
+                    ShowAllClients();
+                }
+                else
+                {
+                    btnOrderClients.Text = char.ConvertFromUtf32(0x2193);
+                    btnOrderClientsUpDown = true;
+                    btnDisableRes.Enabled = false;
+                    btnRefresh.Enabled = false;
+                    AllClients = AllClients.OrderByDescending(c => c.Id).ToList();
+                    listBoxClients.Items.Clear();
+                    listBoxReservations.Items.Clear();
+                    ShowAllClients();
+                }
             }
         }
     }

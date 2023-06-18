@@ -91,11 +91,17 @@
             // 
             // btnOrderClients
             // 
+            this.btnOrderClients.BackColor = System.Drawing.Color.Transparent;
+            this.btnOrderClients.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOrderClients.BackgroundImage")));
+            this.btnOrderClients.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOrderClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderClients.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnOrderClients.ForeColor = System.Drawing.Color.White;
             this.btnOrderClients.Location = new System.Drawing.Point(12, 6);
             this.btnOrderClients.Name = "btnOrderClients";
             this.btnOrderClients.Size = new System.Drawing.Size(75, 38);
             this.btnOrderClients.TabIndex = 6;
-            this.btnOrderClients.UseVisualStyleBackColor = true;
+            this.btnOrderClients.UseVisualStyleBackColor = false;
             this.btnOrderClients.Click += new System.EventHandler(this.btnOrderClients_Click);
             // 
             // InformationForm

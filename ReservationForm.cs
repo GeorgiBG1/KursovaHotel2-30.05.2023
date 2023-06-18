@@ -23,12 +23,13 @@ namespace KursovaHotel2
         private bool IsAllowedAddClient = true;
         private int clientIndex = 0;
         private Client Client = new Client();
-        private Room ClientRoom = new Room();
+        private List<Room> BookedRooms = new List<Room>();
         private List<Room> ClientRooms = new List<Room>();
         private int roomId;
         private Reservation Reservation = new Reservation();
         private List<Client> Clients = new List<Client>();
         private int menuIndex = 0;
+        private bool IsMenuLocked = false;
         private List<Menu> Menus = new List<Menu>();
         private MenuVariety menuVarietyBuffet = new MenuVariety();
         private MenuVariety menuVarietyAllIn = new MenuVariety();
@@ -140,6 +141,8 @@ namespace KursovaHotel2
             else
             {
                 AddNewClient(roomId);
+                BookedRooms.Add(HotelBusiness.GetAllRooms().FirstOrDefault(r => r.Id == roomId)!);
+                ShowAllRooms();
                 PartialResetRegistrationForm();
             }
             radioBtnOneRes.Enabled = false;
@@ -191,8 +194,6 @@ namespace KursovaHotel2
             Client.Email = txtBoxEmail.Text;
             Client.Age = (int)numUpDownAge.Value;
             Client.RoomId = roomId;
-            ClientRoom = HotelBusiness.GetAllRooms().FirstOrDefault(r => r.Id == roomId)!;
-            ClientRoom.IsBooked = true;
             Clients.Add(Client);
             Reservation.IsActive = true;
         }
@@ -223,39 +224,98 @@ namespace KursovaHotel2
             radioBtnGroupRes.Checked = false;
             radioBtnOneRes.Checked = true;
         }
+        private bool CheckResData()
+        {
+            bool result;
+            if (Clients.Any())
+            {
+                UpdateCurrentClient(clientIndex);
+                for (int i = 0; i < Clients.Count; i++)
+                {
+                    if (Clients[i].FirstName != ""
+                        && Clients[i].MiddleName != ""
+                        && Clients[i].SurName != ""
+                        && Clients[i].EGN!.Length == 10
+                        && Clients[i].PhoneNumber!.Length == 10
+                        && Clients[i].Email != ""
+                        && Clients[i].Age > 0
+                        && Clients[i].RoomId != 0)
+                    {
+                        result = true;
+                    }
+                    else
+                    {
+                        if (radioBtnGroupRes.Checked)
+                        {
+                            clientIndex = i;
+                            SelectClient();
+                        }
+                        else if(radioBtnOneRes.Checked)
+                        {
+                            Clients = new List<Client>();
+                        }
+                        lblCheckResData.Enabled = true;
+                        lblCheckResData.Visible = true;
+                        btnCheckResData.Enabled = true;
+                        btnCheckResData.Visible = true;
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                return false;
+            }
+            if (Reservation.BookedOn.Year > 1
+                && Reservation.ExpiredOn.Year > 1
+                && Reservation.Price != 0)
+            {
+                result = true;
+            }
+            else
+            {
+                lblCheckResData.Enabled = true;
+                lblCheckResData.Visible = true;
+                btnCheckResData.Enabled = true;
+                btnCheckResData.Visible = true;
+                return false;
+            }
+            if (Menus.Any())
+            {
+                result = true;
+            }
+            else
+            {
+                lblCheckResData.Enabled = true;
+                lblCheckResData.Visible = true;
+                btnCheckResData.Enabled = true;
+                btnCheckResData.Visible = true;
+                return false;
+            }
+            return result;
+        }
         private void btnSaveRes_Click(object sender, EventArgs e)
         {
-            if (radioBtnOneRes.Checked)
+            AddNewClient(roomId);
+            CalculateReservationPrice();
+            if (CheckResData())
             {
-                AddNewClient(roomId);
-                CalculateReservationPrice();
-                ResetRegistrationForm();
+                Clients = Clients.DistinctBy(c => c.EGN).ToList();
                 HotelBusiness.AddClientsWithTheirReservation(Clients, Reservation);
                 HotelBusiness.UpdateReservationsStatus();
                 HotelBusiness.UpdateRoomsStatus();
-                AddAllMenus();
+                HotelBusiness.AddClientMenus(Menus);
+                lblCheckResData.Enabled = false;
+                lblCheckResData.Visible = false;
+                btnCheckResData.Enabled = false;
+                btnCheckResData.Visible = false;
+                ResetRegistrationForm();
                 ResetAllTabPages();
                 BookedOnDate = new DateTime();
                 ExpiredOnDate = new DateTime();
                 Reservation = new Reservation();
                 Clients = new List<Client>();
-                roomId = 0;
-                ShowAllRooms();
-            }
-            else if (radioBtnGroupRes.Checked)
-            {
-                AddNewClient(roomId);
-                CalculateReservationPrice();
-                ResetRegistrationForm();
-                HotelBusiness.AddClientsWithTheirReservation(Clients, Reservation);
-                HotelBusiness.UpdateReservationsStatus();
-                HotelBusiness.UpdateRoomsStatus();
-                AddAllMenus();
-                ResetAllTabPages();
-                BookedOnDate = new DateTime();
-                ExpiredOnDate = new DateTime();
-                Reservation = new Reservation();
-                Clients = new List<Client>();
+                BookedRooms = new List<Room>();
                 roomId = 0;
                 clientIndex = 0;
                 ShowAllRooms();
@@ -292,7 +352,7 @@ namespace KursovaHotel2
 
             foreach (var room in allRooms)
             {
-                if (!room.IsBooked && room.Id != ClientRoom.Id)
+                if (!room.IsBooked)
                 {
                     rooms[room.RoomNumber].BackColor = Color.DarkGreen;
                 }
@@ -305,6 +365,17 @@ namespace KursovaHotel2
             {
                 var selectedRoom = rooms.FirstOrDefault(r => r.Key == roomNumber);
                 selectedRoom.Value.BackColor = Color.CadetBlue;
+            }
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                for (int j = 0; j < BookedRooms.Count; j++)
+                {
+                    if (i == BookedRooms[j].Id - 1)
+                    {
+                        var room = rooms.ElementAt(i).Value;
+                        room.BackColor = Color.DarkRed;
+                    }
+                }
             }
         }
         private void btnRoom10_Click(object sender, EventArgs e)
@@ -399,6 +470,7 @@ namespace KursovaHotel2
         }
         private void ResetAllTabPages()
         {
+            IsMenuLocked = false;
             lblMenuOnOffPage1.Enabled = true;
             lblMenuOnOffPage1.Visible = true;
             lblMenuOnOffPage2.Enabled = true;
@@ -407,6 +479,14 @@ namespace KursovaHotel2
             lblMenuOnOffPage3.Visible = true;
             lblMenuOnOffPage4.Enabled = true;
             lblMenuOnOffPage4.Visible = true;
+            lblCompletedMenu1.Enabled = false;
+            lblCompletedMenu1.Visible = false;
+            lblCompletedMenu2.Enabled = false;
+            lblCompletedMenu2.Visible = false;
+            lblCompletedMenu3.Enabled = false;
+            lblCompletedMenu3.Visible = false;
+            lblCompletedMenu4.Enabled = false;
+            lblCompletedMenu4.Visible = false;
             lblMenuDate.Enabled = false;
             lblMenuDate.Visible = false;
             lblSelectedMenu.Enabled = false;
@@ -439,6 +519,40 @@ namespace KursovaHotel2
             btnNextDay.Enabled = false;
             btnNextDay.Visible = false;
             btnNextDay.Text = "Следващ ден";
+        }
+        private void LockAllTapPages()
+        {
+            IsMenuLocked = true;
+            lblCompletedMenu1.Enabled = true;
+            lblCompletedMenu1.Visible = true;
+            lblCompletedMenu2.Enabled = true;
+            lblCompletedMenu2.Visible = true;
+            lblCompletedMenu3.Enabled = true;
+            lblCompletedMenu3.Visible = true;
+            lblCompletedMenu4.Enabled = true;
+            lblCompletedMenu4.Visible = true;
+            lblMenuDate.Enabled = false;
+            lblMenuDate.Visible = false;
+            lblSelectedMenu.Enabled = false;
+            lblSelectedMenu.Visible = false;
+            lblBuffetInfo.Enabled = false;
+            lblBuffetInfo.Visible = false;
+            lblAllInclusiveInfo.Enabled = false;
+            lblAllInclusiveInfo.Visible = false;
+            lblVipMenuInfo.Enabled = false;
+            lblVipMenuInfo.Visible = false;
+            checkedListBoxMenu.Enabled = false;
+            checkedListBoxMenu.Visible = false;
+            lblBreakfast.Enabled = false;
+            lblBreakfast.Visible = false;
+            lblLunch.Enabled = false;
+            lblLunch.Visible = false;
+            lblDinner.Enabled = false;
+            lblDinner.Visible = false;
+            btnPreviousDay.Enabled = false;
+            btnPreviousDay.Visible = false;
+            btnNextDay.Enabled = false;
+            btnNextDay.Visible = false;
         }
         private bool AddMenu()
         {
@@ -476,62 +590,82 @@ namespace KursovaHotel2
         }
         private void tabPageWithMenus_Click(object sender, EventArgs e)
         {
-            if (AddMenu())
+            if (!IsMenuLocked)
             {
-                lblMenuDate.Enabled = true;
-                lblMenuDate.Visible = true;
-                lblMenuDate.Text = $"{Reservation.BookedOn.ToShortDateString()}";
-                lblSelectedMenu.Enabled = true;
-                lblSelectedMenu.Visible = true;
-                checkedListBoxMenu.Enabled = true;
-                checkedListBoxMenu.Visible = true;
-                checkedListBoxMenu.CheckOnClick = true;
-                btnNextDay.Enabled = true;
-                btnNextDay.Visible = true;
-                btnPreviousDay.Enabled = true;
-                btnPreviousDay.Visible = true;
+                if (AddMenu())
+                {
+                    lblCompletedMenu1.Enabled = false;
+                    lblCompletedMenu1.Visible = false;
+                    lblMenuDate.Enabled = true;
+                    lblMenuDate.Visible = true;
+                    lblMenuDate.Text = $"{Reservation.BookedOn.ToShortDateString()}";
+                    lblSelectedMenu.Enabled = true;
+                    lblSelectedMenu.Visible = true;
+                    checkedListBoxMenu.Enabled = true;
+                    checkedListBoxMenu.Visible = true;
+                    checkedListBoxMenu.CheckOnClick = true;
+                    btnNextDay.Enabled = true;
+                    btnNextDay.Visible = true;
+                    btnPreviousDay.Enabled = true;
+                    btnPreviousDay.Visible = true;
+                }
             }
         }
         private void tabPageBuffet_Click(object sender, EventArgs e)
         {
-            if (AddMenu() && menuVarietyBuffet.Name == null)
+            if (!IsMenuLocked)
             {
-                menuVarietyBuffet = HotelBusiness
-                    .GetMenuVarietyByName("Buffet");
-                lblBuffetInfo.Enabled = true;
-                lblBuffetInfo.Visible = true;
-                lblBuffetInfo.Text = $"Описание на блок масата:\r\n{menuVarietyBuffet.Description}\n" +
-                    $"Закуска: ✓\n" +
-                    $"Обяд: ✓\n" +
-                    $"Вечеря: ✓\n\n\n\nЦена: {menuVarietyBuffet.Price}лв";
+                if (AddMenu() && menuVarietyBuffet.Name == null)
+                {
+                    lblCompletedMenu2.Enabled = false;
+                    lblCompletedMenu2.Visible = false;
+                    menuVarietyBuffet = HotelBusiness
+                        .GetMenuVarietyByName("Buffet");
+                    lblBuffetInfo.Enabled = true;
+                    lblBuffetInfo.Visible = true;
+                    lblBuffetInfo.Text = $"Описание на блок масата:\r\n{menuVarietyBuffet.Description}\n" +
+                        $"Закуска: ✓\n" +
+                        $"Обяд: ✓\n" +
+                        $"Вечеря: ✓\n\n\n\nЦена: {menuVarietyBuffet.Price}лв";
+                }
             }
         }
         private void tabPageALLIn_Click(object sender, EventArgs e)
         {
-            if (AddMenu() && menuVarietyAllIn.Name == null)
+            if (!IsMenuLocked)
             {
-                menuVarietyAllIn = HotelBusiness
-                    .GetMenuVarietyByName("All Inclusive");
-                lblAllInclusiveInfo.Enabled = true;
-                lblAllInclusiveInfo.Visible = true;
-                lblAllInclusiveInfo.Text = $"Описание на All Inclusive пакет:\r\n{menuVarietyAllIn.Description}\n" +
-                    $"Закуска: ✓\n" +
-                    $"Обяд: ✓\n" +
-                    $"Вечеря: ✓\n\n\n\nЦена: {menuVarietyAllIn.Price}лв";
+                if (AddMenu() && menuVarietyAllIn.Name == null)
+                {
+                    lblCompletedMenu3.Enabled = false;
+                    lblCompletedMenu3.Visible = false;
+                    menuVarietyAllIn = HotelBusiness
+                        .GetMenuVarietyByName("All Inclusive");
+                    lblAllInclusiveInfo.Enabled = true;
+                    lblAllInclusiveInfo.Visible = true;
+                    lblAllInclusiveInfo.Text = $"Описание на All Inclusive пакет:\r\n{menuVarietyAllIn.Description}\n" +
+                        $"Закуска: ✓\n" +
+                        $"Обяд: ✓\n" +
+                        $"Вечеря: ✓\n\n\n\nЦена: {menuVarietyAllIn.Price}лв";
+                }
             }
         }
         private void tabPageVipMenu_Click(object sender, EventArgs e)
         {
-            if (AddMenu() && menuVarietyVip.Name == null)
+            if (!IsMenuLocked)
             {
-                menuVarietyVip = HotelBusiness
-                    .GetMenuVarietyByName("VIP");
-                lblVipMenuInfo.Enabled = true;
-                lblVipMenuInfo.Visible = true;
-                lblVipMenuInfo.Text = $"Описание на VIP менюто:\r\n{menuVarietyVip.Description}\n" +
-                    $"Закуска: ✓\n" +
-                    $"Обяд: ✓\n" +
-                    $"Вечеря: ✓\n\n\n\nЦена: {menuVarietyVip.Price}лв";
+                if (AddMenu() && menuVarietyVip.Name == null)
+                {
+                    lblCompletedMenu4.Enabled = false;
+                    lblCompletedMenu4.Visible = false;
+                    menuVarietyVip = HotelBusiness
+                        .GetMenuVarietyByName("VIP");
+                    lblVipMenuInfo.Enabled = true;
+                    lblVipMenuInfo.Visible = true;
+                    lblVipMenuInfo.Text = $"Описание на VIP менюто:\r\n{menuVarietyVip.Description}\n" +
+                        $"Закуска: ✓\n" +
+                        $"Обяд: ✓\n" +
+                        $"Вечеря: ✓\n\n\n\nЦена: {menuVarietyVip.Price}лв";
+                }
             }
         }
         private void AddMenuOption()
@@ -623,6 +757,10 @@ namespace KursovaHotel2
             else
             {
                 AddMenuOption();
+                if (btnNextDay.Text == "Завършек")
+                {
+                    LockAllTapPages();
+                }
             }
         }
         private void btnPreviousDay_Click(object sender, EventArgs e)
@@ -637,10 +775,6 @@ namespace KursovaHotel2
             {
                 btnNextDay.Text = "Следващ ден";
             }
-        }
-        private void AddAllMenus()
-        {
-            HotelBusiness.AddClientMenus(Menus);
         }
         private void SelectMenuVariety()
         {
@@ -701,9 +835,10 @@ namespace KursovaHotel2
             ClientRooms = ClientRooms.Distinct().ToList();
             foreach (var clientRoom in ClientRooms)
             {
-                decimal price = 0;
-                price += clientRoom.Price * Reservation.Duration;
-                Reservation.Price += clientRoom.Price * Reservation.Duration;
+                if (clientRoom != null)
+                {
+                    Reservation.Price += clientRoom.Price * Reservation.Duration;
+                }
             }
         }
 
@@ -717,6 +852,14 @@ namespace KursovaHotel2
         {
             btnDelAll.Enabled = false;
             btnDelAll.Visible = false;
+        }
+
+        private void btnCheckResData_Click(object sender, EventArgs e)
+        {
+            lblCheckResData.Enabled = false;
+            lblCheckResData.Visible = false;
+            btnCheckResData.Enabled = false;
+            btnCheckResData.Visible = false;
         }
     }
 }

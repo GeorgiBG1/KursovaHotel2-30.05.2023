@@ -325,6 +325,8 @@ namespace KursovaHotel.Business
         }
         public List<Room> GetAllRooms()
         {
+            UpdateReservationsStatus();
+            UpdateRoomsStatus();
             var allRooms = dbContext.Rooms
                 .Include(r=>r.RoomType).ToList();
             return allRooms;
