@@ -111,6 +111,7 @@
             // 
             this.btnDelAll.BackColor = System.Drawing.Color.Red;
             this.btnDelAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelAll.Enabled = false;
             this.btnDelAll.FlatAppearance.BorderSize = 0;
             this.btnDelAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelAll.Location = new System.Drawing.Point(303, 565);
@@ -119,6 +120,7 @@
             this.btnDelAll.TabIndex = 92;
             this.btnDelAll.Text = "Зачисти БД";
             this.btnDelAll.UseVisualStyleBackColor = false;
+            this.btnDelAll.Visible = false;
             this.btnDelAll.Click += new System.EventHandler(this.btnDelAll_Click);
             // 
             // monthCalendar
@@ -236,7 +238,7 @@
             this.btnNext.Enabled = false;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.ForeColor = System.Drawing.Color.SkyBlue;
-            this.btnNext.Location = new System.Drawing.Point(135, 609);
+            this.btnNext.Location = new System.Drawing.Point(135, 608);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(138, 43);
             this.btnNext.TabIndex = 81;
@@ -253,7 +255,7 @@
             this.btnBack.Enabled = false;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.ForeColor = System.Drawing.Color.SkyBlue;
-            this.btnBack.Location = new System.Drawing.Point(2, 610);
+            this.btnBack.Location = new System.Drawing.Point(2, 609);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(127, 42);
             this.btnBack.TabIndex = 80;
@@ -269,7 +271,7 @@
             this.btnSaveRes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveRes.ForeColor = System.Drawing.Color.SkyBlue;
-            this.btnSaveRes.Location = new System.Drawing.Point(279, 609);
+            this.btnSaveRes.Location = new System.Drawing.Point(279, 608);
             this.btnSaveRes.Name = "btnSaveRes";
             this.btnSaveRes.Size = new System.Drawing.Size(127, 43);
             this.btnSaveRes.TabIndex = 79;
@@ -729,6 +731,7 @@
             this.lblFloor1.TabIndex = 2;
             this.lblFloor1.Text = "Етаж 1";
             this.lblFloor1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFloor1.DoubleClick += new System.EventHandler(this.lblFloor1_DoubleClick);
             // 
             // lblFloor2
             // 
@@ -741,6 +744,7 @@
             this.lblFloor2.TabIndex = 3;
             this.lblFloor2.Text = "Етаж 2";
             this.lblFloor2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFloor2.DoubleClick += new System.EventHandler(this.lblFloor2_DoubleClick);
             // 
             // btnRoom30
             // 

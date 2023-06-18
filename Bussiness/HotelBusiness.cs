@@ -340,6 +340,13 @@ namespace KursovaHotel.Business
             var allClients = dbContext.Clients.ToList();
             return allClients;
         }
+        public Client GetClientById(int id)
+        {
+            var client = dbContext.Clients
+                .Include(c=>c.Reservation)
+                .FirstOrDefault(c => c.Id == id);
+            return client!;
+        }
         public List<Client> GetAllClientsWithTheirReservationAndRoom()
         {
             var allClients = dbContext.Clients
@@ -353,14 +360,25 @@ namespace KursovaHotel.Business
         }
         public List<Client> GetAllClientsOrderedByReservations()
         {
-            var allClients = dbContext.Clients.Include(c => c.Reservation).ThenInclude(r=>r!.Menus)
-                .Include(c => c.Room).ToList();
+            var allClients = dbContext.Clients.Include(c => c.Reservation)
+                .ThenInclude(r=>r!.Menus)
+                .Include(c => c.Room)
+                .OrderBy(c => c.ReservationId)
+                .ToList();
             return allClients;
         }
         public List<Reservation> GetAllReservations()
         {
             var allReservations = dbContext.Reservations.ToList();
             return allReservations;
+        }
+        public Reservation GetReservationById(int id)
+        {
+            var reservation = dbContext.Reservations
+                .Include(r=>r.Menus!)
+                .ThenInclude(m=>m.MenuVariety)
+                .FirstOrDefault(r => r.Id == id);
+            return reservation!;
         }
         public MenuVariety GetMenuVarietyByName(string name)
         {

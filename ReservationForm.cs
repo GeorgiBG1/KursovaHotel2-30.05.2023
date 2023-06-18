@@ -228,7 +228,7 @@ namespace KursovaHotel2
             if (radioBtnOneRes.Checked)
             {
                 AddNewClient(roomId);
-                CalculatePriceReservation();
+                CalculateReservationPrice();
                 ResetRegistrationForm();
                 HotelBusiness.AddClientsWithTheirReservation(Clients, Reservation);
                 HotelBusiness.UpdateReservationsStatus();
@@ -245,7 +245,7 @@ namespace KursovaHotel2
             else if (radioBtnGroupRes.Checked)
             {
                 AddNewClient(roomId);
-                CalculatePriceReservation();
+                CalculateReservationPrice();
                 ResetRegistrationForm();
                 HotelBusiness.AddClientsWithTheirReservation(Clients, Reservation);
                 HotelBusiness.UpdateReservationsStatus();
@@ -685,7 +685,7 @@ namespace KursovaHotel2
                 menu.Price = menuVariety.Price + menuOption.Price;
             }
         }
-        private void CalculatePriceReservation()
+        private void CalculateReservationPrice()
         {
             SelectMenuVariety();
             CalculatePriceForEveryMenu();
@@ -705,6 +705,18 @@ namespace KursovaHotel2
                 price += clientRoom.Price * Reservation.Duration;
                 Reservation.Price += clientRoom.Price * Reservation.Duration;
             }
+        }
+
+        private void lblFloor1_DoubleClick(object sender, EventArgs e)
+        {
+            btnDelAll.Enabled = true;
+            btnDelAll.Visible = true;
+        }
+
+        private void lblFloor2_DoubleClick(object sender, EventArgs e)
+        {
+            btnDelAll.Enabled = false;
+            btnDelAll.Visible = false;
         }
     }
 }
