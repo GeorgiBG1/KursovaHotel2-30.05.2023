@@ -1,5 +1,6 @@
 ﻿using KursovaHotel.Business;
 using KursovaHotel.Data.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -125,6 +126,14 @@ namespace KursovaHotel2
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            if (roomId == 0)
+            {
+                lblCheckResData.Enabled = true;
+                lblCheckResData.Visible = true;
+                btnCheckResData.Enabled = true;
+                btnCheckResData.Visible = true;
+                return;
+            }
             clientIndex++;
             var nextClient = Clients.ElementAtOrDefault(clientIndex);
             if (nextClient != null)
@@ -250,7 +259,7 @@ namespace KursovaHotel2
                             clientIndex = i;
                             SelectClient();
                         }
-                        else if(radioBtnOneRes.Checked)
+                        else if (radioBtnOneRes.Checked)
                         {
                             Clients = new List<Client>();
                         }
@@ -668,98 +677,114 @@ namespace KursovaHotel2
                 }
             }
         }
-        private void AddMenuOption()
+        private bool AddMenuOption()
         {
             var checkedItems = checkedListBoxMenu.CheckedItems;
-            if (checkedItems.Count < 2)
+            if (checkedItems.Count != 0)
             {
-                if (checkedItems[0] == "Закуска")
+                if (checkedItems.Count < 2)
                 {
-                    Menus[menuIndex].MenuOptionId = 2;
-                    lblBreakfast.Enabled = true;
-                    lblBreakfast.Visible = true;
-                    lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
+                    if (checkedItems[0] == "Закуска")
+                    {
+                        Menus[menuIndex].MenuOptionId = 2;
+                        lblBreakfast.Enabled = true;
+                        lblBreakfast.Visible = true;
+                        lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
+                    }
+                    else if (checkedItems[0] == "Обяд")
+                    {
+                        Menus[menuIndex].MenuOptionId = 4;
+                        lblLunch.Enabled = true;
+                        lblLunch.Visible = true;
+                        lblLunch.Text = "Обяд от 11:30ч до 12:30ч";
+                    }
+                    else
+                    {
+                        Menus[menuIndex].MenuOptionId = 6;
+                        lblDinner.Enabled = true;
+                        lblDinner.Visible = true;
+                        lblDinner.Text = "Вечеря от 19:00ч до 20:30ч";
+                    }
                 }
-                else if (checkedItems[0] == "Обяд")
+                else if (checkedItems.Count == 2)
                 {
-                    Menus[menuIndex].MenuOptionId = 4;
-                    lblLunch.Enabled = true;
-                    lblLunch.Visible = true;
-                    lblLunch.Text = "Обяд от 11:30ч до 12:30ч";
+                    if (checkedItems[0] == "Закуска" && checkedItems[1] == "Обяд")
+                    {
+                        Menus[menuIndex].MenuOptionId = 3;
+                        lblBreakfast.Enabled = true;
+                        lblBreakfast.Visible = true;
+                        lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
+                        lblLunch.Enabled = true;
+                        lblLunch.Visible = true;
+                        lblLunch.Text = "Обяд от 11:30ч до 12:30ч";
+                    }
+                    else if (checkedItems[0] == "Обяд" && checkedItems[1] == "Вечеря")
+                    {
+                        Menus[menuIndex].MenuOptionId = 5;
+                        lblBreakfast.Enabled = true;
+                        lblBreakfast.Visible = true;
+                        lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
+                        lblDinner.Enabled = true;
+                        lblDinner.Visible = true;
+                        lblDinner.Text = "Вечеря от 19:00ч до 20:30ч";
+                    }
+                    else if (checkedItems[0] == "Закуска" && checkedItems[1] == "Вечеря")
+                    {
+                        Menus[menuIndex].MenuOptionId = 7;
+                        lblBreakfast.Enabled = true;
+                        lblBreakfast.Visible = true;
+                        lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
+                        lblDinner.Enabled = true;
+                        lblDinner.Visible = true;
+                        lblDinner.Text = "Вечеря от 19:00ч до 20:30ч";
+                    }
                 }
                 else
                 {
-                    Menus[menuIndex].MenuOptionId = 6;
-                    lblDinner.Enabled = true;
-                    lblDinner.Visible = true;
-                    lblDinner.Text = "Вечеря от 19:00ч до 20:30ч";
-                }
-            }
-            else if (checkedItems.Count == 2)
-            {
-                if (checkedItems[0] == "Закуска" && checkedItems[1] == "Обяд")
-                {
-                    Menus[menuIndex].MenuOptionId = 3;
+                    Menus[menuIndex].MenuOptionId = 8;
                     lblBreakfast.Enabled = true;
                     lblBreakfast.Visible = true;
                     lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
                     lblLunch.Enabled = true;
                     lblLunch.Visible = true;
                     lblLunch.Text = "Обяд от 11:30ч до 12:30ч";
-                }
-                else if (checkedItems[0] == "Обяд" && checkedItems[1] == "Вечеря")
-                {
-                    Menus[menuIndex].MenuOptionId = 5;
-                    lblBreakfast.Enabled = true;
-                    lblBreakfast.Visible = true;
-                    lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
                     lblDinner.Enabled = true;
                     lblDinner.Visible = true;
                     lblDinner.Text = "Вечеря от 19:00ч до 20:30ч";
                 }
-                else if (checkedItems[0] == "Закуска" && checkedItems[1] == "Вечеря")
-                {
-                    Menus[menuIndex].MenuOptionId = 7;
-                    lblBreakfast.Enabled = true;
-                    lblBreakfast.Visible = true;
-                    lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
-                    lblDinner.Enabled = true;
-                    lblDinner.Visible = true;
-                    lblDinner.Text = "Вечеря от 19:00ч до 20:30ч";
-                }
+                return true;
             }
             else
             {
-                Menus[menuIndex].MenuOptionId = 8;
-                lblBreakfast.Enabled = true;
-                lblBreakfast.Visible = true;
-                lblBreakfast.Text = "Закуска от 7:00ч до 9:00ч";
-                lblLunch.Enabled = true;
-                lblLunch.Visible = true;
-                lblLunch.Text = "Обяд от 11:30ч до 12:30ч";
-                lblDinner.Enabled = true;
-                lblDinner.Visible = true;
-                lblDinner.Text = "Вечеря от 19:00ч до 20:30ч";
+                lblCheckResData.Enabled = true;
+                lblCheckResData.Visible = true;
+                btnCheckResData.Enabled = true;
+                btnCheckResData.Visible = true;
+                return false;
             }
         }
         private void btnNextDay_Click(object sender, EventArgs e)
         {
             if (checkedListBoxMenu.CheckedItems.Count > 0 && menuIndex < Menus.Count - 1)
             {
-                AddMenuOption();
-                menuIndex++;
-                lblMenuDate.Text = Menus[menuIndex].Date.ToShortDateString();
-                if (Menus[menuIndex].Date == Reservation.ExpiredOn)
+                if (AddMenuOption())
                 {
-                    btnNextDay.Text = "Завършек";
+                    menuIndex++;
+                    lblMenuDate.Text = Menus[menuIndex].Date.ToShortDateString();
+                    if (Menus[menuIndex].Date == Reservation.ExpiredOn)
+                    {
+                        btnNextDay.Text = "Завършек";
+                    }
                 }
             }
             else
             {
-                AddMenuOption();
-                if (btnNextDay.Text == "Завършек")
+                if (AddMenuOption())
                 {
-                    LockAllTapPages();
+                    if (btnNextDay.Text == "Завършек")
+                    {
+                        LockAllTapPages();
+                    }
                 }
             }
         }
@@ -767,9 +792,11 @@ namespace KursovaHotel2
         {
             if (checkedListBoxMenu.CheckedItems.Count > 0 && menuIndex >= 1)
             {
-                AddMenuOption();
-                menuIndex--;
-                lblMenuDate.Text = Menus[menuIndex].Date.ToShortDateString();
+                if (AddMenuOption())
+                {
+                    menuIndex--;
+                    lblMenuDate.Text = Menus[menuIndex].Date.ToShortDateString();
+                }
             }
             if (btnNextDay.Text == "Завършек")
             {
