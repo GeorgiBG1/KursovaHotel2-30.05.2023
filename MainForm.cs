@@ -13,7 +13,7 @@ namespace KursovaHotel2
     public partial class MainForm : Form
     {
         private ReservationForm _reservationForm = new ReservationForm();
-        private RoomForm _roomForm = new RoomForm();
+        private GalleryForm _roomForm = new GalleryForm();
         private InformationForm _informationForm = new InformationForm();
         public MainForm()
         {

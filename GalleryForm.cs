@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KursovaHotel2
 {
-    public partial class RoomForm : Form
+    public partial class GalleryForm : Form
     {
-        public RoomForm()
+        public GalleryForm()
         {
             InitializeComponent();
         }
