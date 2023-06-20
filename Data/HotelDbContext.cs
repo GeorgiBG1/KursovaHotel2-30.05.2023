@@ -15,7 +15,6 @@ namespace KursovaHotel.Data
         {
             this.Database.EnsureCreated();
         }
-
         public DbSet<Room> Rooms { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
