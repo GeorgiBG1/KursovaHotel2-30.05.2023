@@ -43,7 +43,7 @@
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(500, 45);
             this.lblName.TabIndex = 7;
-            this.lblName.Text = "Хотел Арте";
+            this.lblName.Text = "Хотел Карте";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // splitContainer
@@ -86,7 +86,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Хотел Арте";
+            this.Text = "Хотел Карте";
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
