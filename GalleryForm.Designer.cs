@@ -57,7 +57,7 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblGallery = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
@@ -352,17 +352,17 @@
             this.pictureBox24.TabIndex = 41;
             this.pictureBox24.TabStop = false;
             // 
-            // label1
+            // lblGallery
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(583, 264);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 136);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "Галерия";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGallery.BackColor = System.Drawing.Color.Transparent;
+            this.lblGallery.Font = new System.Drawing.Font("Times New Roman", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblGallery.ForeColor = System.Drawing.Color.Black;
+            this.lblGallery.Location = new System.Drawing.Point(583, 264);
+            this.lblGallery.Name = "lblGallery";
+            this.lblGallery.Size = new System.Drawing.Size(243, 136);
+            this.lblGallery.TabIndex = 42;
+            this.lblGallery.Text = "Галерия";
+            this.lblGallery.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox7
             // 
@@ -400,7 +400,7 @@
             this.pictureBox25.TabIndex = 46;
             this.pictureBox25.TabStop = false;
             // 
-            // RoomForm
+            // GalleryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -412,7 +412,7 @@
             this.Controls.Add(this.pictureBox19);
             this.Controls.Add(this.pictureBox27);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblGallery);
             this.Controls.Add(this.pictureBox24);
             this.Controls.Add(this.pictureBox21);
             this.Controls.Add(this.pictureBox12);
@@ -443,7 +443,7 @@
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "RoomForm";
+            this.Name = "GalleryForm";
             this.Text = "RoomForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -511,7 +511,7 @@
         private PictureBox pictureBox12;
         private PictureBox pictureBox21;
         private PictureBox pictureBox24;
-        private Label label1;
+        private Label lblGallery;
         private PictureBox pictureBox7;
         private PictureBox pictureBox27;
         private PictureBox pictureBox19;
